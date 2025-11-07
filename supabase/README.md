@@ -15,12 +15,17 @@
 
 ### 2. Run Database Schema
 
+**📖 For detailed step-by-step instructions, see [SETUP_DATABASE.md](./SETUP_DATABASE.md)**
+
+Quick steps:
 1. In your Supabase dashboard, go to the SQL Editor
 2. Copy the contents of `schema.sql`
 3. Paste into the SQL Editor
 4. Click "Run"
 
 This will create all necessary tables, indexes, and policies.
+
+**⚠️ IMPORTANT**: The schema file has been updated to fix table dependency order. Make sure to use the latest version.
 
 ### 3. Get API Credentials
 

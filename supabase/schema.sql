@@ -19,6 +19,24 @@ CREATE INDEX idx_users_email ON users(email);
 CREATE INDEX idx_users_nickname ON users(nickname);
 
 -- ============================================
+-- PARTIES TABLE (Created before characters due to FK dependency)
+-- ============================================
+CREATE TABLE IF NOT EXISTS parties (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  name TEXT NOT NULL,
+  code TEXT UNIQUE NOT NULL,
+  leader_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  max_members INTEGER DEFAULT 6,
+  goal INTEGER DEFAULT 20,
+  status TEXT DEFAULT 'active',
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+CREATE INDEX idx_parties_code ON parties(code);
+CREATE INDEX idx_parties_leader_id ON parties(leader_id);
+
+-- ============================================
 -- CHARACTERS TABLE
 -- ============================================
 CREATE TABLE IF NOT EXISTS characters (
@@ -78,24 +96,6 @@ CREATE TABLE IF NOT EXISTS characters (
 CREATE INDEX idx_characters_user_id ON characters(user_id);
 CREATE INDEX idx_characters_party_id ON characters(party_id);
 CREATE INDEX idx_characters_level ON characters(level);
-
--- ============================================
--- PARTIES TABLE
--- ============================================
-CREATE TABLE IF NOT EXISTS parties (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  name TEXT NOT NULL,
-  code TEXT UNIQUE NOT NULL,
-  leader_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-  max_members INTEGER DEFAULT 6,
-  goal INTEGER DEFAULT 20,
-  status TEXT DEFAULT 'active',
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
-CREATE INDEX idx_parties_code ON parties(code);
-CREATE INDEX idx_parties_leader_id ON parties(leader_id);
 
 -- ============================================
 -- COMBATS TABLE
