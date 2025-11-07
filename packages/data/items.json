@@ -1,0 +1,481 @@
+[
+  {
+    "id": "dagger",
+    "name": "Dagger",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A simple blade weapon used for close combat.",
+    "value": 2,
+    "weight": 1,
+    "weapon": {
+      "type": "simple_melee",
+      "damage": "1d4",
+      "damageType": "piercing",
+      "properties": ["finesse", "light", "thrown"],
+      "range": {"normal": 20, "long": 60}
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "shortsword",
+    "name": "Shortsword",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A martial melee weapon with a short blade.",
+    "value": 10,
+    "weight": 2,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d6",
+      "damageType": "piercing",
+      "properties": ["finesse", "light"]
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "longsword",
+    "name": "Longsword",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A martial melee weapon with a long blade.",
+    "value": 15,
+    "weight": 3,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d8",
+      "damageType": "slashing",
+      "properties": ["versatile"],
+      "versatileDamage": "1d10"
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "greatsword",
+    "name": "Greatsword",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A large two-handed blade.",
+    "value": 50,
+    "weight": 6,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "2d6",
+      "damageType": "slashing",
+      "properties": ["heavy", "two_handed"]
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "greataxe",
+    "name": "Greataxe",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A massive two-handed axe.",
+    "value": 30,
+    "weight": 7,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d12",
+      "damageType": "slashing",
+      "properties": ["heavy", "two_handed"]
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "shortbow",
+    "name": "Shortbow",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A simple ranged weapon.",
+    "value": 25,
+    "weight": 2,
+    "weapon": {
+      "type": "simple_ranged",
+      "damage": "1d6",
+      "damageType": "piercing",
+      "properties": ["ammunition", "two_handed"],
+      "range": {"normal": 80, "long": 320}
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "longbow",
+    "name": "Longbow",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A martial ranged weapon with extended range.",
+    "value": 50,
+    "weight": 2,
+    "weapon": {
+      "type": "martial_ranged",
+      "damage": "1d8",
+      "damageType": "piercing",
+      "properties": ["ammunition", "heavy", "two_handed"],
+      "range": {"normal": 150, "long": 600}
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "leather_armor",
+    "name": "Leather Armor",
+    "type": "armor",
+    "rarity": "common",
+    "description": "Light armor made from softened and flexible leather.",
+    "value": 10,
+    "weight": 10,
+    "armor": {
+      "type": "light",
+      "armorClass": 11,
+      "stealthDisadvantage": false
+    },
+    "equipSlot": "body",
+    "requiresAttunement": false
+  },
+  {
+    "id": "chain_mail",
+    "name": "Chain Mail",
+    "type": "armor",
+    "rarity": "common",
+    "description": "Heavy armor made of interlocking metal rings.",
+    "value": 75,
+    "weight": 55,
+    "armor": {
+      "type": "heavy",
+      "armorClass": 16,
+      "strengthRequirement": 13,
+      "stealthDisadvantage": true
+    },
+    "equipSlot": "body",
+    "requiresAttunement": false
+  },
+  {
+    "id": "plate_armor",
+    "name": "Plate Armor",
+    "type": "armor",
+    "rarity": "common",
+    "description": "Heavy armor consisting of shaped, interlocking metal plates.",
+    "value": 1500,
+    "weight": 65,
+    "armor": {
+      "type": "heavy",
+      "armorClass": 18,
+      "strengthRequirement": 15,
+      "stealthDisadvantage": true
+    },
+    "equipSlot": "body",
+    "requiresAttunement": false
+  },
+  {
+    "id": "shield",
+    "name": "Shield",
+    "type": "shield",
+    "rarity": "common",
+    "description": "A shield provides +2 to AC.",
+    "value": 10,
+    "weight": 6,
+    "shield": {
+      "armorClassBonus": 2
+    },
+    "equipSlot": "offHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "longsword_plus_1",
+    "name": "Longsword +1",
+    "type": "weapon",
+    "rarity": "uncommon",
+    "description": "A magically enhanced longsword that provides a +1 bonus to attack and damage rolls.",
+    "value": 500,
+    "weight": 3,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d8",
+      "damageType": "slashing",
+      "properties": ["versatile"],
+      "versatileDamage": "1d10"
+    },
+    "magicBonus": 1,
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "flame_tongue",
+    "name": "Flame Tongue",
+    "type": "weapon",
+    "rarity": "rare",
+    "description": "You can use a bonus action to speak this magic sword's command word, causing flames to erupt from the blade. These flames shed bright light in a 40-foot radius and dim light for an additional 40 feet. While the sword is ablaze, it deals an extra 2d6 fire damage to any target it hits.",
+    "value": 5000,
+    "weight": 3,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d8",
+      "damageType": "slashing",
+      "properties": ["versatile"],
+      "versatileDamage": "1d10"
+    },
+    "effects": [
+      {
+        "type": "bonus_damage",
+        "value": 2,
+        "description": "Deals an extra 2d6 fire damage when activated"
+      }
+    ],
+    "equipSlot": "mainHand",
+    "requiresAttunement": true
+  },
+  {
+    "id": "vorpal_sword",
+    "name": "Vorpal Sword",
+    "type": "weapon",
+    "rarity": "legendary",
+    "description": "You gain a +3 bonus to attack and damage rolls made with this magic weapon. In addition, the weapon ignores resistance to slashing damage. When you attack a creature that has at least one head with this weapon and roll a 20 on the attack roll, you cut off one of the creature's heads.",
+    "value": 50000,
+    "weight": 3,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d8",
+      "damageType": "slashing",
+      "properties": ["versatile"],
+      "versatileDamage": "1d10"
+    },
+    "magicBonus": 3,
+    "effects": [
+      {
+        "type": "custom",
+        "description": "Ignores resistance to slashing damage. On natural 20, severs head of creature with heads."
+      }
+    ],
+    "equipSlot": "mainHand",
+    "requiresAttunement": true
+  },
+  {
+    "id": "armor_plus_1",
+    "name": "Armor +1",
+    "type": "armor",
+    "rarity": "uncommon",
+    "description": "You have a +1 bonus to AC while wearing this armor.",
+    "value": 500,
+    "weight": 20,
+    "armor": {
+      "type": "medium",
+      "armorClass": 14,
+      "maxDexBonus": 2,
+      "stealthDisadvantage": false
+    },
+    "magicBonus": 1,
+    "equipSlot": "body",
+    "requiresAttunement": false
+  },
+  {
+    "id": "cloak_of_protection",
+    "name": "Cloak of Protection",
+    "type": "wondrous",
+    "rarity": "uncommon",
+    "description": "You gain a +1 bonus to AC and saving throws while you wear this cloak.",
+    "value": 350,
+    "weight": 1,
+    "effects": [
+      {
+        "type": "bonus_ac",
+        "value": 1,
+        "description": "+1 to AC and saving throws"
+      }
+    ],
+    "equipSlot": "accessory",
+    "requiresAttunement": true
+  },
+  {
+    "id": "ring_of_protection",
+    "name": "Ring of Protection",
+    "type": "ring",
+    "rarity": "rare",
+    "description": "You gain a +1 bonus to AC and saving throws while wearing this ring.",
+    "value": 3500,
+    "weight": 0,
+    "effects": [
+      {
+        "type": "bonus_ac",
+        "value": 1,
+        "description": "+1 to AC and saving throws"
+      }
+    ],
+    "equipSlot": "ring",
+    "requiresAttunement": true
+  },
+  {
+    "id": "ring_of_invisibility",
+    "name": "Ring of Invisibility",
+    "type": "ring",
+    "rarity": "legendary",
+    "description": "While wearing this ring, you can turn invisible as an action. Anything you are wearing or carrying is invisible with you. You remain invisible until the ring is removed, until you attack or cast a spell, or until you use a bonus action to become visible again.",
+    "value": 50000,
+    "weight": 0,
+    "effects": [
+      {
+        "type": "custom",
+        "description": "Can turn invisible as an action"
+      }
+    ],
+    "equipSlot": "ring",
+    "requiresAttunement": true
+  },
+  {
+    "id": "belt_of_giant_strength",
+    "name": "Belt of Giant Strength (Hill)",
+    "type": "wondrous",
+    "rarity": "rare",
+    "description": "While wearing this belt, your Strength score changes to 21. If your Strength is already equal to or greater than the belt's score, the item has no effect on you.",
+    "value": 8000,
+    "weight": 1,
+    "effects": [
+      {
+        "type": "ability_bonus",
+        "ability": "strength",
+        "description": "Strength becomes 21"
+      }
+    ],
+    "equipSlot": "accessory",
+    "requiresAttunement": true
+  },
+  {
+    "id": "potion_healing",
+    "name": "Potion of Healing",
+    "type": "potion",
+    "rarity": "common",
+    "description": "You regain 2d4 + 2 hit points when you drink this potion.",
+    "value": 50,
+    "weight": 0.5,
+    "consumable": {
+      "effect": "Heal",
+      "healing": "2d4+2"
+    },
+    "requiresAttunement": false
+  },
+  {
+    "id": "potion_greater_healing",
+    "name": "Potion of Greater Healing",
+    "type": "potion",
+    "rarity": "uncommon",
+    "description": "You regain 4d4 + 4 hit points when you drink this potion.",
+    "value": 150,
+    "weight": 0.5,
+    "consumable": {
+      "effect": "Heal",
+      "healing": "4d4+4"
+    },
+    "requiresAttunement": false
+  },
+  {
+    "id": "potion_superior_healing",
+    "name": "Potion of Superior Healing",
+    "type": "potion",
+    "rarity": "rare",
+    "description": "You regain 8d4 + 8 hit points when you drink this potion.",
+    "value": 450,
+    "weight": 0.5,
+    "consumable": {
+      "effect": "Heal",
+      "healing": "8d4+8"
+    },
+    "requiresAttunement": false
+  },
+  {
+    "id": "potion_fire_resistance",
+    "name": "Potion of Fire Resistance",
+    "type": "potion",
+    "rarity": "uncommon",
+    "description": "When you drink this potion, you gain resistance to fire damage for 1 hour.",
+    "value": 100,
+    "weight": 0.5,
+    "consumable": {
+      "effect": "Grant fire resistance",
+      "duration": 60
+    },
+    "requiresAttunement": false
+  },
+  {
+    "id": "cursed_sword",
+    "name": "Cursed Sword of Vengeance",
+    "type": "cursed",
+    "rarity": "uncommon",
+    "description": "This sword appears to be a +1 longsword. However, once you attune to it, you are cursed until you are targeted by remove curse. While cursed, you are unwilling to part with the sword, keeping it within reach at all times. You also have disadvantage on attack rolls with weapons other than this one.",
+    "value": 100,
+    "weight": 3,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d8",
+      "damageType": "slashing",
+      "properties": ["versatile"],
+      "versatileDamage": "1d10"
+    },
+    "magicBonus": 1,
+    "curse": {
+      "description": "Cursed - unwilling to part with sword",
+      "effect": "Disadvantage on attacks with other weapons. Cannot voluntarily remove sword.",
+      "removable": true
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": true
+  },
+  {
+    "id": "cursed_armor_vulnerability",
+    "name": "Armor of Vulnerability",
+    "type": "cursed",
+    "rarity": "rare",
+    "description": "While wearing this armor, you have resistance to one of the following damage types: bludgeoning, piercing, or slashing. However, you have vulnerability to the other two types. Once you don the armor, you can't doff it unless you are targeted by remove curse or similar magic.",
+    "value": 200,
+    "weight": 45,
+    "armor": {
+      "type": "heavy",
+      "armorClass": 18,
+      "stealthDisadvantage": true
+    },
+    "curse": {
+      "description": "Cursed - vulnerability to 2 damage types",
+      "effect": "Resistance to one physical damage type, vulnerability to the other two. Cannot remove without Remove Curse.",
+      "removable": true
+    },
+    "equipSlot": "body",
+    "requiresAttunement": true
+  },
+  {
+    "id": "scroll_fireball",
+    "name": "Scroll of Fireball",
+    "type": "scroll",
+    "rarity": "uncommon",
+    "description": "A spell scroll containing the fireball spell (3rd level).",
+    "value": 200,
+    "weight": 0,
+    "scroll": {
+      "spellId": "fireball",
+      "spellLevel": 3
+    },
+    "consumable": {
+      "effect": "Cast Fireball (3rd level)"
+    },
+    "requiresAttunement": false
+  },
+  {
+    "id": "bag_of_holding",
+    "name": "Bag of Holding",
+    "type": "wondrous",
+    "rarity": "uncommon",
+    "description": "This bag has an interior space considerably larger than its outside dimensions. The bag can hold up to 500 pounds, not exceeding a volume of 64 cubic feet. The bag weighs 15 pounds, regardless of its contents.",
+    "value": 4000,
+    "weight": 15,
+    "effects": [
+      {
+        "type": "custom",
+        "description": "Can hold 500 lbs of items in extradimensional space"
+      }
+    ],
+    "requiresAttunement": false
+  }
+]

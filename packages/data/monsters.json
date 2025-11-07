@@ -1,0 +1,693 @@
+[
+  {
+    "id": "rat",
+    "name": "Rat",
+    "type": "beast",
+    "size": "tiny",
+    "alignment": "unaligned",
+    "challengeRating": 0,
+    "experiencePoints": 10,
+    "armorClass": 10,
+    "hitPoints": 1,
+    "hitDice": "1d4-1",
+    "speed": {"walk": 20},
+    "abilityScores": {
+      "strength": 2,
+      "dexterity": 11,
+      "constitution": 9,
+      "intelligence": 2,
+      "wisdom": 10,
+      "charisma": 4
+    },
+    "senses": {"darkvision": 30, "passivePerception": 10},
+    "languages": [],
+    "traits": [
+      {
+        "name": "Keen Smell",
+        "description": "The rat has advantage on Wisdom (Perception) checks that rely on smell."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Weapon Attack: +0 to hit, reach 5 ft., one target.",
+        "attackBonus": 0,
+        "damage": "1",
+        "damageType": "piercing",
+        "reach": 5
+      }
+    ],
+    "lootTable": [],
+    "goldDrops": {"min": 0, "max": 0},
+    "environment": ["urban", "dungeon"]
+  },
+  {
+    "id": "goblin",
+    "name": "Goblin",
+    "type": "humanoid",
+    "size": "small",
+    "alignment": "neutral evil",
+    "challengeRating": 0.25,
+    "experiencePoints": 50,
+    "armorClass": 15,
+    "hitPoints": 7,
+    "hitDice": "2d6",
+    "speed": {"walk": 30},
+    "abilityScores": {
+      "strength": 8,
+      "dexterity": 14,
+      "constitution": 10,
+      "intelligence": 10,
+      "wisdom": 8,
+      "charisma": 8
+    },
+    "skills": {"stealth": 6},
+    "senses": {"darkvision": 60, "passivePerception": 9},
+    "languages": ["Common", "Goblin"],
+    "traits": [
+      {
+        "name": "Nimble Escape",
+        "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Scimitar",
+        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target.",
+        "attackBonus": 4,
+        "damage": "1d6+2",
+        "damageType": "slashing",
+        "reach": 5
+      },
+      {
+        "name": "Shortbow",
+        "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target.",
+        "attackBonus": 4,
+        "damage": "1d6+2",
+        "damageType": "piercing",
+        "range": "80/320"
+      }
+    ],
+    "lootTable": [
+      {"itemId": "leather_armor", "chance": 50, "quantity": {"min": 1, "max": 1}},
+      {"itemId": "scimitar", "chance": 50, "quantity": {"min": 1, "max": 1}},
+      {"itemId": "shortbow", "chance": 40, "quantity": {"min": 1, "max": 1}}
+    ],
+    "goldDrops": {"min": 1, "max": 10},
+    "environment": ["forest", "mountain", "dungeon"]
+  },
+  {
+    "id": "skeleton",
+    "name": "Skeleton",
+    "type": "undead",
+    "size": "medium",
+    "alignment": "lawful evil",
+    "challengeRating": 0.25,
+    "experiencePoints": 50,
+    "armorClass": 13,
+    "hitPoints": 13,
+    "hitDice": "2d8+4",
+    "speed": {"walk": 30},
+    "abilityScores": {
+      "strength": 10,
+      "dexterity": 14,
+      "constitution": 15,
+      "intelligence": 6,
+      "wisdom": 8,
+      "charisma": 5
+    },
+    "damageVulnerabilities": ["bludgeoning"],
+    "damageImmunities": ["poison"],
+    "conditionImmunities": ["exhaustion", "poisoned"],
+    "senses": {"darkvision": 60, "passivePerception": 9},
+    "languages": ["Understands all languages it knew in life but can't speak"],
+    "actions": [
+      {
+        "name": "Shortsword",
+        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target.",
+        "attackBonus": 4,
+        "damage": "1d6+2",
+        "damageType": "piercing",
+        "reach": 5
+      },
+      {
+        "name": "Shortbow",
+        "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target.",
+        "attackBonus": 4,
+        "damage": "1d6+2",
+        "damageType": "piercing",
+        "range": "80/320"
+      }
+    ],
+    "lootTable": [
+      {"itemId": "bone_dust", "chance": 80, "quantity": {"min": 1, "max": 3}},
+      {"itemId": "rusty_shortsword", "chance": 30, "quantity": {"min": 1, "max": 1}}
+    ],
+    "goldDrops": {"min": 0, "max": 5},
+    "environment": ["dungeon", "underdark"]
+  },
+  {
+    "id": "zombie",
+    "name": "Zombie",
+    "type": "undead",
+    "size": "medium",
+    "alignment": "neutral evil",
+    "challengeRating": 0.25,
+    "experiencePoints": 50,
+    "armorClass": 8,
+    "hitPoints": 22,
+    "hitDice": "3d8+9",
+    "speed": {"walk": 20},
+    "abilityScores": {
+      "strength": 13,
+      "dexterity": 6,
+      "constitution": 16,
+      "intelligence": 3,
+      "wisdom": 6,
+      "charisma": 5
+    },
+    "savingThrows": {"wisdom": 0},
+    "damageImmunities": ["poison"],
+    "conditionImmunities": ["poisoned"],
+    "senses": {"darkvision": 60, "passivePerception": 8},
+    "languages": ["Understands languages it knew in life but can't speak"],
+    "traits": [
+      {
+        "name": "Undead Fortitude",
+        "description": "If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Slam",
+        "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target.",
+        "attackBonus": 3,
+        "damage": "1d6+1",
+        "damageType": "bludgeoning",
+        "reach": 5
+      }
+    ],
+    "lootTable": [
+      {"itemId": "rotten_flesh", "chance": 60, "quantity": {"min": 1, "max": 2}}
+    ],
+    "goldDrops": {"min": 0, "max": 3},
+    "environment": ["dungeon", "swamp", "urban"]
+  },
+  {
+    "id": "orc",
+    "name": "Orc",
+    "type": "humanoid",
+    "size": "medium",
+    "alignment": "chaotic evil",
+    "challengeRating": 0.5,
+    "experiencePoints": 100,
+    "armorClass": 13,
+    "hitPoints": 15,
+    "hitDice": "2d8+6",
+    "speed": {"walk": 30},
+    "abilityScores": {
+      "strength": 16,
+      "dexterity": 12,
+      "constitution": 16,
+      "intelligence": 7,
+      "wisdom": 11,
+      "charisma": 10
+    },
+    "skills": {"intimidation": 2},
+    "senses": {"darkvision": 60, "passivePerception": 10},
+    "languages": ["Common", "Orc"],
+    "traits": [
+      {
+        "name": "Aggressive",
+        "description": "As a bonus action, the orc can move up to its speed toward a hostile creature that it can see."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Greataxe",
+        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target.",
+        "attackBonus": 5,
+        "damage": "1d12+3",
+        "damageType": "slashing",
+        "reach": 5
+      },
+      {
+        "name": "Javelin",
+        "description": "Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 30/120 ft., one target.",
+        "attackBonus": 5,
+        "damage": "1d6+3",
+        "damageType": "piercing",
+        "range": "30/120"
+      }
+    ],
+    "lootTable": [
+      {"itemId": "greataxe", "chance": 60, "quantity": {"min": 1, "max": 1}},
+      {"itemId": "hide_armor", "chance": 50, "quantity": {"min": 1, "max": 1}},
+      {"itemId": "javelin", "chance": 40, "quantity": {"min": 1, "max": 3}}
+    ],
+    "goldDrops": {"min": 5, "max": 20},
+    "environment": ["mountain", "forest", "grassland"]
+  },
+  {
+    "id": "ogre",
+    "name": "Ogre",
+    "type": "giant",
+    "size": "large",
+    "alignment": "chaotic evil",
+    "challengeRating": 2,
+    "experiencePoints": 450,
+    "armorClass": 11,
+    "hitPoints": 59,
+    "hitDice": "7d10+21",
+    "speed": {"walk": 40},
+    "abilityScores": {
+      "strength": 19,
+      "dexterity": 8,
+      "constitution": 16,
+      "intelligence": 5,
+      "wisdom": 7,
+      "charisma": 7
+    },
+    "senses": {"darkvision": 60, "passivePerception": 8},
+    "languages": ["Common", "Giant"],
+    "actions": [
+      {
+        "name": "Greatclub",
+        "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target.",
+        "attackBonus": 6,
+        "damage": "2d8+4",
+        "damageType": "bludgeoning",
+        "reach": 5
+      },
+      {
+        "name": "Javelin",
+        "description": "Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 30/120 ft., one target.",
+        "attackBonus": 6,
+        "damage": "2d6+4",
+        "damageType": "piercing",
+        "range": "30/120"
+      }
+    ],
+    "lootTable": [
+      {"itemId": "greatclub", "chance": 70, "quantity": {"min": 1, "max": 1}},
+      {"itemId": "large_bone", "chance": 50, "quantity": {"min": 2, "max": 4}}
+    ],
+    "goldDrops": {"min": 20, "max": 60},
+    "environment": ["mountain", "forest", "dungeon"]
+  },
+  {
+    "id": "troll",
+    "name": "Troll",
+    "type": "giant",
+    "size": "large",
+    "alignment": "chaotic evil",
+    "challengeRating": 5,
+    "experiencePoints": 1800,
+    "armorClass": 15,
+    "hitPoints": 84,
+    "hitDice": "8d10+40",
+    "speed": {"walk": 30},
+    "abilityScores": {
+      "strength": 18,
+      "dexterity": 13,
+      "constitution": 20,
+      "intelligence": 7,
+      "wisdom": 9,
+      "charisma": 7
+    },
+    "skills": {"perception": 2},
+    "senses": {"darkvision": 60, "passivePerception": 12},
+    "languages": ["Giant"],
+    "traits": [
+      {
+        "name": "Keen Smell",
+        "description": "The troll has advantage on Wisdom (Perception) checks that rely on smell."
+      },
+      {
+        "name": "Regeneration",
+        "description": "The troll regains 10 hit points at the start of its turn. If the troll takes acid or fire damage, this trait doesn't function at the start of the troll's next turn. The troll dies only if it starts its turn with 0 hit points and doesn't regenerate."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The troll makes three attacks: one with its bite and two with its claws."
+      },
+      {
+        "name": "Bite",
+        "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target.",
+        "attackBonus": 7,
+        "damage": "1d6+4",
+        "damageType": "piercing",
+        "reach": 5
+      },
+      {
+        "name": "Claw",
+        "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target.",
+        "attackBonus": 7,
+        "damage": "2d6+4",
+        "damageType": "slashing",
+        "reach": 5
+      }
+    ],
+    "lootTable": [
+      {"itemId": "troll_blood", "chance": 80, "quantity": {"min": 2, "max": 4}},
+      {"itemId": "regeneration_salve", "chance": 30, "quantity": {"min": 1, "max": 1}}
+    ],
+    "goldDrops": {"min": 50, "max": 150},
+    "environment": ["swamp", "mountain", "forest"]
+  },
+  {
+    "id": "young_red_dragon",
+    "name": "Young Red Dragon",
+    "type": "dragon",
+    "size": "large",
+    "alignment": "chaotic evil",
+    "challengeRating": 10,
+    "experiencePoints": 5900,
+    "armorClass": 18,
+    "hitPoints": 178,
+    "hitDice": "17d10+85",
+    "speed": {"walk": 40, "climb": 40, "fly": 80},
+    "abilityScores": {
+      "strength": 23,
+      "dexterity": 10,
+      "constitution": 21,
+      "intelligence": 14,
+      "wisdom": 11,
+      "charisma": 19
+    },
+    "savingThrows": {
+      "dexterity": 4,
+      "constitution": 9,
+      "wisdom": 4,
+      "charisma": 8
+    },
+    "skills": {"perception": 8, "stealth": 4},
+    "damageImmunities": ["fire"],
+    "senses": {"blindsight": 30, "darkvision": 120, "passivePerception": 18},
+    "languages": ["Common", "Draconic"],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The dragon makes three attacks: one with its bite and two with its claws."
+      },
+      {
+        "name": "Bite",
+        "description": "Melee Weapon Attack: +10 to hit, reach 10 ft., one target.",
+        "attackBonus": 10,
+        "damage": "2d10+6",
+        "damageType": "piercing",
+        "reach": 10
+      },
+      {
+        "name": "Claw",
+        "description": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target.",
+        "attackBonus": 10,
+        "damage": "2d6+6",
+        "damageType": "slashing",
+        "reach": 5
+      },
+      {
+        "name": "Fire Breath (Recharge 5-6)",
+        "description": "The dragon exhales fire in a 30-foot cone. Each creature in that area must make a DC 17 Dexterity saving throw, taking 56 (16d6) fire damage on a failed save, or half as much damage on a successful one.",
+        "savingThrow": {
+          "ability": "dexterity",
+          "dc": 17,
+          "effect": "56 (16d6) fire damage, half on success"
+        }
+      }
+    ],
+    "lootTable": [
+      {"itemId": "dragon_scale_red", "chance": 90, "quantity": {"min": 3, "max": 8}},
+      {"itemId": "dragon_fang", "chance": 70, "quantity": {"min": 2, "max": 4}},
+      {"itemId": "fire_ruby", "chance": 60, "quantity": {"min": 1, "max": 3}},
+      {"itemId": "potion_fire_resistance", "chance": 40, "quantity": {"min": 1, "max": 2}}
+    ],
+    "goldDrops": {"min": 500, "max": 2000},
+    "environment": ["mountain"]
+  },
+  {
+    "id": "beholder",
+    "name": "Beholder",
+    "type": "aberration",
+    "size": "large",
+    "alignment": "lawful evil",
+    "challengeRating": 13,
+    "experiencePoints": 10000,
+    "armorClass": 18,
+    "hitPoints": 180,
+    "hitDice": "19d10+76",
+    "speed": {"fly": 20},
+    "abilityScores": {
+      "strength": 10,
+      "dexterity": 14,
+      "constitution": 18,
+      "intelligence": 17,
+      "wisdom": 15,
+      "charisma": 17
+    },
+    "savingThrows": {
+      "intelligence": 8,
+      "wisdom": 7,
+      "charisma": 8
+    },
+    "skills": {"perception": 12},
+    "conditionImmunities": ["prone"],
+    "senses": {"darkvision": 120, "passivePerception": 22},
+    "languages": ["Deep Speech", "Undercommon"],
+    "traits": [
+      {
+        "name": "Antimagic Cone",
+        "description": "The beholder's central eye creates an area of antimagic, as in the antimagic field spell, in a 150-foot cone. At the start of each of its turns, the beholder decides which way the cone faces."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target.",
+        "attackBonus": 5,
+        "damage": "4d6",
+        "damageType": "piercing",
+        "reach": 5
+      },
+      {
+        "name": "Eye Rays",
+        "description": "The beholder shoots three of the following magical eye rays at random (reroll duplicates), choosing one to three targets it can see within 120 feet: Charm Ray, Paralyzing Ray, Fear Ray, Slowing Ray, Enervation Ray, Telekinetic Ray, Sleep Ray, Petrification Ray, Disintegration Ray, Death Ray."
+      }
+    ],
+    "lootTable": [
+      {"itemId": "beholder_eye", "chance": 100, "quantity": {"min": 1, "max": 1}},
+      {"itemId": "wand_of_paralysis", "chance": 30, "quantity": {"min": 1, "max": 1}},
+      {"itemId": "ring_of_telekinesis", "chance": 25, "quantity": {"min": 1, "max": 1}}
+    ],
+    "goldDrops": {"min": 1000, "max": 5000},
+    "environment": ["underdark", "dungeon"]
+  },
+  {
+    "id": "ancient_red_dragon",
+    "name": "Ancient Red Dragon",
+    "type": "dragon",
+    "size": "gargantuan",
+    "alignment": "chaotic evil",
+    "challengeRating": 24,
+    "experiencePoints": 62000,
+    "armorClass": 22,
+    "hitPoints": 546,
+    "hitDice": "28d20+252",
+    "speed": {"walk": 40, "climb": 40, "fly": 80},
+    "abilityScores": {
+      "strength": 30,
+      "dexterity": 10,
+      "constitution": 29,
+      "intelligence": 18,
+      "wisdom": 13,
+      "charisma": 23
+    },
+    "savingThrows": {
+      "dexterity": 7,
+      "constitution": 16,
+      "wisdom": 8,
+      "charisma": 13
+    },
+    "skills": {"perception": 16, "stealth": 7},
+    "damageImmunities": ["fire"],
+    "senses": {"blindsight": 60, "darkvision": 120, "passivePerception": 26},
+    "languages": ["Common", "Draconic"],
+    "traits": [
+      {
+        "name": "Legendary Resistance (3/Day)",
+        "description": "If the dragon fails a saving throw, it can choose to succeed instead."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws."
+      },
+      {
+        "name": "Bite",
+        "description": "Melee Weapon Attack: +17 to hit, reach 15 ft., one target.",
+        "attackBonus": 17,
+        "damage": "2d10+10",
+        "damageType": "piercing",
+        "reach": 15
+      },
+      {
+        "name": "Claw",
+        "description": "Melee Weapon Attack: +17 to hit, reach 10 ft., one target.",
+        "attackBonus": 17,
+        "damage": "2d6+10",
+        "damageType": "slashing",
+        "reach": 10
+      },
+      {
+        "name": "Fire Breath (Recharge 5-6)",
+        "description": "The dragon exhales fire in a 90-foot cone. Each creature in that area must make a DC 24 Dexterity saving throw, taking 91 (26d6) fire damage on a failed save, or half as much damage on a successful one.",
+        "savingThrow": {
+          "ability": "dexterity",
+          "dc": 24,
+          "effect": "91 (26d6) fire damage, half on success"
+        }
+      }
+    ],
+    "legendaryActions": [
+      {
+        "name": "Detect",
+        "description": "The dragon makes a Wisdom (Perception) check.",
+        "cost": 1
+      },
+      {
+        "name": "Tail Attack",
+        "description": "The dragon makes a tail attack.",
+        "cost": 1
+      },
+      {
+        "name": "Wing Attack (Costs 2 Actions)",
+        "description": "The dragon beats its wings. Each creature within 15 feet must succeed on a DC 25 Dexterity saving throw or take 17 (2d6+10) bludgeoning damage and be knocked prone.",
+        "cost": 2
+      }
+    ],
+    "lootTable": [
+      {"itemId": "ancient_dragon_scale_red", "chance": 100, "quantity": {"min": 10, "max": 20}},
+      {"itemId": "dragon_heart", "chance": 100, "quantity": {"min": 1, "max": 1}},
+      {"itemId": "legendary_fire_gem", "chance": 80, "quantity": {"min": 3, "max": 7}},
+      {"itemId": "ring_of_fire_immunity", "chance": 50, "quantity": {"min": 1, "max": 1}},
+      {"itemId": "legendary_weapon_random", "chance": 60, "quantity": {"min": 1, "max": 2}}
+    ],
+    "goldDrops": {"min": 10000, "max": 50000},
+    "environment": ["mountain"]
+  },
+  {
+    "id": "tarrasque",
+    "name": "Tarrasque",
+    "type": "monstrosity",
+    "size": "gargantuan",
+    "alignment": "unaligned",
+    "challengeRating": 30,
+    "experiencePoints": 155000,
+    "armorClass": 25,
+    "hitPoints": 676,
+    "hitDice": "33d20+330",
+    "speed": {"walk": 40},
+    "abilityScores": {
+      "strength": 30,
+      "dexterity": 11,
+      "constitution": 30,
+      "intelligence": 3,
+      "wisdom": 11,
+      "charisma": 11
+    },
+    "savingThrows": {
+      "intelligence": 5,
+      "wisdom": 9,
+      "charisma": 9
+    },
+    "damageImmunities": ["fire", "poison"],
+    "damageResistances": ["bludgeoning", "piercing", "slashing"],
+    "conditionImmunities": ["charmed", "frightened", "paralyzed", "poisoned"],
+    "senses": {"blindsight": 120, "passivePerception": 10},
+    "languages": [],
+    "traits": [
+      {
+        "name": "Legendary Resistance (3/Day)",
+        "description": "If the tarrasque fails a saving throw, it can choose to succeed instead."
+      },
+      {
+        "name": "Magic Resistance",
+        "description": "The tarrasque has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Reflective Carapace",
+        "description": "Any time the tarrasque is targeted by a magic missile spell, a line spell, or a spell that requires a ranged attack roll, roll a d6. On a 1 to 5, the tarrasque is unaffected. On a 6, the tarrasque is unaffected, and the effect is reflected back at the caster."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The tarrasque can use its Frightful Presence. It then makes five attacks: one with its bite, two with its claws, one with its horns, and one with its tail."
+      },
+      {
+        "name": "Bite",
+        "description": "Melee Weapon Attack: +19 to hit, reach 10 ft., one target.",
+        "attackBonus": 19,
+        "damage": "4d12+10",
+        "damageType": "piercing",
+        "reach": 10
+      },
+      {
+        "name": "Claw",
+        "description": "Melee Weapon Attack: +19 to hit, reach 15 ft., one target.",
+        "attackBonus": 19,
+        "damage": "4d8+10",
+        "damageType": "slashing",
+        "reach": 15
+      },
+      {
+        "name": "Horns",
+        "description": "Melee Weapon Attack: +19 to hit, reach 10 ft., one target.",
+        "attackBonus": 19,
+        "damage": "4d10+10",
+        "damageType": "piercing",
+        "reach": 10
+      },
+      {
+        "name": "Tail",
+        "description": "Melee Weapon Attack: +19 to hit, reach 20 ft., one target.",
+        "attackBonus": 19,
+        "damage": "4d6+10",
+        "damageType": "bludgeoning",
+        "reach": 20
+      },
+      {
+        "name": "Swallow",
+        "description": "The tarrasque makes one bite attack against a Large or smaller creature it is grappling. If the attack hits, the target takes the bite's damage, the target is swallowed, and the grapple ends."
+      }
+    ],
+    "legendaryActions": [
+      {
+        "name": "Attack",
+        "description": "The tarrasque makes one claw attack or tail attack.",
+        "cost": 1
+      },
+      {
+        "name": "Move",
+        "description": "The tarrasque moves up to half its speed.",
+        "cost": 1
+      },
+      {
+        "name": "Chomp (Costs 2 Actions)",
+        "description": "The tarrasque makes one bite attack or uses its Swallow.",
+        "cost": 2
+      }
+    ],
+    "lootTable": [
+      {"itemId": "tarrasque_scale", "chance": 100, "quantity": {"min": 20, "max": 40}},
+      {"itemId": "tarrasque_heart", "chance": 100, "quantity": {"min": 1, "max": 1}},
+      {"itemId": "artifact_random", "chance": 80, "quantity": {"min": 1, "max": 3}},
+      {"itemId": "legendary_armor_random", "chance": 70, "quantity": {"min": 1, "max": 2}}
+    ],
+    "goldDrops": {"min": 50000, "max": 200000},
+    "environment": ["dungeon"]
+  }
+]

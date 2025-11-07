@@ -1,0 +1,612 @@
+[
+  {
+    "id": "human",
+    "name": "Human",
+    "abilityBonuses": {
+      "strength": 1,
+      "dexterity": 1,
+      "constitution": 1,
+      "intelligence": 1,
+      "wisdom": 1,
+      "charisma": 1
+    },
+    "speed": 30,
+    "size": "Medium",
+    "languages": ["Common", "One extra language"],
+    "traits": [
+      {
+        "name": "Versatile",
+        "description": "Humans gain +1 to all ability scores."
+      }
+    ]
+  },
+  {
+    "id": "high_elf",
+    "name": "High Elf",
+    "abilityBonuses": {
+      "dexterity": 2,
+      "intelligence": 1
+    },
+    "speed": 30,
+    "size": "Medium",
+    "languages": ["Common", "Elvish", "One extra language"],
+    "darkvision": 60,
+    "traits": [
+      {
+        "name": "Fey Ancestry",
+        "description": "Advantage on saving throws against being charmed, and magic can't put you to sleep."
+      },
+      {
+        "name": "Trance",
+        "description": "Elves don't need to sleep. Instead, they meditate deeply for 4 hours a day."
+      },
+      {
+        "name": "Keen Senses",
+        "description": "Proficiency in Perception."
+      },
+      {
+        "name": "Elf Weapon Training",
+        "description": "Proficiency with longsword, shortsword, shortbow, and longbow."
+      },
+      {
+        "name": "Cantrip",
+        "description": "You know one cantrip of your choice from the wizard spell list."
+      }
+    ]
+  },
+  {
+    "id": "wood_elf",
+    "name": "Wood Elf",
+    "abilityBonuses": {
+      "dexterity": 2,
+      "wisdom": 1
+    },
+    "speed": 35,
+    "size": "Medium",
+    "languages": ["Common", "Elvish"],
+    "darkvision": 60,
+    "traits": [
+      {
+        "name": "Fey Ancestry",
+        "description": "Advantage on saving throws against being charmed, and magic can't put you to sleep."
+      },
+      {
+        "name": "Trance",
+        "description": "Elves don't need to sleep. Instead, they meditate deeply for 4 hours a day."
+      },
+      {
+        "name": "Keen Senses",
+        "description": "Proficiency in Perception."
+      },
+      {
+        "name": "Elf Weapon Training",
+        "description": "Proficiency with longsword, shortsword, shortbow, and longbow."
+      },
+      {
+        "name": "Fleet of Foot",
+        "description": "Your base walking speed increases to 35 feet."
+      },
+      {
+        "name": "Mask of the Wild",
+        "description": "You can attempt to hide even when only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
+      }
+    ]
+  },
+  {
+    "id": "dark_elf",
+    "name": "Dark Elf (Drow)",
+    "abilityBonuses": {
+      "dexterity": 2,
+      "charisma": 1
+    },
+    "speed": 30,
+    "size": "Medium",
+    "languages": ["Common", "Elvish"],
+    "darkvision": 120,
+    "traits": [
+      {
+        "name": "Fey Ancestry",
+        "description": "Advantage on saving throws against being charmed, and magic can't put you to sleep."
+      },
+      {
+        "name": "Keen Senses",
+        "description": "Proficiency in Perception."
+      },
+      {
+        "name": "Sunlight Sensitivity",
+        "description": "Disadvantage on attack rolls and Perception checks in direct sunlight."
+      },
+      {
+        "name": "Drow Magic",
+        "description": "You know the Dancing Lights cantrip. At 3rd level, you can cast Faerie Fire once per day. At 5th level, you can also cast Darkness once per day."
+      },
+      {
+        "name": "Drow Weapon Training",
+        "description": "Proficiency with rapiers, shortswords, and hand crossbows."
+      }
+    ]
+  },
+  {
+    "id": "mountain_dwarf",
+    "name": "Mountain Dwarf",
+    "abilityBonuses": {
+      "strength": 2,
+      "constitution": 2
+    },
+    "speed": 25,
+    "size": "Medium",
+    "languages": ["Common", "Dwarvish"],
+    "darkvision": 60,
+    "traits": [
+      {
+        "name": "Dwarven Resilience",
+        "description": "Advantage on saving throws against poison, and resistance to poison damage."
+      },
+      {
+        "name": "Dwarven Combat Training",
+        "description": "Proficiency with battleaxe, handaxe, light hammer, and warhammer."
+      },
+      {
+        "name": "Tool Proficiency",
+        "description": "Proficiency with artisan's tools of your choice."
+      },
+      {
+        "name": "Stonecunning",
+        "description": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient and add double your proficiency bonus."
+      },
+      {
+        "name": "Dwarven Armor Training",
+        "description": "Proficiency with light and medium armor."
+      }
+    ]
+  },
+  {
+    "id": "hill_dwarf",
+    "name": "Hill Dwarf",
+    "abilityBonuses": {
+      "constitution": 2,
+      "wisdom": 1
+    },
+    "speed": 25,
+    "size": "Medium",
+    "languages": ["Common", "Dwarvish"],
+    "darkvision": 60,
+    "traits": [
+      {
+        "name": "Dwarven Resilience",
+        "description": "Advantage on saving throws against poison, and resistance to poison damage."
+      },
+      {
+        "name": "Dwarven Combat Training",
+        "description": "Proficiency with battleaxe, handaxe, light hammer, and warhammer."
+      },
+      {
+        "name": "Tool Proficiency",
+        "description": "Proficiency with artisan's tools of your choice."
+      },
+      {
+        "name": "Stonecunning",
+        "description": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient and add double your proficiency bonus."
+      },
+      {
+        "name": "Dwarven Toughness",
+        "description": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
+      }
+    ]
+  },
+  {
+    "id": "lightfoot_halfling",
+    "name": "Lightfoot Halfling",
+    "abilityBonuses": {
+      "dexterity": 2,
+      "charisma": 1
+    },
+    "speed": 25,
+    "size": "Small",
+    "languages": ["Common", "Halfling"],
+    "traits": [
+      {
+        "name": "Lucky",
+        "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
+      },
+      {
+        "name": "Brave",
+        "description": "Advantage on saving throws against being frightened."
+      },
+      {
+        "name": "Halfling Nimbleness",
+        "description": "You can move through the space of any creature that is of a size larger than yours."
+      },
+      {
+        "name": "Naturally Stealthy",
+        "description": "You can attempt to hide even when obscured only by a creature that is at least one size larger than you."
+      }
+    ]
+  },
+  {
+    "id": "stout_halfling",
+    "name": "Stout Halfling",
+    "abilityBonuses": {
+      "dexterity": 2,
+      "constitution": 1
+    },
+    "speed": 25,
+    "size": "Small",
+    "languages": ["Common", "Halfling"],
+    "traits": [
+      {
+        "name": "Lucky",
+        "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
+      },
+      {
+        "name": "Brave",
+        "description": "Advantage on saving throws against being frightened."
+      },
+      {
+        "name": "Halfling Nimbleness",
+        "description": "You can move through the space of any creature that is of a size larger than yours."
+      },
+      {
+        "name": "Stout Resilience",
+        "description": "Advantage on saving throws against poison, and resistance to poison damage."
+      }
+    ]
+  },
+  {
+    "id": "dragonborn",
+    "name": "Dragonborn",
+    "abilityBonuses": {
+      "strength": 2,
+      "charisma": 1
+    },
+    "speed": 30,
+    "size": "Medium",
+    "languages": ["Common", "Draconic"],
+    "traits": [
+      {
+        "name": "Draconic Ancestry",
+        "description": "Choose one type of dragon. Your breath weapon and damage resistance are determined by the dragon type."
+      },
+      {
+        "name": "Breath Weapon",
+        "description": "You can use your action to exhale destructive energy. Each creature in the area must make a saving throw. The DC is 8 + Constitution modifier + proficiency bonus. Damage is 2d6 at 1st level, increasing as you level."
+      },
+      {
+        "name": "Damage Resistance",
+        "description": "You have resistance to the damage type associated with your draconic ancestry."
+      }
+    ]
+  },
+  {
+    "id": "rock_gnome",
+    "name": "Rock Gnome",
+    "abilityBonuses": {
+      "intelligence": 2,
+      "constitution": 1
+    },
+    "speed": 25,
+    "size": "Small",
+    "languages": ["Common", "Gnomish"],
+    "darkvision": 60,
+    "traits": [
+      {
+        "name": "Gnome Cunning",
+        "description": "Advantage on Intelligence, Wisdom, and Charisma saving throws against magic."
+      },
+      {
+        "name": "Artificer's Lore",
+        "description": "Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, add twice your proficiency bonus."
+      },
+      {
+        "name": "Tinker",
+        "description": "You have proficiency with artisan's tools (tinker's tools). You can spend 1 hour and 10 gp to construct a Tiny clockwork device."
+      }
+    ]
+  },
+  {
+    "id": "forest_gnome",
+    "name": "Forest Gnome",
+    "abilityBonuses": {
+      "intelligence": 2,
+      "dexterity": 1
+    },
+    "speed": 25,
+    "size": "Small",
+    "languages": ["Common", "Gnomish"],
+    "darkvision": 60,
+    "traits": [
+      {
+        "name": "Gnome Cunning",
+        "description": "Advantage on Intelligence, Wisdom, and Charisma saving throws against magic."
+      },
+      {
+        "name": "Natural Illusionist",
+        "description": "You know the Minor Illusion cantrip. Intelligence is your spellcasting ability."
+      },
+      {
+        "name": "Speak with Small Beasts",
+        "description": "You can communicate simple ideas with Small or smaller beasts through sounds and gestures."
+      }
+    ]
+  },
+  {
+    "id": "half_elf",
+    "name": "Half-Elf",
+    "abilityBonuses": {
+      "charisma": 2
+    },
+    "speed": 30,
+    "size": "Medium",
+    "languages": ["Common", "Elvish", "One extra language"],
+    "darkvision": 60,
+    "traits": [
+      {
+        "name": "Ability Score Increase",
+        "description": "+2 Charisma, and two other ability scores of your choice increase by 1."
+      },
+      {
+        "name": "Fey Ancestry",
+        "description": "Advantage on saving throws against being charmed, and magic can't put you to sleep."
+      },
+      {
+        "name": "Skill Versatility",
+        "description": "Proficiency in two skills of your choice."
+      }
+    ]
+  },
+  {
+    "id": "half_orc",
+    "name": "Half-Orc",
+    "abilityBonuses": {
+      "strength": 2,
+      "constitution": 1
+    },
+    "speed": 30,
+    "size": "Medium",
+    "languages": ["Common", "Orc"],
+    "darkvision": 60,
+    "traits": [
+      {
+        "name": "Menacing",
+        "description": "Proficiency in Intimidation."
+      },
+      {
+        "name": "Relentless Endurance",
+        "description": "When reduced to 0 HP but not killed outright, you can drop to 1 HP instead. You can't use this feature again until you finish a long rest."
+      },
+      {
+        "name": "Savage Attacks",
+        "description": "When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage."
+      }
+    ]
+  },
+  {
+    "id": "tiefling",
+    "name": "Tiefling",
+    "abilityBonuses": {
+      "charisma": 2,
+      "intelligence": 1
+    },
+    "speed": 30,
+    "size": "Medium",
+    "languages": ["Common", "Infernal"],
+    "darkvision": 60,
+    "traits": [
+      {
+        "name": "Hellish Resistance",
+        "description": "Resistance to fire damage."
+      },
+      {
+        "name": "Infernal Legacy",
+        "description": "You know the Thaumaturgy cantrip. At 3rd level, you can cast Hellish Rebuke once per day. At 5th level, you can also cast Darkness once per day. Charisma is your spellcasting ability."
+      }
+    ]
+  },
+  {
+    "id": "aarakocra",
+    "name": "Aarakocra",
+    "abilityBonuses": {
+      "dexterity": 2,
+      "wisdom": 1
+    },
+    "speed": 25,
+    "size": "Medium",
+    "languages": ["Common", "Aarakocra", "Auran"],
+    "traits": [
+      {
+        "name": "Flight",
+        "description": "You have a flying speed of 50 feet. You can't use this if you're wearing medium or heavy armor."
+      },
+      {
+        "name": "Talons",
+        "description": "Your talons are natural weapons, which you can use to make unarmed strikes. On hit, they deal 1d4 + Strength modifier slashing damage."
+      }
+    ]
+  },
+  {
+    "id": "genasi_fire",
+    "name": "Fire Genasi",
+    "abilityBonuses": {
+      "constitution": 2,
+      "intelligence": 1
+    },
+    "speed": 30,
+    "size": "Medium",
+    "languages": ["Common", "Primordial"],
+    "darkvision": 60,
+    "traits": [
+      {
+        "name": "Fire Resistance",
+        "description": "Resistance to fire damage."
+      },
+      {
+        "name": "Reach to the Blaze",
+        "description": "You know the Produce Flame cantrip. At 3rd level, you can cast Burning Hands once per day as a 1st-level spell. Constitution is your spellcasting ability."
+      }
+    ]
+  },
+  {
+    "id": "genasi_water",
+    "name": "Water Genasi",
+    "abilityBonuses": {
+      "constitution": 2,
+      "wisdom": 1
+    },
+    "speed": 30,
+    "size": "Medium",
+    "languages": ["Common", "Primordial"],
+    "darkvision": 60,
+    "traits": [
+      {
+        "name": "Acid Resistance",
+        "description": "Resistance to acid damage."
+      },
+      {
+        "name": "Amphibious",
+        "description": "You can breathe air and water."
+      },
+      {
+        "name": "Swim",
+        "description": "You have a swimming speed of 30 feet."
+      },
+      {
+        "name": "Call to the Wave",
+        "description": "You know the Shape Water cantrip. At 3rd level, you can cast Create or Destroy Water once per day as a 2nd-level spell. Constitution is your spellcasting ability."
+      }
+    ]
+  },
+  {
+    "id": "genasi_air",
+    "name": "Air Genasi",
+    "abilityBonuses": {
+      "constitution": 2,
+      "dexterity": 1
+    },
+    "speed": 30,
+    "size": "Medium",
+    "languages": ["Common", "Primordial"],
+    "darkvision": 60,
+    "traits": [
+      {
+        "name": "Unending Breath",
+        "description": "You can hold your breath indefinitely while you're not incapacitated."
+      },
+      {
+        "name": "Mingle with the Wind",
+        "description": "You can cast Levitate once per day without requiring a material component. Constitution is your spellcasting ability."
+      }
+    ]
+  },
+  {
+    "id": "genasi_earth",
+    "name": "Earth Genasi",
+    "abilityBonuses": {
+      "constitution": 2,
+      "strength": 1
+    },
+    "speed": 30,
+    "size": "Medium",
+    "languages": ["Common", "Primordial"],
+    "darkvision": 60,
+    "traits": [
+      {
+        "name": "Earth Walk",
+        "description": "You can move across difficult terrain made of earth or stone without expending extra movement."
+      },
+      {
+        "name": "Merge with Stone",
+        "description": "You can cast Pass Without Trace once per day without requiring a material component. Constitution is your spellcasting ability."
+      }
+    ]
+  },
+  {
+    "id": "goliath",
+    "name": "Goliath",
+    "abilityBonuses": {
+      "strength": 2,
+      "constitution": 1
+    },
+    "speed": 30,
+    "size": "Medium",
+    "languages": ["Common", "Giant"],
+    "traits": [
+      {
+        "name": "Natural Athlete",
+        "description": "Proficiency in Athletics."
+      },
+      {
+        "name": "Stone's Endurance",
+        "description": "You can use your reaction to reduce damage by 1d12 + Constitution modifier. You can't use this again until you finish a short or long rest."
+      },
+      {
+        "name": "Powerful Build",
+        "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+      },
+      {
+        "name": "Mountain Born",
+        "description": "You're acclimated to high altitude and naturally adapted to cold climates."
+      }
+    ]
+  },
+  {
+    "id": "tabaxi",
+    "name": "Tabaxi",
+    "abilityBonuses": {
+      "dexterity": 2,
+      "charisma": 1
+    },
+    "speed": 30,
+    "size": "Medium",
+    "languages": ["Common"],
+    "darkvision": 60,
+    "traits": [
+      {
+        "name": "Feline Agility",
+        "description": "When you move on your turn in combat, you can double your speed until the end of the turn. Once used, you can't use it again until you move 0 feet on one of your turns."
+      },
+      {
+        "name": "Cat's Claws",
+        "description": "Your claws are natural weapons. You can use them to make unarmed strikes. On hit, they deal 1d4 + Strength modifier slashing damage. You also have a climbing speed of 20 feet."
+      },
+      {
+        "name": "Cat's Talent",
+        "description": "Proficiency in Perception and Stealth."
+      }
+    ]
+  },
+  {
+    "id": "triton",
+    "name": "Triton",
+    "abilityBonuses": {
+      "strength": 1,
+      "constitution": 1,
+      "charisma": 1
+    },
+    "speed": 30,
+    "size": "Medium",
+    "languages": ["Common", "Primordial"],
+    "darkvision": 60,
+    "traits": [
+      {
+        "name": "Amphibious",
+        "description": "You can breathe air and water."
+      },
+      {
+        "name": "Swim",
+        "description": "You have a swimming speed of 30 feet."
+      },
+      {
+        "name": "Control Air and Water",
+        "description": "You can cast Fog Cloud once per day. At 3rd level, you can cast Gust of Wind once per day. At 5th level, you can cast Wall of Water once per day. Charisma is your spellcasting ability."
+      },
+      {
+        "name": "Emissary of the Sea",
+        "description": "You can communicate simple ideas with beasts that can breathe water."
+      },
+      {
+        "name": "Guardians of the Depths",
+        "description": "Adapted to the ocean depths, you have resistance to cold damage."
+      }
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "name": "maelstorm-rpg",
+  "version": "1.0.0",
+  "description": "Competitive RPG Mobile/Web App based on D&D 5e + Munchkin mechanics",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "web": "cd packages/app && npm run web",
+    "ios": "cd packages/app && npm run ios",
+    "android": "cd packages/app && npm run android",
+    "api:dev": "cd packages/api && npm run dev",
+    "dev": "concurrently \"npm run api:dev\" \"npm run web\"",
+    "build": "npm run build:app && npm run build:api",
+    "build:app": "cd packages/app && npm run build",
+    "build:api": "cd packages/api && npm run build",
+    "setup": "npm install && npm run setup:supabase",
+    "setup:supabase": "echo 'Follow instructions in README.md to setup Supabase'"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  }
+}
