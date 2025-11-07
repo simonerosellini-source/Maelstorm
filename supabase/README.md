@@ -109,6 +109,42 @@ If you can't connect:
 2. Verify network/firewall settings
 3. Check Supabase project status
 
+#### Error: "57P03: the database system is not accepting connections"
+
+This error occurs when the Supabase database is in standby mode or paused. **Solutions:**
+
+1. **Check Project Status** (Most Common)
+   - Go to [app.supabase.com](https://app.supabase.com)
+   - Select your project
+   - If you see "Project Paused" banner, click **"Restore Project"**
+   - Wait 2-3 minutes for the database to fully restart
+
+2. **Free Tier Auto-Pause**
+   - Free tier projects pause after 7 days of inactivity
+   - Upgrade to Pro tier to prevent auto-pause
+   - Or ensure regular activity to keep project active
+
+3. **Check Database Status**
+   - Go to Database → Settings in Supabase dashboard
+   - Verify database is in "Healthy" state
+   - Check for any ongoing maintenance or restore operations
+
+4. **Verify Connection Using Health Endpoint**
+   ```bash
+   # Check API health
+   curl http://localhost:3001/api/health
+   ```
+
+5. **Automatic Retry**
+   - The API now includes automatic retry logic
+   - Will retry up to 3 times with exponential backoff
+   - Check console logs for retry attempts
+
+6. **Contact Support**
+   - If issue persists after restoring project
+   - Check [Supabase Status Page](https://status.supabase.com)
+   - Contact Supabase support if regional outage
+
 ### RLS Errors
 
 If you get permission errors:
