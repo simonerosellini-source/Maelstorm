@@ -4866,7 +4866,7 @@
       },
       {
         "name": "Rust Metal",
-        "description": "Any nonmagical weapon made of metal that hits the rust monster corrodes. After dealing damage, the weapon takes a permanent and cumulative \u22121 penalty to damage rolls. If its penalty drops to \u22125, the weapon is destroyed."
+        "description": "Any nonmagical weapon made of metal that hits the rust monster corrodes. After dealing damage, the weapon takes a permanent and cumulative −1 penalty to damage rolls. If its penalty drops to −5, the weapon is destroyed."
       }
     ],
     "actions": [
@@ -5903,7 +5903,7 @@
       },
       {
         "name": "Horrifying Visage",
-        "description": "Each non-undead creature within 60 feet of the ghost that can see it must succeed on a DC 13 Wisdom saving throw or be frightened for 1 minute. If the save fails by 5 or more, the target also ages 1d4 \u00d7 10 years. A frightened target can repeat the saving throw at the end of each of its turns, ending the frightened condition on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to this ghost's Horrifying Visage for the next 24 hours. The aging effect can be reversed with a greater restoration spell, but only within 24 hours of it occurring."
+        "description": "Each non-undead creature within 60 feet of the ghost that can see it must succeed on a DC 13 Wisdom saving throw or be frightened for 1 minute. If the save fails by 5 or more, the target also ages 1d4 × 10 years. A frightened target can repeat the saving throw at the end of each of its turns, ending the frightened condition on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to this ghost's Horrifying Visage for the next 24 hours. The aging effect can be reversed with a greater restoration spell, but only within 24 hours of it occurring."
       },
       {
         "name": "Possession",
@@ -7200,6 +7200,2107 @@
     "environment": [
       "swamp",
       "lair"
+    ]
+  },
+  {
+    "id": "clay_golem",
+    "name": "Clay Golem",
+    "type": "construct",
+    "challengeRating": 9,
+    "experiencePoints": 5000,
+    "armorClass": 14,
+    "hitPoints": 133,
+    "speed": {
+      "walk": 20
+    },
+    "abilities": {
+      "strength": 20,
+      "dexterity": 9,
+      "constitution": 18,
+      "intelligence": 3,
+      "wisdom": 8,
+      "charisma": 1
+    },
+    "damageImmunities": [
+      "acid",
+      "poison",
+      "psychic",
+      "nonmagical attacks that aren't adamantine"
+    ],
+    "conditionImmunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ],
+    "senses": {
+      "darkvision": 60,
+      "passivePerception": 9
+    },
+    "traits": [
+      {
+        "name": "Acid Absorption",
+        "description": "Whenever the golem is subjected to acid damage, it takes no damage and instead regains a number of hit points equal to the acid damage dealt."
+      },
+      {
+        "name": "Berserk",
+        "description": "Whenever the golem starts its turn with 60 hit points or fewer, roll a d6. On a 6, the golem goes berserk. On each of its turns while berserk, the golem attacks the nearest creature it can see."
+      },
+      {
+        "name": "Immutable Form",
+        "description": "The golem is immune to any spell or effect that would alter its form."
+      },
+      {
+        "name": "Magic Resistance",
+        "description": "The golem has advantage on saving throws against spells and other magical effects."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The golem makes two slam attacks."
+      },
+      {
+        "name": "Slam",
+        "description": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 16 (2d10 + 5) bludgeoning damage. If the target is a creature, it must succeed on a DC 15 Constitution saving throw or have its hit point maximum reduced by an amount equal to the damage taken. The target dies if this attack reduces its hit point maximum to 0. The reduction lasts until removed by the greater restoration spell or other magic."
+      },
+      {
+        "name": "Haste",
+        "description": "Until the end of its next turn, the golem magically gains a +2 bonus to its AC, has advantage on Dexterity saving throws, and can use its slam attack as a bonus action.",
+        "recharge": "5-6"
+      }
+    ],
+    "lootTable": [
+      {
+        "item": "clay",
+        "quantity": "10d10"
+      },
+      {
+        "item": "golem_core",
+        "chance": 0.4
+      }
+    ],
+    "environment": [
+      "dungeon",
+      "ruins"
+    ]
+  },
+  {
+    "id": "guardian_naga",
+    "name": "Guardian Naga",
+    "type": "monstrosity",
+    "challengeRating": 10,
+    "experiencePoints": 5900,
+    "armorClass": 18,
+    "hitPoints": 127,
+    "speed": {
+      "walk": 40
+    },
+    "abilities": {
+      "strength": 19,
+      "dexterity": 18,
+      "constitution": 16,
+      "intelligence": 16,
+      "wisdom": 19,
+      "charisma": 18
+    },
+    "savingThrows": {
+      "dexterity": 8,
+      "constitution": 7,
+      "intelligence": 7,
+      "wisdom": 8,
+      "charisma": 8
+    },
+    "damageImmunities": [
+      "poison"
+    ],
+    "conditionImmunities": [
+      "charmed",
+      "poisoned"
+    ],
+    "senses": {
+      "darkvision": 60,
+      "passivePerception": 14
+    },
+    "languages": [
+      "Celestial",
+      "Common"
+    ],
+    "traits": [
+      {
+        "name": "Rejuvenation",
+        "description": "If it dies, the naga returns to life in 1d6 days and regains all its hit points. Only a wish spell can prevent this trait from functioning."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Weapon Attack: +8 to hit, reach 10 ft., one creature. Hit: 8 (1d8 + 4) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 45 (10d8) poison damage on a failed save, or half as much damage on a successful one."
+      },
+      {
+        "name": "Spit Poison",
+        "description": "Ranged Weapon Attack: +8 to hit, range 15/30 ft., one creature. Hit: The target must make a DC 15 Constitution saving throw, taking 45 (10d8) poison damage on a failed save, or half as much damage on a successful one."
+      }
+    ],
+    "spellcasting": {
+      "level": 11,
+      "ability": "wisdom",
+      "saveDC": 16,
+      "attackBonus": 8,
+      "cantrips": [
+        "mending",
+        "sacred_flame",
+        "thaumaturgy"
+      ],
+      "slots": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 3,
+        "5": 2,
+        "6": 1
+      },
+      "spells": {
+        "1": [
+          "command",
+          "cure_wounds",
+          "shield_of_faith"
+        ],
+        "2": [
+          "calm_emotions",
+          "hold_person"
+        ],
+        "3": [
+          "bestow_curse",
+          "clairvoyance"
+        ],
+        "4": [
+          "banishment",
+          "freedom_of_movement"
+        ],
+        "5": [
+          "flame_strike",
+          "geas"
+        ],
+        "6": [
+          "true_seeing"
+        ]
+      }
+    },
+    "lootTable": [
+      {
+        "item": "naga_scale",
+        "quantity": "3d6",
+        "chance": 0.8
+      },
+      {
+        "item": "gold",
+        "quantity": "20d20"
+      },
+      {
+        "item": "magic_item",
+        "chance": 0.4
+      }
+    ],
+    "environment": [
+      "temple",
+      "ruins"
+    ]
+  },
+  {
+    "id": "efreeti",
+    "name": "Efreeti",
+    "type": "elemental",
+    "challengeRating": 11,
+    "experiencePoints": 7200,
+    "armorClass": 17,
+    "hitPoints": 200,
+    "speed": {
+      "walk": 40,
+      "fly": 60
+    },
+    "abilities": {
+      "strength": 22,
+      "dexterity": 12,
+      "constitution": 24,
+      "intelligence": 16,
+      "wisdom": 15,
+      "charisma": 16
+    },
+    "savingThrows": {
+      "intelligence": 7,
+      "wisdom": 6,
+      "charisma": 7
+    },
+    "damageImmunities": [
+      "fire"
+    ],
+    "senses": {
+      "darkvision": 120,
+      "passivePerception": 12
+    },
+    "languages": [
+      "Ignan"
+    ],
+    "traits": [
+      {
+        "name": "Elemental Demise",
+        "description": "If the efreeti dies, its body disintegrates in a flash of fire and puff of smoke, leaving behind only equipment the efreeti was wearing or carrying."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The efreeti makes two scimitar attacks or uses its Hurl Flame twice."
+      },
+      {
+        "name": "Scimitar",
+        "description": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage plus 7 (2d6) fire damage."
+      },
+      {
+        "name": "Hurl Flame",
+        "description": "Ranged Spell Attack: +7 to hit, range 120 ft., one target. Hit: 17 (5d6) fire damage."
+      }
+    ],
+    "spellcasting": {
+      "level": 11,
+      "ability": "intelligence",
+      "saveDC": 15,
+      "atWill": [
+        "detect_magic"
+      ],
+      "perDay": {
+        "3": [
+          "enlarge_reduce",
+          "tongues"
+        ],
+        "1": [
+          "conjure_elemental",
+          "gaseous_form",
+          "invisibility",
+          "major_image",
+          "plane_shift",
+          "wall_of_fire"
+        ]
+      }
+    },
+    "lootTable": [
+      {
+        "item": "brass_lamp",
+        "chance": 0.2
+      },
+      {
+        "item": "fire_gem",
+        "quantity": "2d4",
+        "chance": 0.6
+      },
+      {
+        "item": "gold",
+        "quantity": "30d20"
+      }
+    ],
+    "environment": [
+      "elemental_plane_of_fire",
+      "desert"
+    ]
+  },
+  {
+    "id": "erinyes",
+    "name": "Erinyes",
+    "type": "fiend",
+    "challengeRating": 12,
+    "experiencePoints": 8400,
+    "armorClass": 18,
+    "hitPoints": 153,
+    "speed": {
+      "walk": 30,
+      "fly": 60
+    },
+    "abilities": {
+      "strength": 18,
+      "dexterity": 16,
+      "constitution": 18,
+      "intelligence": 14,
+      "wisdom": 14,
+      "charisma": 18
+    },
+    "savingThrows": {
+      "dexterity": 7,
+      "constitution": 8,
+      "wisdom": 6,
+      "charisma": 8
+    },
+    "damageResistances": [
+      "cold",
+      "nonmagical attacks that aren't silvered"
+    ],
+    "damageImmunities": [
+      "fire",
+      "poison"
+    ],
+    "conditionImmunities": [
+      "poisoned"
+    ],
+    "senses": {
+      "truesight": 120,
+      "passivePerception": 12
+    },
+    "languages": [
+      "Infernal",
+      "telepathy 120 ft."
+    ],
+    "traits": [
+      {
+        "name": "Hellish Weapons",
+        "description": "The erinyes's weapon attacks are magical and deal an extra 13 (3d8) poison damage on a hit."
+      },
+      {
+        "name": "Magic Resistance",
+        "description": "The erinyes has advantage on saving throws against spells and other magical effects."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The erinyes makes three attacks."
+      },
+      {
+        "name": "Longsword",
+        "description": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) slashing damage, or 9 (1d10 + 4) slashing damage if used with two hands, plus 13 (3d8) poison damage."
+      },
+      {
+        "name": "Longbow",
+        "description": "Ranged Weapon Attack: +7 to hit, range 150/600 ft., one target. Hit: 7 (1d8 + 3) piercing damage plus 13 (3d8) poison damage, and the target must succeed on a DC 14 Constitution saving throw or be poisoned. The poison lasts until it is removed by the lesser restoration spell or similar magic."
+      }
+    ],
+    "reactions": [
+      {
+        "name": "Parry",
+        "description": "The erinyes adds 4 to its AC against one melee attack that would hit it. To do so, the erinyes must see the attacker and be wielding a melee weapon."
+      }
+    ],
+    "lootTable": [
+      {
+        "item": "rope_of_entanglement",
+        "chance": 0.3
+      },
+      {
+        "item": "infernal_iron",
+        "quantity": "2d6",
+        "chance": 0.7
+      },
+      {
+        "item": "gold",
+        "quantity": "40d20"
+      }
+    ],
+    "environment": [
+      "nine_hells",
+      "summoned"
+    ]
+  },
+  {
+    "id": "rakshasa",
+    "name": "Rakshasa",
+    "type": "fiend",
+    "challengeRating": 13,
+    "experiencePoints": 10000,
+    "armorClass": 16,
+    "hitPoints": 110,
+    "speed": {
+      "walk": 40
+    },
+    "abilities": {
+      "strength": 14,
+      "dexterity": 17,
+      "constitution": 18,
+      "intelligence": 13,
+      "wisdom": 16,
+      "charisma": 20
+    },
+    "skills": {
+      "deception": 10,
+      "insight": 8
+    },
+    "damageVulnerabilities": [
+      "piercing from magic weapons wielded by good creatures"
+    ],
+    "damageImmunities": [
+      "bludgeoning, piercing, and slashing from nonmagical attacks"
+    ],
+    "senses": {
+      "darkvision": 60,
+      "passivePerception": 13
+    },
+    "languages": [
+      "Common",
+      "Infernal"
+    ],
+    "traits": [
+      {
+        "name": "Limited Magic Immunity",
+        "description": "The rakshasa can't be affected or detected by spells of 6th level or lower unless it wishes to be. It has advantage on saving throws against all other spells and magical effects."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The rakshasa makes two claw attacks."
+      },
+      {
+        "name": "Claw",
+        "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) slashing damage, and the target is cursed if it is a creature. The magical curse takes effect whenever the target takes a short or long rest, filling the target's thoughts with horrible images and dreams. The cursed target gains no benefit from finishing a short or long rest. The curse lasts until it is lifted by a remove curse spell or similar magic."
+      }
+    ],
+    "spellcasting": {
+      "level": 13,
+      "ability": "charisma",
+      "saveDC": 18,
+      "attackBonus": 10,
+      "atWill": [
+        "detect_thoughts",
+        "disguise_self",
+        "mage_hand",
+        "minor_illusion"
+      ],
+      "perDay": {
+        "3": [
+          "charm_person",
+          "detect_magic",
+          "invisibility",
+          "major_image",
+          "suggestion"
+        ],
+        "1": [
+          "dominate_person",
+          "fly",
+          "plane_shift",
+          "true_seeing"
+        ]
+      }
+    },
+    "lootTable": [
+      {
+        "item": "disguise_kit",
+        "chance": 0.6
+      },
+      {
+        "item": "silk_clothes",
+        "chance": 0.8
+      },
+      {
+        "item": "gold",
+        "quantity": "50d20"
+      },
+      {
+        "item": "magic_item",
+        "chance": 0.5
+      }
+    ],
+    "environment": [
+      "urban",
+      "palace"
+    ]
+  },
+  {
+    "id": "purple_worm",
+    "name": "Purple Worm",
+    "type": "monstrosity",
+    "challengeRating": 15,
+    "experiencePoints": 13000,
+    "armorClass": 18,
+    "hitPoints": 247,
+    "speed": {
+      "walk": 50,
+      "burrow": 30
+    },
+    "abilities": {
+      "strength": 28,
+      "dexterity": 7,
+      "constitution": 22,
+      "intelligence": 1,
+      "wisdom": 8,
+      "charisma": 4
+    },
+    "savingThrows": {
+      "constitution": 11,
+      "wisdom": 4
+    },
+    "senses": {
+      "blindsight": 30,
+      "tremorsense": 60,
+      "passivePerception": 9
+    },
+    "traits": [
+      {
+        "name": "Tunneler",
+        "description": "The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The worm makes two attacks: one with its bite and one with its stinger."
+      },
+      {
+        "name": "Bite",
+        "description": "Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 22 (3d8 + 9) piercing damage. If the target is a Large or smaller creature, it must succeed on a DC 19 Dexterity saving throw or be swallowed by the worm. A swallowed creature is blinded and restrained, it has total cover against attacks and other effects outside the worm, and it takes 21 (6d6) acid damage at the start of each of the worm's turns."
+      },
+      {
+        "name": "Tail Stinger",
+        "description": "Melee Weapon Attack: +14 to hit, reach 10 ft., one creature. Hit: 19 (3d6 + 9) piercing damage, and the target must make a DC 19 Constitution saving throw, taking 42 (12d6) poison damage on a failed save, or half as much damage on a successful one."
+      }
+    ],
+    "lootTable": [
+      {
+        "item": "purple_worm_poison",
+        "quantity": "1d6",
+        "chance": 0.7
+      },
+      {
+        "item": "undigested_treasure",
+        "quantity": "10d100",
+        "gold": true
+      },
+      {
+        "item": "gems",
+        "quantity": "5d10",
+        "chance": 0.6
+      }
+    ],
+    "environment": [
+      "underdark",
+      "desert"
+    ]
+  },
+  {
+    "id": "adult_gold_dragon",
+    "name": "Adult Gold Dragon",
+    "type": "dragon",
+    "challengeRating": 17,
+    "experiencePoints": 18000,
+    "armorClass": 19,
+    "hitPoints": 256,
+    "speed": {
+      "walk": 40,
+      "fly": 80,
+      "swim": 40
+    },
+    "abilities": {
+      "strength": 27,
+      "dexterity": 14,
+      "constitution": 25,
+      "intelligence": 16,
+      "wisdom": 15,
+      "charisma": 24
+    },
+    "savingThrows": {
+      "dexterity": 8,
+      "constitution": 13,
+      "wisdom": 8,
+      "charisma": 13
+    },
+    "skills": {
+      "insight": 8,
+      "perception": 14,
+      "persuasion": 13,
+      "stealth": 8
+    },
+    "damageImmunities": [
+      "fire"
+    ],
+    "senses": {
+      "blindsight": 60,
+      "darkvision": 120,
+      "passivePerception": 24
+    },
+    "languages": [
+      "Common",
+      "Draconic"
+    ],
+    "traits": [
+      {
+        "name": "Amphibious",
+        "description": "The dragon can breathe air and water."
+      },
+      {
+        "name": "Legendary Resistance (3/Day)",
+        "description": "If the dragon fails a saving throw, it can choose to succeed instead."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws."
+      },
+      {
+        "name": "Bite",
+        "description": "Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 19 (2d10 + 8) piercing damage."
+      },
+      {
+        "name": "Claw",
+        "description": "Melee Weapon Attack: +14 to hit, reach 5 ft., one target. Hit: 15 (2d6 + 8) slashing damage."
+      },
+      {
+        "name": "Tail",
+        "description": "Melee Weapon Attack: +14 to hit, reach 15 ft., one target. Hit: 17 (2d8 + 8) bludgeoning damage."
+      },
+      {
+        "name": "Frightful Presence",
+        "description": "Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 21 Wisdom saving throw or become frightened for 1 minute."
+      },
+      {
+        "name": "Breath Weapons",
+        "description": "The dragon uses one of the following breath weapons: Fire Breath (60-foot cone, DC 21 Dex save, 66 (12d10) fire damage) or Weakening Breath (60-foot cone, DC 21 Str save, advantage on attacks for 1 minute on failed save).",
+        "recharge": "5-6"
+      }
+    ],
+    "legendaryActions": [
+      {
+        "name": "Detect",
+        "description": "The dragon makes a Wisdom (Perception) check."
+      },
+      {
+        "name": "Tail Attack",
+        "description": "The dragon makes a tail attack."
+      },
+      {
+        "name": "Wing Attack (Costs 2 Actions)",
+        "description": "The dragon beats its wings. Each creature within 10 feet must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone."
+      }
+    ],
+    "spellcasting": {
+      "level": 17,
+      "ability": "charisma",
+      "saveDC": 21,
+      "atWill": [
+        "bless",
+        "cure_wounds"
+      ],
+      "perDay": {
+        "1": [
+          "greater_restoration",
+          "resurrection"
+        ]
+      }
+    },
+    "lootTable": [
+      {
+        "item": "gold",
+        "quantity": "200d20"
+      },
+      {
+        "item": "gold_dragon_scale",
+        "quantity": "5d6",
+        "chance": 0.9
+      },
+      {
+        "item": "gems",
+        "quantity": "10d10",
+        "chance": 0.9
+      },
+      {
+        "item": "magic_item",
+        "chance": 0.8
+      }
+    ],
+    "environment": [
+      "mountain",
+      "lair"
+    ]
+  },
+  {
+    "id": "couatl",
+    "name": "Couatl",
+    "type": "celestial",
+    "challengeRating": 4,
+    "experiencePoints": 1100,
+    "armorClass": 19,
+    "hitPoints": 97,
+    "speed": {
+      "walk": 30,
+      "fly": 90
+    },
+    "abilities": {
+      "strength": 16,
+      "dexterity": 20,
+      "constitution": 17,
+      "intelligence": 18,
+      "wisdom": 20,
+      "charisma": 18
+    },
+    "savingThrows": {
+      "constitution": 5,
+      "wisdom": 7,
+      "charisma": 6
+    },
+    "damageResistances": [
+      "radiant"
+    ],
+    "damageImmunities": [
+      "psychic",
+      "nonmagical attacks"
+    ],
+    "senses": {
+      "truesight": 120,
+      "passivePerception": 15
+    },
+    "languages": [
+      "all",
+      "telepathy 120 ft."
+    ],
+    "traits": [
+      {
+        "name": "Magic Weapons",
+        "description": "The couatl's weapon attacks are magical."
+      },
+      {
+        "name": "Shielded Mind",
+        "description": "The couatl is immune to scrying and to any effect that would sense its emotions, read its thoughts, or detect its location."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Weapon Attack: +8 to hit, reach 5 ft., one creature. Hit: 8 (1d6 + 5) piercing damage, and the target must succeed on a DC 13 Constitution saving throw or be poisoned for 24 hours. Until this poison ends, the target is unconscious. Another creature can use an action to shake the target awake."
+      },
+      {
+        "name": "Constrict",
+        "description": "Melee Weapon Attack: +6 to hit, reach 10 ft., one Medium or smaller creature. Hit: 10 (2d6 + 3) bludgeoning damage, and the target is grappled (escape DC 15). Until this grapple ends, the target is restrained, and the couatl can't constrict another target."
+      },
+      {
+        "name": "Change Shape",
+        "description": "The couatl magically polymorphs into a humanoid or beast that has a challenge rating equal to or less than its own, or back into its true form."
+      }
+    ],
+    "spellcasting": {
+      "level": 9,
+      "ability": "charisma",
+      "saveDC": 14,
+      "atWill": [
+        "detect_evil_and_good",
+        "detect_magic",
+        "detect_thoughts"
+      ],
+      "perDay": {
+        "3": [
+          "bless",
+          "cure_wounds",
+          "lesser_restoration",
+          "protection_from_poison",
+          "sanctuary",
+          "shield"
+        ],
+        "1": [
+          "dream",
+          "greater_restoration",
+          "scrying"
+        ]
+      }
+    },
+    "lootTable": [
+      {
+        "item": "couatl_feather",
+        "quantity": "2d6",
+        "chance": 0.8
+      },
+      {
+        "item": "gold",
+        "quantity": "10d20"
+      }
+    ],
+    "environment": [
+      "jungle",
+      "temple"
+    ]
+  },
+  {
+    "id": "night_hag",
+    "name": "Night Hag",
+    "type": "fiend",
+    "challengeRating": 5,
+    "experiencePoints": 1800,
+    "armorClass": 17,
+    "hitPoints": 112,
+    "speed": {
+      "walk": 30
+    },
+    "abilities": {
+      "strength": 18,
+      "dexterity": 15,
+      "constitution": 16,
+      "intelligence": 16,
+      "wisdom": 14,
+      "charisma": 16
+    },
+    "skills": {
+      "deception": 6,
+      "insight": 5,
+      "perception": 5,
+      "stealth": 5
+    },
+    "damageResistances": [
+      "cold",
+      "fire",
+      "nonmagical attacks that aren't silvered"
+    ],
+    "conditionImmunities": [
+      "charmed"
+    ],
+    "senses": {
+      "darkvision": 120,
+      "passivePerception": 15
+    },
+    "languages": [
+      "Abyssal",
+      "Common",
+      "Infernal",
+      "Primordial"
+    ],
+    "traits": [
+      {
+        "name": "Magic Resistance",
+        "description": "The hag has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Night Hag Items",
+        "description": "A night hag carries two very rare magic items: a heartstone and a soul bag."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Claws",
+        "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage."
+      },
+      {
+        "name": "Change Shape",
+        "description": "The hag magically polymorphs into a Small or Medium female humanoid, or back into her true form."
+      },
+      {
+        "name": "Etherealness",
+        "description": "The hag magically enters the Ethereal Plane from the Material Plane, or vice versa."
+      },
+      {
+        "name": "Nightmare Haunting",
+        "description": "While on the Ethereal Plane, the hag magically touches a sleeping humanoid on the Material Plane. A protection from evil and good spell cast on the target prevents this contact. The target must succeed on a DC 13 Wisdom saving throw or take 22 (5d8) psychic damage."
+      }
+    ],
+    "spellcasting": {
+      "level": 9,
+      "ability": "charisma",
+      "atWill": [
+        "detect_magic",
+        "magic_missile"
+      ],
+      "perDay": {
+        "2": [
+          "plane_shift",
+          "ray_of_enfeeblement",
+          "sleep"
+        ]
+      }
+    },
+    "lootTable": [
+      {
+        "item": "heartstone",
+        "chance": 0.9
+      },
+      {
+        "item": "soul_bag",
+        "chance": 0.7
+      },
+      {
+        "item": "gold",
+        "quantity": "15d20"
+      }
+    ],
+    "environment": [
+      "hades",
+      "nightmare"
+    ]
+  },
+  {
+    "id": "young_blue_dragon",
+    "name": "Young Blue Dragon",
+    "type": "dragon",
+    "challengeRating": 9,
+    "experiencePoints": 5000,
+    "armorClass": 18,
+    "hitPoints": 152,
+    "speed": {
+      "walk": 40,
+      "burrow": 20,
+      "fly": 80
+    },
+    "abilities": {
+      "strength": 21,
+      "dexterity": 10,
+      "constitution": 19,
+      "intelligence": 14,
+      "wisdom": 13,
+      "charisma": 17
+    },
+    "savingThrows": {
+      "dexterity": 4,
+      "constitution": 8,
+      "wisdom": 5,
+      "charisma": 7
+    },
+    "skills": {
+      "perception": 9,
+      "stealth": 4
+    },
+    "damageImmunities": [
+      "lightning"
+    ],
+    "senses": {
+      "blindsight": 30,
+      "darkvision": 120,
+      "passivePerception": 19
+    },
+    "languages": [
+      "Common",
+      "Draconic"
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The dragon makes three attacks: one with its bite and two with its claws."
+      },
+      {
+        "name": "Bite",
+        "description": "Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 16 (2d10 + 5) piercing damage plus 5 (1d10) lightning damage."
+      },
+      {
+        "name": "Claw",
+        "description": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage."
+      },
+      {
+        "name": "Lightning Breath",
+        "description": "The dragon exhales lightning in a 60-foot line that is 5 feet wide. Each creature in that line must make a DC 16 Dexterity saving throw, taking 55 (10d10) lightning damage on a failed save, or half as much damage on a successful one.",
+        "recharge": "5-6"
+      }
+    ],
+    "lootTable": [
+      {
+        "item": "gold",
+        "quantity": "40d20"
+      },
+      {
+        "item": "blue_dragon_scale",
+        "quantity": "3d6",
+        "chance": 0.8
+      },
+      {
+        "item": "gems",
+        "quantity": "4d10",
+        "chance": 0.7
+      }
+    ],
+    "environment": [
+      "desert",
+      "lair"
+    ]
+  },
+  {
+    "id": "death_knight",
+    "name": "Death Knight",
+    "type": "undead",
+    "challengeRating": 17,
+    "experiencePoints": 18000,
+    "armorClass": 20,
+    "hitPoints": 180,
+    "speed": {
+      "walk": 30
+    },
+    "abilities": {
+      "strength": 20,
+      "dexterity": 11,
+      "constitution": 20,
+      "intelligence": 12,
+      "wisdom": 16,
+      "charisma": 18
+    },
+    "savingThrows": {
+      "dexterity": 6,
+      "wisdom": 9,
+      "charisma": 10
+    },
+    "damageImmunities": [
+      "necrotic",
+      "poison"
+    ],
+    "conditionImmunities": [
+      "exhaustion",
+      "frightened",
+      "poisoned"
+    ],
+    "senses": {
+      "darkvision": 120,
+      "passivePerception": 13
+    },
+    "languages": [
+      "Abyssal",
+      "Common"
+    ],
+    "traits": [
+      {
+        "name": "Magic Resistance",
+        "description": "The death knight has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Marshal Undead",
+        "description": "Unless the death knight is incapacitated, it and undead creatures of its choice within 60 feet of it have advantage on saving throws against features that turn undead."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The death knight makes three longsword attacks."
+      },
+      {
+        "name": "Longsword",
+        "description": "Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit: 9 (1d8 + 5) slashing damage, or 10 (1d10 + 5) slashing damage if used with two hands, plus 18 (4d8) necrotic damage."
+      },
+      {
+        "name": "Hellfire Orb",
+        "description": "The death knight hurls a magical ball of fire that explodes at a point it can see within 120 feet of it. Each creature in a 20-foot-radius sphere centered on that point must make a DC 18 Dexterity saving throw. The sphere spreads around corners. A creature takes 35 (10d6) fire damage and 35 (10d6) necrotic damage on a failed save, or half as much damage on a successful one.",
+        "recharge": "5-6"
+      }
+    ],
+    "spellcasting": {
+      "level": 19,
+      "ability": "charisma",
+      "saveDC": 18,
+      "attackBonus": 10,
+      "slots": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 3,
+        "5": 2
+      },
+      "spells": {
+        "1": [
+          "command",
+          "compelled_duel",
+          "searing_smite"
+        ],
+        "2": [
+          "hold_person",
+          "magic_weapon"
+        ],
+        "3": [
+          "dispel_magic",
+          "elemental_weapon"
+        ],
+        "4": [
+          "banishment",
+          "staggering_smite"
+        ],
+        "5": [
+          "destructive_wave"
+        ]
+      }
+    },
+    "lootTable": [
+      {
+        "item": "plate_armor_of_the_damned",
+        "chance": 0.9
+      },
+      {
+        "item": "cursed_longsword",
+        "chance": 0.8
+      },
+      {
+        "item": "gold",
+        "quantity": "100d20"
+      },
+      {
+        "item": "magic_item",
+        "chance": 0.7
+      }
+    ],
+    "environment": [
+      "ruins",
+      "battlefield",
+      "undead_lair"
+    ]
+  },
+  {
+    "id": "pit_fiend",
+    "name": "Pit Fiend",
+    "type": "fiend",
+    "challengeRating": 20,
+    "experiencePoints": 25000,
+    "armorClass": 19,
+    "hitPoints": 300,
+    "speed": {
+      "walk": 30,
+      "fly": 60
+    },
+    "abilities": {
+      "strength": 26,
+      "dexterity": 14,
+      "constitution": 24,
+      "intelligence": 22,
+      "wisdom": 18,
+      "charisma": 24
+    },
+    "savingThrows": {
+      "dexterity": 8,
+      "constitution": 13,
+      "wisdom": 10
+    },
+    "damageResistances": [
+      "cold",
+      "nonmagical attacks that aren't silvered"
+    ],
+    "damageImmunities": [
+      "fire",
+      "poison"
+    ],
+    "conditionImmunities": [
+      "poisoned"
+    ],
+    "senses": {
+      "truesight": 120,
+      "passivePerception": 14
+    },
+    "languages": [
+      "Infernal",
+      "telepathy 120 ft."
+    ],
+    "traits": [
+      {
+        "name": "Fear Aura",
+        "description": "Any creature hostile to the pit fiend that starts its turn within 20 feet of it must make a DC 21 Wisdom saving throw, unless the pit fiend is incapacitated. On a failed save, the creature is frightened until the start of its next turn."
+      },
+      {
+        "name": "Magic Resistance",
+        "description": "The pit fiend has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Magic Weapons",
+        "description": "The pit fiend's weapon attacks are magical."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The pit fiend makes four attacks: one with its bite, one with its claw, one with its mace, and one with its tail."
+      },
+      {
+        "name": "Bite",
+        "description": "Melee Weapon Attack: +14 to hit, reach 5 ft., one target. Hit: 22 (4d6 + 8) piercing damage. The target must succeed on a DC 21 Constitution saving throw or become poisoned. While poisoned in this way, the target can't regain hit points, and it takes 21 (6d6) poison damage at the start of each of its turns."
+      },
+      {
+        "name": "Claw",
+        "description": "Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 17 (2d8 + 8) slashing damage."
+      },
+      {
+        "name": "Mace",
+        "description": "Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 15 (2d6 + 8) bludgeoning damage plus 21 (6d6) fire damage."
+      },
+      {
+        "name": "Tail",
+        "description": "Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 24 (3d10 + 8) bludgeoning damage."
+      }
+    ],
+    "spellcasting": {
+      "level": 20,
+      "ability": "charisma",
+      "saveDC": 21,
+      "atWill": [
+        "detect_magic",
+        "fireball"
+      ],
+      "perDay": {
+        "3": [
+          "hold_monster",
+          "wall_of_fire"
+        ]
+      }
+    },
+    "lootTable": [
+      {
+        "item": "infernal_contract",
+        "chance": 0.4
+      },
+      {
+        "item": "soul_coins",
+        "quantity": "5d10",
+        "chance": 0.8
+      },
+      {
+        "item": "gold",
+        "quantity": "200d20"
+      },
+      {
+        "item": "legendary_magic_item",
+        "chance": 0.5
+      }
+    ],
+    "environment": [
+      "nine_hells",
+      "summoned"
+    ]
+  },
+  {
+    "id": "solar",
+    "name": "Solar",
+    "type": "celestial",
+    "challengeRating": 21,
+    "experiencePoints": 33000,
+    "armorClass": 21,
+    "hitPoints": 243,
+    "speed": {
+      "walk": 50,
+      "fly": 150
+    },
+    "abilities": {
+      "strength": 26,
+      "dexterity": 22,
+      "constitution": 26,
+      "intelligence": 25,
+      "wisdom": 25,
+      "charisma": 30
+    },
+    "savingThrows": {
+      "intelligence": 14,
+      "wisdom": 14,
+      "charisma": 17
+    },
+    "skills": {
+      "perception": 14
+    },
+    "damageResistances": [
+      "radiant",
+      "nonmagical attacks"
+    ],
+    "damageImmunities": [
+      "necrotic",
+      "poison"
+    ],
+    "conditionImmunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "poisoned"
+    ],
+    "senses": {
+      "truesight": 120,
+      "passivePerception": 24
+    },
+    "languages": [
+      "all",
+      "telepathy 120 ft."
+    ],
+    "traits": [
+      {
+        "name": "Angelic Weapons",
+        "description": "The solar's weapon attacks are magical. When the solar hits with any weapon, the weapon deals an extra 6d8 radiant damage."
+      },
+      {
+        "name": "Divine Awareness",
+        "description": "The solar knows if it hears a lie."
+      },
+      {
+        "name": "Magic Resistance",
+        "description": "The solar has advantage on saving throws against spells and other magical effects."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The solar makes two greatsword attacks."
+      },
+      {
+        "name": "Greatsword",
+        "description": "Melee Weapon Attack: +15 to hit, reach 5 ft., one target. Hit: 22 (4d6 + 8) slashing damage plus 27 (6d8) radiant damage."
+      },
+      {
+        "name": "Slaying Longbow",
+        "description": "Ranged Weapon Attack: +13 to hit, range 150/600 ft., one target. Hit: 15 (2d8 + 6) piercing damage plus 27 (6d8) radiant damage. If the target is a creature that has 100 hit points or fewer, it must succeed on a DC 15 Constitution saving throw or die."
+      },
+      {
+        "name": "Flying Sword",
+        "description": "The solar releases its greatsword to hover magically in an unoccupied space within 5 feet of it. If the solar can see the sword, the solar can mentally command it as a bonus action to fly up to 50 feet and either make one attack against a target or return to the solar's hands."
+      },
+      {
+        "name": "Healing Touch",
+        "description": "The solar touches another creature. The target magically regains 40 (8d8 + 4) hit points and is freed from any curse, disease, poison, blindness, or deafness.",
+        "limitedUse": "4/day"
+      }
+    ],
+    "legendaryActions": [
+      {
+        "name": "Teleport",
+        "description": "The solar magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see."
+      },
+      {
+        "name": "Searing Burst (Costs 2 Actions)",
+        "description": "The solar emits magical, divine energy. Each creature of its choice in a 10-foot radius must make a DC 23 Dexterity saving throw, taking 14 (4d6) fire damage plus 14 (4d6) radiant damage on a failed save, or half as much damage on a successful one."
+      },
+      {
+        "name": "Blinding Gaze (Costs 3 Actions)",
+        "description": "The solar targets one creature it can see within 30 feet of it. If the target can see it, the target must succeed on a DC 15 Constitution saving throw or be blinded until magic such as the lesser restoration spell removes the blindness."
+      }
+    ],
+    "spellcasting": {
+      "level": 21,
+      "ability": "charisma",
+      "saveDC": 25,
+      "atWill": [
+        "detect_evil_and_good",
+        "invisibility"
+      ],
+      "perDay": {
+        "3": [
+          "blade_barrier",
+          "dispel_evil_and_good",
+          "resurrection"
+        ],
+        "1": [
+          "commune",
+          "control_weather"
+        ]
+      }
+    },
+    "lootTable": [
+      {
+        "item": "holy_avenger",
+        "chance": 0.3
+      },
+      {
+        "item": "celestial_essence",
+        "quantity": "5d6",
+        "chance": 0.8
+      },
+      {
+        "item": "divine_blessing",
+        "chance": 0.6
+      }
+    ],
+    "environment": [
+      "mount_celestia",
+      "summoned"
+    ]
+  },
+  {
+    "id": "deva",
+    "name": "Deva",
+    "type": "celestial",
+    "challengeRating": 10,
+    "experiencePoints": 5900,
+    "armorClass": 17,
+    "hitPoints": 136,
+    "speed": {
+      "walk": 30,
+      "fly": 90
+    },
+    "abilities": {
+      "strength": 18,
+      "dexterity": 18,
+      "constitution": 18,
+      "intelligence": 17,
+      "wisdom": 20,
+      "charisma": 20
+    },
+    "savingThrows": {
+      "wisdom": 9,
+      "charisma": 9
+    },
+    "skills": {
+      "insight": 9,
+      "perception": 9
+    },
+    "damageResistances": [
+      "radiant",
+      "nonmagical attacks"
+    ],
+    "conditionImmunities": [
+      "charmed",
+      "exhaustion",
+      "frightened"
+    ],
+    "senses": {
+      "darkvision": 120,
+      "passivePerception": 19
+    },
+    "languages": [
+      "all",
+      "telepathy 120 ft."
+    ],
+    "traits": [
+      {
+        "name": "Angelic Weapons",
+        "description": "The deva's weapon attacks are magical. When the deva hits with any weapon, the weapon deals an extra 4d8 radiant damage."
+      },
+      {
+        "name": "Magic Resistance",
+        "description": "The deva has advantage on saving throws against spells and other magical effects."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The deva makes two melee attacks."
+      },
+      {
+        "name": "Mace",
+        "description": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) bludgeoning damage plus 18 (4d8) radiant damage."
+      },
+      {
+        "name": "Healing Touch",
+        "description": "The deva touches another creature. The target magically regains 20 (4d8 + 2) hit points and is freed from any curse, disease, poison, blindness, or deafness.",
+        "limitedUse": "3/day"
+      },
+      {
+        "name": "Change Shape",
+        "description": "The deva magically polymorphs into a humanoid or beast that has a challenge rating equal to or less than its own, or back into its true form."
+      }
+    ],
+    "spellcasting": {
+      "level": 10,
+      "ability": "charisma",
+      "saveDC": 17,
+      "atWill": [
+        "detect_evil_and_good"
+      ],
+      "perDay": {
+        "1": [
+          "commune",
+          "raise_dead"
+        ]
+      }
+    },
+    "lootTable": [
+      {
+        "item": "holy_water",
+        "quantity": "5d4",
+        "chance": 0.8
+      },
+      {
+        "item": "celestial_feather",
+        "quantity": "2d6",
+        "chance": 0.7
+      },
+      {
+        "item": "gold",
+        "quantity": "30d20"
+      }
+    ],
+    "environment": [
+      "mount_celestia",
+      "summoned"
+    ]
+  },
+  {
+    "id": "djinni",
+    "name": "Djinni",
+    "type": "elemental",
+    "challengeRating": 11,
+    "experiencePoints": 7200,
+    "armorClass": 17,
+    "hitPoints": 161,
+    "speed": {
+      "walk": 30,
+      "fly": 90
+    },
+    "abilities": {
+      "strength": 21,
+      "dexterity": 15,
+      "constitution": 22,
+      "intelligence": 15,
+      "wisdom": 16,
+      "charisma": 20
+    },
+    "savingThrows": {
+      "dexterity": 6,
+      "intelligence": 6,
+      "wisdom": 7,
+      "charisma": 9
+    },
+    "damageImmunities": [
+      "lightning",
+      "thunder"
+    ],
+    "senses": {
+      "darkvision": 120,
+      "passivePerception": 13
+    },
+    "languages": [
+      "Auran"
+    ],
+    "traits": [
+      {
+        "name": "Elemental Demise",
+        "description": "If the djinni dies, its body disintegrates into a warm breeze, leaving behind only equipment the djinni was wearing or carrying."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The djinni makes three scimitar attacks."
+      },
+      {
+        "name": "Scimitar",
+        "description": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage plus 3 (1d6) lightning or thunder damage (djinni's choice)."
+      },
+      {
+        "name": "Create Whirlwind",
+        "description": "A 5-foot-radius, 30-foot-tall cylinder of swirling air magically forms on a point the djinni can see within 120 feet of it. The whirlwind lasts as long as the djinni maintains concentration. Any creature but the djinni that enters the whirlwind must succeed on a DC 18 Strength saving throw or be restrained by it."
+      }
+    ],
+    "spellcasting": {
+      "level": 11,
+      "ability": "charisma",
+      "saveDC": 17,
+      "atWill": [
+        "detect_evil_and_good",
+        "detect_magic",
+        "thunderwave"
+      ],
+      "perDay": {
+        "3": [
+          "create_food_and_water",
+          "tongues",
+          "wind_walk"
+        ],
+        "1": [
+          "conjure_elemental",
+          "creation",
+          "gaseous_form",
+          "invisibility",
+          "major_image",
+          "plane_shift"
+        ]
+      }
+    },
+    "lootTable": [
+      {
+        "item": "brass_lamp",
+        "chance": 0.3
+      },
+      {
+        "item": "air_elemental_gem",
+        "quantity": "2d4",
+        "chance": 0.6
+      },
+      {
+        "item": "gold",
+        "quantity": "40d20"
+      }
+    ],
+    "environment": [
+      "elemental_plane_of_air",
+      "desert"
+    ]
+  },
+  {
+    "id": "storm_giant",
+    "name": "Storm Giant",
+    "type": "giant",
+    "challengeRating": 13,
+    "experiencePoints": 10000,
+    "armorClass": 16,
+    "hitPoints": 230,
+    "speed": {
+      "walk": 50,
+      "swim": 50
+    },
+    "abilities": {
+      "strength": 29,
+      "dexterity": 14,
+      "constitution": 20,
+      "intelligence": 16,
+      "wisdom": 18,
+      "charisma": 18
+    },
+    "savingThrows": {
+      "strength": 14,
+      "constitution": 10,
+      "wisdom": 9,
+      "charisma": 9
+    },
+    "skills": {
+      "arcana": 8,
+      "athletics": 14,
+      "history": 8,
+      "perception": 9
+    },
+    "damageResistances": [
+      "cold"
+    ],
+    "damageImmunities": [
+      "lightning",
+      "thunder"
+    ],
+    "senses": {
+      "passivePerception": 19
+    },
+    "languages": [
+      "Common",
+      "Giant"
+    ],
+    "traits": [
+      {
+        "name": "Amphibious",
+        "description": "The giant can breathe air and water."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The giant makes two greatsword attacks."
+      },
+      {
+        "name": "Greatsword",
+        "description": "Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 30 (6d6 + 9) slashing damage."
+      },
+      {
+        "name": "Rock",
+        "description": "Ranged Weapon Attack: +14 to hit, range 60/240 ft., one target. Hit: 35 (4d12 + 9) bludgeoning damage."
+      },
+      {
+        "name": "Lightning Strike",
+        "description": "The giant hurls a magical lightning bolt at a point it can see within 500 feet of it. Each creature within 10 feet of that point must make a DC 17 Dexterity saving throw, taking 54 (12d8) lightning damage on a failed save, or half as much damage on a successful one.",
+        "recharge": "5-6"
+      }
+    ],
+    "spellcasting": {
+      "level": 13,
+      "ability": "charisma",
+      "saveDC": 17,
+      "atWill": [
+        "detect_magic",
+        "feather_fall",
+        "levitate",
+        "light"
+      ],
+      "perDay": {
+        "3": [
+          "control_weather",
+          "water_breathing"
+        ]
+      }
+    },
+    "lootTable": [
+      {
+        "item": "gold",
+        "quantity": "100d20"
+      },
+      {
+        "item": "storm_giant_heart",
+        "chance": 0.3
+      },
+      {
+        "item": "lightning_gem",
+        "quantity": "3d6",
+        "chance": 0.7
+      },
+      {
+        "item": "magic_item",
+        "chance": 0.6
+      }
+    ],
+    "environment": [
+      "mountain",
+      "coastline",
+      "storm_peak"
+    ]
+  },
+  {
+    "id": "adult_silver_dragon",
+    "name": "Adult Silver Dragon",
+    "type": "dragon",
+    "challengeRating": 16,
+    "experiencePoints": 15000,
+    "armorClass": 19,
+    "hitPoints": 243,
+    "speed": {
+      "walk": 40,
+      "fly": 80
+    },
+    "abilities": {
+      "strength": 27,
+      "dexterity": 10,
+      "constitution": 25,
+      "intelligence": 16,
+      "wisdom": 13,
+      "charisma": 21
+    },
+    "savingThrows": {
+      "dexterity": 5,
+      "constitution": 12,
+      "wisdom": 6,
+      "charisma": 10
+    },
+    "skills": {
+      "arcana": 8,
+      "history": 8,
+      "perception": 11,
+      "stealth": 5
+    },
+    "damageImmunities": [
+      "cold"
+    ],
+    "senses": {
+      "blindsight": 60,
+      "darkvision": 120,
+      "passivePerception": 21
+    },
+    "languages": [
+      "Common",
+      "Draconic"
+    ],
+    "traits": [
+      {
+        "name": "Legendary Resistance (3/Day)",
+        "description": "If the dragon fails a saving throw, it can choose to succeed instead."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws."
+      },
+      {
+        "name": "Bite",
+        "description": "Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 19 (2d10 + 8) piercing damage."
+      },
+      {
+        "name": "Claw",
+        "description": "Melee Weapon Attack: +13 to hit, reach 5 ft., one target. Hit: 15 (2d6 + 8) slashing damage."
+      },
+      {
+        "name": "Tail",
+        "description": "Melee Weapon Attack: +13 to hit, reach 15 ft., one target. Hit: 17 (2d8 + 8) bludgeoning damage."
+      },
+      {
+        "name": "Frightful Presence",
+        "description": "Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 18 Wisdom saving throw or become frightened for 1 minute."
+      },
+      {
+        "name": "Breath Weapons",
+        "description": "The dragon uses one of the following breath weapons: Cold Breath (60-foot cone, DC 20 Con save, 58 (13d8) cold damage) or Paralyzing Breath (60-foot cone, DC 20 Con save, paralyzed for 1 minute).",
+        "recharge": "5-6"
+      }
+    ],
+    "legendaryActions": [
+      {
+        "name": "Detect",
+        "description": "The dragon makes a Wisdom (Perception) check."
+      },
+      {
+        "name": "Tail Attack",
+        "description": "The dragon makes a tail attack."
+      },
+      {
+        "name": "Wing Attack (Costs 2 Actions)",
+        "description": "The dragon beats its wings. Each creature within 10 feet must succeed on a DC 21 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone."
+      }
+    ],
+    "spellcasting": {
+      "level": 16,
+      "ability": "charisma",
+      "saveDC": 18,
+      "atWill": [
+        "fog_cloud"
+      ],
+      "perDay": {
+        "1": [
+          "polymorph"
+        ]
+      }
+    },
+    "lootTable": [
+      {
+        "item": "gold",
+        "quantity": "150d20"
+      },
+      {
+        "item": "silver_dragon_scale",
+        "quantity": "4d6",
+        "chance": 0.9
+      },
+      {
+        "item": "gems",
+        "quantity": "8d10",
+        "chance": 0.8
+      },
+      {
+        "item": "magic_item",
+        "chance": 0.7
+      }
+    ],
+    "environment": [
+      "mountain",
+      "cloud_castle"
+    ]
+  },
+  {
+    "id": "vampire",
+    "name": "Vampire",
+    "type": "undead",
+    "challengeRating": 13,
+    "experiencePoints": 10000,
+    "size": "medium",
+    "alignment": "lawful evil",
+    "armorClass": 16,
+    "hitPoints": 144,
+    "hitDice": "17d8+68",
+    "speed": {
+      "walk": 30
+    },
+    "abilities": {
+      "strength": 18,
+      "dexterity": 18,
+      "constitution": 18,
+      "intelligence": 17,
+      "wisdom": 15,
+      "charisma": 18
+    },
+    "savingThrows": {
+      "dexterity": 9,
+      "wisdom": 7,
+      "charisma": 9
+    },
+    "skills": {
+      "perception": 7,
+      "stealth": 9
+    },
+    "damageResistances": [
+      "necrotic",
+      "bludgeoning, piercing, and slashing from nonmagical attacks"
+    ],
+    "senses": {
+      "darkvision": 120,
+      "passivePerception": 17
+    },
+    "languages": [
+      "the languages it knew in life"
+    ],
+    "traits": [
+      {
+        "name": "Shapechanger",
+        "description": "If the vampire isn't in sunlight or running water, it can use its action to polymorph into a Tiny bat or a Medium cloud of mist, or back into its true form."
+      },
+      {
+        "name": "Legendary Resistance (3/Day)",
+        "description": "If the vampire fails a saving throw, it can choose to succeed instead."
+      },
+      {
+        "name": "Misty Escape",
+        "description": "When it drops to 0 hit points outside its resting place, the vampire transforms into a cloud of mist instead of falling unconscious, provided that it isn't in sunlight or running water."
+      },
+      {
+        "name": "Regeneration",
+        "description": "The vampire regains 20 hit points at the start of its turn if it has at least 1 hit point and isn't in sunlight or running water. If the vampire takes radiant damage or damage from holy water, this trait doesn't function at the start of the vampire's next turn."
+      },
+      {
+        "name": "Spider Climb",
+        "description": "The vampire can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      },
+      {
+        "name": "Vampire Weaknesses",
+        "description": "The vampire has the following flaws: Forbiddance, Harmed by Running Water, Stake to the Heart, Sunlight Hypersensitivity."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack (Vampire Form Only)",
+        "description": "The vampire makes two attacks, only one of which can be a bite attack."
+      },
+      {
+        "name": "Unarmed Strike (Vampire Form Only)",
+        "attackBonus": 9,
+        "damage": {
+          "dice": "1d8+4",
+          "type": "bludgeoning"
+        },
+        "description": "Instead of dealing damage, the vampire can grapple the target (escape DC 18)."
+      },
+      {
+        "name": "Bite (Bat or Vampire Form Only)",
+        "attackBonus": 9,
+        "damage": {
+          "dice": "1d6+4",
+          "type": "piercing"
+        },
+        "additionalDamage": {
+          "dice": "3d6",
+          "type": "necrotic"
+        },
+        "description": "The target's hit point maximum is reduced by an amount equal to the necrotic damage taken, and the vampire regains hit points equal to that amount."
+      },
+      {
+        "name": "Charm",
+        "description": "The vampire targets one humanoid it can see within 30 feet of it. The target must succeed on a DC 17 Wisdom saving throw or be charmed by the vampire."
+      }
+    ],
+    "legendaryActions": [
+      {
+        "name": "Move",
+        "description": "The vampire moves up to its speed without provoking opportunity attacks."
+      },
+      {
+        "name": "Unarmed Strike",
+        "description": "The vampire makes one unarmed strike."
+      },
+      {
+        "name": "Bite (Costs 2 Actions)",
+        "description": "The vampire makes one bite attack."
+      }
+    ]
+  },
+  {
+    "id": "mummy_lord",
+    "name": "Mummy Lord",
+    "type": "undead",
+    "challengeRating": 15,
+    "experiencePoints": 13000,
+    "size": "medium",
+    "alignment": "lawful evil",
+    "armorClass": 17,
+    "hitPoints": 97,
+    "hitDice": "13d8+39",
+    "speed": {
+      "walk": 20
+    },
+    "abilities": {
+      "strength": 18,
+      "dexterity": 10,
+      "constitution": 17,
+      "intelligence": 11,
+      "wisdom": 18,
+      "charisma": 16
+    },
+    "savingThrows": {
+      "constitution": 8,
+      "intelligence": 5,
+      "wisdom": 9,
+      "charisma": 8
+    },
+    "skills": {
+      "history": 5,
+      "religion": 5
+    },
+    "damageVulnerabilities": [
+      "fire"
+    ],
+    "damageImmunities": [
+      "necrotic",
+      "poison",
+      "bludgeoning, piercing, and slashing from nonmagical attacks"
+    ],
+    "conditionImmunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "poisoned"
+    ],
+    "senses": {
+      "darkvision": 60,
+      "passivePerception": 14
+    },
+    "languages": [
+      "the languages it knew in life"
+    ],
+    "traits": [
+      {
+        "name": "Magic Resistance",
+        "description": "The mummy lord has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Rejuvenation",
+        "description": "A destroyed mummy lord gains a new body in 24 hours if its heart is intact, regaining all its hit points and becoming active again."
+      },
+      {
+        "name": "Spellcasting",
+        "description": "The mummy lord is a 10th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 17, +9 to hit with spell attacks). The mummy lord has the following cleric spells prepared:",
+        "spells": {
+          "cantrips": [
+            "sacred flame",
+            "thaumaturgy"
+          ],
+          "1st": [
+            "command",
+            "guiding bolt",
+            "shield of faith"
+          ],
+          "2nd": [
+            "hold person",
+            "silence",
+            "spiritual weapon"
+          ],
+          "3rd": [
+            "animate dead",
+            "dispel magic"
+          ],
+          "4th": [
+            "divination",
+            "guardian of faith"
+          ],
+          "5th": [
+            "contagion",
+            "insect plague"
+          ],
+          "6th": [
+            "harm"
+          ]
+        }
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The mummy can use its Dreadful Glare and makes one attack with its rotting fist."
+      },
+      {
+        "name": "Rotting Fist",
+        "attackBonus": 9,
+        "reach": 5,
+        "damage": {
+          "dice": "3d6+4",
+          "type": "bludgeoning"
+        },
+        "additionalDamage": {
+          "dice": "6d6",
+          "type": "necrotic"
+        },
+        "description": "If the target is a creature, it must succeed on a DC 16 Constitution saving throw or be cursed with mummy rot."
+      },
+      {
+        "name": "Dreadful Glare",
+        "description": "The mummy lord targets one creature it can see within 60 feet of it. The target must succeed on a DC 16 Wisdom saving throw or become frightened until the end of the mummy's next turn."
+      }
+    ],
+    "legendaryActions": [
+      {
+        "name": "Attack",
+        "description": "The mummy lord makes one attack with its rotting fist or uses its Dreadful Glare."
+      },
+      {
+        "name": "Blinding Dust",
+        "description": "Blinding dust and sand swirls magically around the mummy lord. Each creature within 5 feet of the mummy lord must succeed on a DC 16 Constitution saving throw or be blinded until the end of the creature's next turn."
+      },
+      {
+        "name": "Blasphemous Word (Costs 2 Actions)",
+        "description": "The mummy lord utters a blasphemous word. Each non-undead creature within 10 feet of the mummy lord that can hear the magical utterance must succeed on a DC 16 Constitution saving throw or be stunned until the end of the mummy lord's next turn."
+      },
+      {
+        "name": "Channel Negative Energy (Costs 2 Actions)",
+        "description": "The mummy lord magically unleashes negative energy. Creatures within 60 feet of the mummy lord, including ones behind barriers and around corners, can't regain hit points until the end of the mummy lord's next turn."
+      },
+      {
+        "name": "Whirlwind of Sand (Costs 2 Actions)",
+        "description": "The mummy lord magically transforms into a whirlwind of sand, moves up to 60 feet, and reverts to its normal form."
+      }
     ]
   }
 ]

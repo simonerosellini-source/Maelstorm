@@ -3148,7 +3148,7 @@
     "classes": [
       "wizard"
     ],
-    "description": "A shimmering, multicolored plane of light forms a vertical opaque wall\u2014up to 90 feet long, 30 feet high, and 1 inch thick\u2014centered on a point you can see within range. Alternatively, you can shape the wall into a sphere up to 30 feet in diameter centered on a point you choose within range. The wall remains in place for the duration. If you position the wall so that it passes through a space occupied by a creature, the spell fails, and your action and the spell slot are wasted. The wall sheds bright light out to a range of 100 feet and dim light for an additional 100 feet. You and creatures you designate at the time you cast the spell can pass through and remain near the wall without harm. If another creature that can see the wall moves to within 20 feet of it or starts its turn there, the creature must succeed on a Constitution saving throw or become blinded for 1 minute.",
+    "description": "A shimmering, multicolored plane of light forms a vertical opaque wall—up to 90 feet long, 30 feet high, and 1 inch thick—centered on a point you can see within range. Alternatively, you can shape the wall into a sphere up to 30 feet in diameter centered on a point you choose within range. The wall remains in place for the duration. If you position the wall so that it passes through a space occupied by a creature, the spell fails, and your action and the spell slot are wasted. The wall sheds bright light out to a range of 100 feet and dim light for an additional 100 feet. You and creatures you designate at the time you cast the spell can pass through and remain near the wall without harm. If another creature that can see the wall moves to within 20 feet of it or starts its turn there, the creature must succeed on a Constitution saving throw or become blinded for 1 minute.",
     "damageType": null
   },
   {
@@ -3183,5 +3183,559 @@
       "type": "circle",
       "size": 360
     }
+  },
+  {
+    "id": "blade_ward",
+    "name": "Blade Ward",
+    "level": 0,
+    "school": "abjuration",
+    "castingTime": "1 action",
+    "range": "self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "1 round",
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "description": "You extend your hand and trace a sigil of warding in the air. Until the end of your next turn, you have resistance against bludgeoning, piercing, and slashing damage dealt by weapon attacks.",
+    "concentration": false,
+    "ritual": false
+  },
+  {
+    "id": "friends",
+    "name": "Friends",
+    "level": 0,
+    "school": "enchantment",
+    "castingTime": "1 action",
+    "range": "self",
+    "components": [
+      "S",
+      "M"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "description": "For the duration, you have advantage on all Charisma checks directed at one creature of your choice that isn't hostile toward you. When the spell ends, the creature realizes that you used magic to influence its mood and becomes hostile toward you.",
+    "concentration": true,
+    "ritual": false
+  },
+  {
+    "id": "true_strike",
+    "name": "True Strike",
+    "level": 0,
+    "school": "divination",
+    "castingTime": "1 action",
+    "range": "30 feet",
+    "components": [
+      "S"
+    ],
+    "duration": "Concentration, up to 1 round",
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "description": "You point a finger at a target in range. Your magic grants you a brief insight into the target's defenses. On your next turn, you gain advantage on your first attack roll against the target.",
+    "concentration": true,
+    "ritual": false
+  },
+  {
+    "id": "bane",
+    "name": "Bane",
+    "level": 1,
+    "school": "enchantment",
+    "castingTime": "1 action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "classes": [
+      "bard",
+      "cleric"
+    ],
+    "description": "Up to three creatures of your choice that you can see within range must make Charisma saving throws. Whenever a target that fails this saving throw makes an attack roll or a saving throw before the spell ends, the target must roll a d4 and subtract the number rolled from the attack roll or saving throw.",
+    "savingThrow": {
+      "ability": "charisma",
+      "effect": "Avoid the effect"
+    },
+    "concentration": true,
+    "ritual": false
+  },
+  {
+    "id": "feather_fall",
+    "name": "Feather Fall",
+    "level": 1,
+    "school": "transmutation",
+    "castingTime": "1 reaction",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "M"
+    ],
+    "duration": "1 minute",
+    "classes": [
+      "bard",
+      "sorcerer",
+      "wizard"
+    ],
+    "description": "Choose up to five falling creatures within range. A falling creature's rate of descent slows to 60 feet per round until the spell ends. If the creature lands before the spell ends, it takes no falling damage and can land on its feet.",
+    "concentration": false,
+    "ritual": false
+  },
+  {
+    "id": "identify",
+    "name": "Identify",
+    "level": 1,
+    "school": "divination",
+    "castingTime": "1 minute",
+    "range": "touch",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "Instantaneous",
+    "classes": [
+      "bard",
+      "wizard"
+    ],
+    "description": "You choose one object that you must touch throughout the casting of the spell. If it is a magic item or some other magic-imbued object, you learn its properties and how to use them, whether it requires attunement to use, and how many charges it has, if any.",
+    "concentration": false,
+    "ritual": true
+  },
+  {
+    "id": "jump",
+    "name": "Jump",
+    "level": 1,
+    "school": "transmutation",
+    "castingTime": "1 action",
+    "range": "touch",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "1 minute",
+    "classes": [
+      "druid",
+      "ranger",
+      "sorcerer",
+      "wizard"
+    ],
+    "description": "You touch a creature. The creature's jump distance is tripled until the spell ends.",
+    "concentration": false,
+    "ritual": false
+  },
+  {
+    "id": "longstrider",
+    "name": "Longstrider",
+    "level": 1,
+    "school": "transmutation",
+    "castingTime": "1 action",
+    "range": "touch",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "1 hour",
+    "classes": [
+      "bard",
+      "druid",
+      "ranger",
+      "wizard"
+    ],
+    "description": "You touch a creature. The target's speed increases by 10 feet until the spell ends.",
+    "concentration": false,
+    "ritual": false
+  },
+  {
+    "id": "alter_self",
+    "name": "Alter Self",
+    "level": 2,
+    "school": "transmutation",
+    "castingTime": "1 action",
+    "range": "self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "description": "You assume a different form. When you cast the spell, choose one of the following options: Aquatic Adaptation, Change Appearance, or Natural Weapons.",
+    "concentration": true,
+    "ritual": false
+  },
+  {
+    "id": "arcane_lock",
+    "name": "Arcane Lock",
+    "level": 2,
+    "school": "abjuration",
+    "castingTime": "1 action",
+    "range": "touch",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "Until dispelled",
+    "classes": [
+      "wizard"
+    ],
+    "description": "You touch a closed door, window, gate, chest, or other entryway, and it becomes locked for the duration. You and the creatures you designate when you cast this spell can open the object normally.",
+    "concentration": false,
+    "ritual": false
+  },
+  {
+    "id": "enlarge_reduce",
+    "name": "Enlarge/Reduce",
+    "level": 2,
+    "school": "transmutation",
+    "castingTime": "1 action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "description": "You cause a creature or an object you can see within range to grow larger or smaller for the duration. Choose either a creature or an object that is neither worn nor carried.",
+    "savingThrow": {
+      "ability": "constitution",
+      "effect": "Negates if unwilling"
+    },
+    "concentration": true,
+    "ritual": false
+  },
+  {
+    "id": "rope_trick",
+    "name": "Rope Trick",
+    "level": 2,
+    "school": "transmutation",
+    "castingTime": "1 action",
+    "range": "touch",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "1 hour",
+    "classes": [
+      "wizard"
+    ],
+    "description": "You touch a length of rope that is up to 60 feet long. One end of the rope then rises into the air until the whole rope hangs perpendicular to the ground. At the upper end of the rope, an invisible entrance opens to an extradimensional space that lasts until the spell ends.",
+    "concentration": false,
+    "ritual": false
+  },
+  {
+    "id": "animate_dead",
+    "name": "Animate Dead",
+    "level": 3,
+    "school": "necromancy",
+    "castingTime": "1 minute",
+    "range": "10 feet",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "Instantaneous",
+    "classes": [
+      "cleric",
+      "wizard"
+    ],
+    "description": "This spell creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. Your spell imbues the target with a foul mimicry of life, raising it as an undead creature.",
+    "concentration": false,
+    "ritual": false
+  },
+  {
+    "id": "clairvoyance",
+    "name": "Clairvoyance",
+    "level": 3,
+    "school": "divination",
+    "castingTime": "10 minutes",
+    "range": "1 mile",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "classes": [
+      "bard",
+      "cleric",
+      "sorcerer",
+      "wizard"
+    ],
+    "description": "You create an invisible sensor within range in a location familiar to you or in an obvious location that is unfamiliar to you. The sensor remains in place for the duration, and it can't be attacked or otherwise interacted with.",
+    "concentration": true,
+    "ritual": false
+  },
+  {
+    "id": "gaseous_form",
+    "name": "Gaseous Form",
+    "level": 3,
+    "school": "transmutation",
+    "castingTime": "1 action",
+    "range": "touch",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "description": "You transform a willing creature you touch, along with everything it's wearing and carrying, into a misty cloud for the duration. The spell ends if the creature drops to 0 hit points.",
+    "concentration": true,
+    "ritual": false
+  },
+  {
+    "id": "glyph_of_warding",
+    "name": "Glyph of Warding",
+    "level": 3,
+    "school": "abjuration",
+    "castingTime": "1 hour",
+    "range": "touch",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "Until dispelled or triggered",
+    "classes": [
+      "bard",
+      "cleric",
+      "wizard"
+    ],
+    "description": "When you cast this spell, you inscribe a glyph that harms other creatures, either upon a surface or within an object that can be closed to conceal the glyph.",
+    "damage": {
+      "dice": "5d8",
+      "type": "acid, cold, fire, lightning, or thunder"
+    },
+    "savingThrow": {
+      "ability": "dexterity",
+      "effect": "Takes half damage on success"
+    },
+    "concentration": false,
+    "ritual": false
+  },
+  {
+    "id": "arcane_eye",
+    "name": "Arcane Eye",
+    "level": 4,
+    "school": "divination",
+    "castingTime": "1 action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "classes": [
+      "wizard"
+    ],
+    "description": "You create an invisible, magical eye within range that hovers in the air for the duration. You mentally receive visual information from the eye, which has normal vision and darkvision out to 30 feet.",
+    "concentration": true,
+    "ritual": false
+  },
+  {
+    "id": "fabricate",
+    "name": "Fabricate",
+    "level": 4,
+    "school": "transmutation",
+    "castingTime": "10 minutes",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "classes": [
+      "wizard"
+    ],
+    "description": "You convert raw materials into products of the same material. For example, you can fabricate a wooden bridge from a clump of trees, a rope from a patch of hemp, and clothes from flax or wool.",
+    "concentration": false,
+    "ritual": false
+  },
+  {
+    "id": "locate_creature",
+    "name": "Locate Creature",
+    "level": 4,
+    "school": "divination",
+    "castingTime": "1 action",
+    "range": "self",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "classes": [
+      "bard",
+      "cleric",
+      "druid",
+      "paladin",
+      "ranger",
+      "wizard"
+    ],
+    "description": "Describe or name a creature that is familiar to you. You sense the direction to the creature's location, as long as that creature is within 1,000 feet of you.",
+    "concentration": true,
+    "ritual": false
+  },
+  {
+    "id": "stone_shape",
+    "name": "Stone Shape",
+    "level": 4,
+    "school": "transmutation",
+    "castingTime": "1 action",
+    "range": "touch",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "Instantaneous",
+    "classes": [
+      "cleric",
+      "druid",
+      "wizard"
+    ],
+    "description": "You touch a stone object of Medium size or smaller or a section of stone no more than 5 feet in any dimension and form it into any shape that suits your purpose.",
+    "concentration": false,
+    "ritual": false
+  },
+  {
+    "id": "animate_objects",
+    "name": "Animate Objects",
+    "level": 5,
+    "school": "transmutation",
+    "castingTime": "1 action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "classes": [
+      "bard",
+      "sorcerer",
+      "wizard"
+    ],
+    "description": "Objects come to life at your command. Choose up to ten nonmagical objects within range that are not being worn or carried. Medium targets count as two objects, Large targets count as four objects, Huge targets count as eight objects.",
+    "concentration": true,
+    "ritual": false
+  },
+  {
+    "id": "awaken",
+    "name": "Awaken",
+    "level": 5,
+    "school": "transmutation",
+    "castingTime": "8 hours",
+    "range": "touch",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "Instantaneous",
+    "classes": [
+      "bard",
+      "druid"
+    ],
+    "description": "After spending the casting time tracing magical pathways within a precious gemstone, you touch a Huge or smaller beast or plant. The target must have either no Intelligence score or an Intelligence of 3 or less. The target gains an Intelligence of 10.",
+    "concentration": false,
+    "ritual": false
+  },
+  {
+    "id": "legend_lore",
+    "name": "Legend Lore",
+    "level": 5,
+    "school": "divination",
+    "castingTime": "10 minutes",
+    "range": "self",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "Instantaneous",
+    "classes": [
+      "bard",
+      "cleric",
+      "wizard"
+    ],
+    "description": "Name or describe a person, place, or object. The spell brings to your mind a brief summary of the significant lore about the thing you named.",
+    "concentration": false,
+    "ritual": false
+  },
+  {
+    "id": "create_undead",
+    "name": "Create Undead",
+    "level": 6,
+    "school": "necromancy",
+    "castingTime": "1 minute",
+    "range": "10 feet",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "Instantaneous",
+    "classes": [
+      "cleric",
+      "wizard"
+    ],
+    "description": "You can cast this spell only at night. Choose up to three corpses of Medium or Small humanoids within range. Each corpse becomes a ghoul under your control.",
+    "concentration": false,
+    "ritual": false
+  },
+  {
+    "id": "true_seeing",
+    "name": "True Seeing",
+    "level": 6,
+    "school": "divination",
+    "castingTime": "1 action",
+    "range": "touch",
+    "components": [
+      "V",
+      "S",
+      "M"
+    ],
+    "duration": "1 hour",
+    "classes": [
+      "bard",
+      "cleric",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "description": "This spell gives the willing creature you touch the ability to see things as they actually are. For the duration, the creature has truesight, notices secret doors hidden by magic, and can see into the Ethereal Plane.",
+    "concentration": false,
+    "ritual": false
   }
 ]
