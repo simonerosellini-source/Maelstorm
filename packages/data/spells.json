@@ -1894,5 +1894,1294 @@
     ],
     "description": "You touch a creature that has been dead for no longer than 200 years and that died for any reason except old age. If the creature's soul is free and willing, the creature is restored to life with all its hit points. This spell closes all wounds, neutralizes any poison, cures all diseases, and lifts any curses affecting the creature when it died. The spell replaces damaged or missing organs and limbs.",
     "damageType": null
+  },
+  {
+    "id": "prestidigitation",
+    "name": "Prestidigitation",
+    "level": 0,
+    "school": "transmutation",
+    "castingTime": "1 action",
+    "range": 10,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 3600,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "wizard",
+      "sorcerer",
+      "bard",
+      "warlock"
+    ],
+    "description": "This spell is a minor magical trick that novice spellcasters use for practice. You create one of the following magical effects within range: instantaneous harmless sensory effect, light/snuff candle, clean/soil object, chill/warm/flavor 1 cubic foot of material, create color/mark/symbol on object or surface, or create a nonmagical trinket or illusion that fits in your hand and lasts until the end of your next turn.",
+    "damageType": null
+  },
+  {
+    "id": "minor_illusion",
+    "name": "Minor Illusion",
+    "level": 0,
+    "school": "illusion",
+    "castingTime": "1 action",
+    "range": 30,
+    "components": {
+      "verbal": false,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 60,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "wizard",
+      "sorcerer",
+      "bard",
+      "warlock"
+    ],
+    "description": "You create a sound or an image of an object within range that lasts for the duration. The illusion also ends if you dismiss it as an action or cast this spell again. If you create a sound, its volume can range from a whisper to a scream. If you create an image of an object, it must be no larger than a 5-foot cube. The image can't create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion.",
+    "damageType": null
+  },
+  {
+    "id": "vicious_mockery",
+    "name": "Vicious Mockery",
+    "level": 0,
+    "school": "enchantment",
+    "castingTime": "1 action",
+    "range": 60,
+    "components": {
+      "verbal": true,
+      "somatic": false,
+      "material": false
+    },
+    "duration": 0,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard"
+    ],
+    "description": "You unleash a string of insults laced with subtle enchantments at a creature you can see within range. If the target can hear you (though it need not understand you), it must succeed on a Wisdom saving throw or take psychic damage and have disadvantage on the next attack roll it makes before the end of its next turn.",
+    "damage": {
+      "dice": "1d4",
+      "type": "psychic",
+      "scalingDice": {
+        "5": "2d4",
+        "11": "3d4",
+        "17": "4d4"
+      }
+    },
+    "damageType": "psychic",
+    "savingThrow": {
+      "ability": "wisdom",
+      "effect": "Takes no damage on success"
+    }
+  },
+  {
+    "id": "guidance",
+    "name": "Guidance",
+    "level": 0,
+    "school": "divination",
+    "castingTime": "1 action",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 60,
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "druid"
+    ],
+    "description": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends.",
+    "damageType": null
+  },
+  {
+    "id": "shillelagh",
+    "name": "Shillelagh",
+    "level": 0,
+    "school": "transmutation",
+    "castingTime": "1 bonus action",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 60,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "druid"
+    ],
+    "description": "The wood of a club or quarterstaff you are holding is imbued with nature's power. For the duration, you can use your spellcasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon's damage die becomes a d8. The weapon also becomes magical, if it isn't already. The spell ends if you cast it again or if you let go of the weapon.",
+    "damageType": null
+  },
+  {
+    "id": "thorn_whip",
+    "name": "Thorn Whip",
+    "level": 0,
+    "school": "transmutation",
+    "castingTime": "1 action",
+    "range": 30,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 0,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "druid"
+    ],
+    "description": "You create a long, vine-like whip covered in thorns that lashes out at your command toward a creature in range. Make a melee spell attack against the target. If the attack hits, the creature takes piercing damage, and if the creature is Large or smaller, you pull the creature up to 10 feet closer to you.",
+    "damage": {
+      "dice": "1d6",
+      "type": "piercing",
+      "scalingDice": {
+        "5": "2d6",
+        "11": "3d6",
+        "17": "4d6"
+      }
+    },
+    "damageType": "piercing",
+    "requiresAttackRoll": true
+  },
+  {
+    "id": "guiding_bolt",
+    "name": "Guiding Bolt",
+    "level": 1,
+    "school": "evocation",
+    "castingTime": "1 action",
+    "range": 120,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 6,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "description": "A flash of light streaks toward a creature of your choice within range. Make a ranged spell attack against the target. On a hit, the target takes radiant damage, and the next attack roll made against this target before the end of your next turn has advantage, thanks to the mystical dim light glittering on the target until then.",
+    "damage": {
+      "dice": "4d6",
+      "type": "radiant",
+      "scalingDice": {
+        "2": "5d6",
+        "3": "6d6",
+        "4": "7d6",
+        "5": "8d6",
+        "6": "9d6",
+        "7": "10d6",
+        "8": "11d6",
+        "9": "12d6"
+      }
+    },
+    "damageType": "radiant",
+    "requiresAttackRoll": true
+  },
+  {
+    "id": "healing_word",
+    "name": "Healing Word",
+    "level": 1,
+    "school": "evocation",
+    "castingTime": "1 bonus action",
+    "range": 60,
+    "components": {
+      "verbal": true,
+      "somatic": false,
+      "material": false
+    },
+    "duration": 0,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "bard",
+      "druid"
+    ],
+    "description": "A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
+    "healing": {
+      "dice": "1d4",
+      "modifier": "spellcasting",
+      "scalingDice": {
+        "2": "2d4",
+        "3": "3d4",
+        "4": "4d4",
+        "5": "5d4",
+        "6": "6d4",
+        "7": "7d4",
+        "8": "8d4",
+        "9": "9d4"
+      }
+    },
+    "damageType": null
+  },
+  {
+    "id": "faerie_fire",
+    "name": "Faerie Fire",
+    "level": 1,
+    "school": "evocation",
+    "castingTime": "1 action",
+    "range": 60,
+    "components": {
+      "verbal": true,
+      "somatic": false,
+      "material": false
+    },
+    "duration": 60,
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "druid"
+    ],
+    "description": "Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the spell is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius. Any attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can't benefit from being invisible.",
+    "damageType": null,
+    "savingThrow": {
+      "ability": "dexterity",
+      "effect": "Is not outlined on success"
+    },
+    "areaOfEffect": {
+      "type": "cube",
+      "size": 20
+    }
+  },
+  {
+    "id": "hunters_mark",
+    "name": "Hunter's Mark",
+    "level": 1,
+    "school": "divination",
+    "castingTime": "1 bonus action",
+    "range": 90,
+    "components": {
+      "verbal": true,
+      "somatic": false,
+      "material": false
+    },
+    "duration": 3600,
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "ranger"
+    ],
+    "description": "You choose a creature you can see within range and mystically mark it as your quarry. Until the spell ends, you deal an extra 1d6 damage to the target whenever you hit it with a weapon attack, and you have advantage on any Wisdom (Perception) or Wisdom (Survival) check you make to find it.",
+    "damage": {
+      "dice": "1d6",
+      "type": "weapon"
+    },
+    "damageType": null
+  },
+  {
+    "id": "shield_of_faith",
+    "name": "Shield of Faith",
+    "level": 1,
+    "school": "abjuration",
+    "castingTime": "1 bonus action",
+    "range": 60,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 600,
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "paladin"
+    ],
+    "description": "A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.",
+    "damageType": null
+  },
+  {
+    "id": "sanctuary",
+    "name": "Sanctuary",
+    "level": 1,
+    "school": "abjuration",
+    "castingTime": "1 bonus action",
+    "range": 30,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 60,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "description": "You ward a creature within range against attack. Until the spell ends, any creature who targets the warded creature with an attack or a harmful spell must first make a Wisdom saving throw. On a failed save, the creature must choose a new target or lose the attack or spell. This spell doesn't protect the warded creature from area effects. If the warded creature makes an attack or casts a spell that affects an enemy creature, this spell ends.",
+    "damageType": null,
+    "savingThrow": {
+      "ability": "wisdom",
+      "effect": "Can target the warded creature on success"
+    }
+  },
+  {
+    "id": "speak_with_animals",
+    "name": "Speak with Animals",
+    "level": 1,
+    "school": "divination",
+    "castingTime": "1 action",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 600,
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "bard",
+      "druid",
+      "ranger"
+    ],
+    "description": "You gain the ability to comprehend and verbally communicate with beasts for the duration. The knowledge and awareness of many beasts is limited by their intelligence, but at minimum, beasts can give you information about nearby locations and monsters, including whatever they can perceive or have perceived within the past day.",
+    "damageType": null
+  },
+  {
+    "id": "armor_of_agathys",
+    "name": "Armor of Agathys",
+    "level": 1,
+    "school": "abjuration",
+    "castingTime": "1 action",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 3600,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "warlock"
+    ],
+    "description": "A protective magical force surrounds you, manifesting as a spectral frost that covers you and your gear. You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 cold damage.",
+    "healing": {
+      "flat": 5,
+      "scalingFlat": {
+        "2": 10,
+        "3": 15,
+        "4": 20,
+        "5": 25,
+        "6": 30,
+        "7": 35,
+        "8": 40,
+        "9": 45
+      }
+    },
+    "damageType": null
+  },
+  {
+    "id": "hellish_rebuke",
+    "name": "Hellish Rebuke",
+    "level": 1,
+    "school": "evocation",
+    "castingTime": "1 reaction",
+    "range": 60,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 0,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "warlock"
+    ],
+    "description": "You point your finger, and the creature that damaged you is momentarily surrounded by hellish flames. The creature must make a Dexterity saving throw. It takes fire damage on a failed save, or half as much damage on a successful one.",
+    "damage": {
+      "dice": "2d10",
+      "type": "fire",
+      "scalingDice": {
+        "2": "3d10",
+        "3": "4d10",
+        "4": "5d10",
+        "5": "6d10",
+        "6": "7d10",
+        "7": "8d10",
+        "8": "9d10",
+        "9": "10d10"
+      }
+    },
+    "damageType": "fire",
+    "savingThrow": {
+      "ability": "dexterity",
+      "effect": "Takes half damage on success"
+    }
+  },
+  {
+    "id": "pass_without_trace",
+    "name": "Pass without Trace",
+    "level": 2,
+    "school": "abjuration",
+    "castingTime": "1 action",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 3600,
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "ranger"
+    ],
+    "description": "A veil of shadows and silence radiates from you, masking you and your companions from detection. For the duration, each creature you choose within 30 feet of you (including you) has a +10 bonus to Dexterity (Stealth) checks and can't be tracked except by magical means. A creature that receives this bonus leaves behind no tracks or other traces of its passage.",
+    "damageType": null
+  },
+  {
+    "id": "lesser_restoration",
+    "name": "Lesser Restoration",
+    "level": 2,
+    "school": "abjuration",
+    "castingTime": "1 action",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 0,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid",
+      "paladin",
+      "ranger"
+    ],
+    "description": "You touch a creature and can end either one disease or one condition afflicting it. The condition can be blinded, deafened, paralyzed, or poisoned.",
+    "damageType": null
+  },
+  {
+    "id": "silence",
+    "name": "Silence",
+    "level": 2,
+    "school": "illusion",
+    "castingTime": "1 action",
+    "range": 120,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 600,
+    "concentration": true,
+    "ritual": true,
+    "classes": [
+      "bard",
+      "cleric",
+      "ranger"
+    ],
+    "description": "For the duration, no sound can be created within or pass through a 20-foot-radius sphere centered on a point you choose within range. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are deafened while entirely inside it. Casting a spell that includes a verbal component is impossible there.",
+    "damageType": null,
+    "areaOfEffect": {
+      "type": "sphere",
+      "size": 20
+    }
+  },
+  {
+    "id": "spike_growth",
+    "name": "Spike Growth",
+    "level": 2,
+    "school": "transmutation",
+    "castingTime": "1 action",
+    "range": 150,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 600,
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "ranger"
+    ],
+    "description": "The ground in a 20-foot radius centered on a point within range twists and sprouts hard spikes and thorns. The area becomes difficult terrain for the duration. When a creature moves into or within the area, it takes 2d4 piercing damage for every 5 feet it travels.",
+    "damage": {
+      "dice": "2d4",
+      "type": "piercing"
+    },
+    "damageType": "piercing",
+    "areaOfEffect": {
+      "type": "circle",
+      "size": 20
+    }
+  },
+  {
+    "id": "heat_metal",
+    "name": "Heat Metal",
+    "level": 2,
+    "school": "transmutation",
+    "castingTime": "1 action",
+    "range": 60,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 60,
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "druid"
+    ],
+    "description": "Choose a manufactured metal object, such as a metal weapon or a suit of heavy or medium metal armor, that you can see within range. You cause the object to glow red-hot. Any creature in physical contact with the object takes 2d8 fire damage when you cast the spell. Until the spell ends, you can use a bonus action on each of your subsequent turns to cause this damage again.",
+    "damage": {
+      "dice": "2d8",
+      "type": "fire",
+      "scalingDice": {
+        "3": "3d8",
+        "4": "4d8",
+        "5": "5d8",
+        "6": "6d8",
+        "7": "7d8",
+        "8": "8d8",
+        "9": "9d8"
+      }
+    },
+    "damageType": "fire"
+  },
+  {
+    "id": "prayer_of_healing",
+    "name": "Prayer of Healing",
+    "level": 2,
+    "school": "evocation",
+    "castingTime": "10 minutes",
+    "range": 30,
+    "components": {
+      "verbal": true,
+      "somatic": false,
+      "material": false
+    },
+    "duration": 0,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "description": "Up to six creatures of your choice that you can see within range each regain hit points equal to 2d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
+    "healing": {
+      "dice": "2d8",
+      "modifier": "spellcasting",
+      "scalingDice": {
+        "3": "3d8",
+        "4": "4d8",
+        "5": "5d8",
+        "6": "6d8",
+        "7": "7d8",
+        "8": "8d8",
+        "9": "9d8"
+      }
+    },
+    "damageType": null
+  },
+  {
+    "id": "mass_healing_word",
+    "name": "Mass Healing Word",
+    "level": 3,
+    "school": "evocation",
+    "castingTime": "1 bonus action",
+    "range": 60,
+    "components": {
+      "verbal": true,
+      "somatic": false,
+      "material": false
+    },
+    "duration": 0,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "description": "As you call out words of restoration, up to six creatures of your choice that you can see within range regain hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
+    "healing": {
+      "dice": "1d4",
+      "modifier": "spellcasting",
+      "scalingDice": {
+        "4": "2d4",
+        "5": "3d4",
+        "6": "4d4",
+        "7": "5d4",
+        "8": "6d4",
+        "9": "7d4"
+      }
+    },
+    "damageType": null
+  },
+  {
+    "id": "bestow_curse",
+    "name": "Bestow Curse",
+    "level": 3,
+    "school": "necromancy",
+    "castingTime": "1 action",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 60,
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "wizard"
+    ],
+    "description": "You touch a creature, and that creature must succeed on a Wisdom saving throw or become cursed for the duration of the spell. When you cast this spell, choose the nature of the curse from the following options: disadvantage on ability checks and saving throws made with one ability score of your choice, disadvantage on attack rolls against you, target must make a Wisdom saving throw at the start of each of its turns or waste that turn doing nothing, or your attacks and spells deal an extra 1d8 necrotic damage to the target.",
+    "damageType": null,
+    "savingThrow": {
+      "ability": "wisdom",
+      "effect": "Is not cursed on success"
+    }
+  },
+  {
+    "id": "conjure_animals",
+    "name": "Conjure Animals",
+    "level": 3,
+    "school": "conjuration",
+    "castingTime": "1 action",
+    "range": 60,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 3600,
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "ranger"
+    ],
+    "description": "You summon fey spirits that take the form of beasts and appear in unoccupied spaces that you can see within range. Choose one of the following options for what appears: one beast of challenge rating 2 or lower, two beasts of challenge rating 1 or lower, four beasts of challenge rating 1/2 or lower, or eight beasts of challenge rating 1/4 or lower.",
+    "damageType": null
+  },
+  {
+    "id": "plant_growth",
+    "name": "Plant Growth",
+    "level": 3,
+    "school": "transmutation",
+    "castingTime": "1 action",
+    "range": 150,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 0,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "druid",
+      "ranger"
+    ],
+    "description": "This spell channels vitality into plants within a specific area. There are two possible uses for the spell, granting either immediate or long-term benefits. If you cast this spell using 1 action, choose a point within range. All normal plants in a 100-foot radius centered on that point become thick and overgrown. A creature moving through the area must spend 4 feet of movement for every 1 foot it moves.",
+    "damageType": null,
+    "areaOfEffect": {
+      "type": "circle",
+      "size": 100
+    }
+  },
+  {
+    "id": "vampiric_touch",
+    "name": "Vampiric Touch",
+    "level": 3,
+    "school": "necromancy",
+    "castingTime": "1 action",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 60,
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "wizard",
+      "warlock"
+    ],
+    "description": "The touch of your shadow-wreathed hand can siphon life force from others to heal your wounds. Make a melee spell attack against a creature within your reach. On a hit, the target takes 3d6 necrotic damage, and you regain hit points equal to half the amount of necrotic damage dealt.",
+    "damage": {
+      "dice": "3d6",
+      "type": "necrotic",
+      "scalingDice": {
+        "4": "4d6",
+        "5": "5d6",
+        "6": "6d6",
+        "7": "7d6",
+        "8": "8d6",
+        "9": "9d6"
+      }
+    },
+    "damageType": "necrotic",
+    "requiresAttackRoll": true
+  },
+  {
+    "id": "conjure_woodland_beings",
+    "name": "Conjure Woodland Beings",
+    "level": 4,
+    "school": "conjuration",
+    "castingTime": "1 action",
+    "range": 60,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 3600,
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "ranger"
+    ],
+    "description": "You summon fey creatures that appear in unoccupied spaces that you can see within range. Choose one of the following options: one fey creature of CR 2 or lower, two fey creatures of CR 1 or lower, four fey creatures of CR 1/2 or lower, or eight fey creatures of CR 1/4 or lower.",
+    "damageType": null
+  },
+  {
+    "id": "death_ward",
+    "name": "Death Ward",
+    "level": 4,
+    "school": "abjuration",
+    "castingTime": "1 action",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 28800,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "paladin"
+    ],
+    "description": "You touch a creature and grant it a measure of protection from death. The first time the target would drop to 0 hit points as a result of taking damage, the target instead drops to 1 hit point, and the spell ends. If the spell is still in effect when the target is subjected to an effect that would kill it instantaneously without dealing damage, that effect is instead negated against the target, and the spell ends.",
+    "damageType": null
+  },
+  {
+    "id": "freedom_of_movement",
+    "name": "Freedom of Movement",
+    "level": 4,
+    "school": "abjuration",
+    "castingTime": "1 action",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 3600,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid",
+      "ranger"
+    ],
+    "description": "You touch a willing creature. For the duration, the target's movement is unaffected by difficult terrain, and spells and other magical effects can neither reduce the target's speed nor cause the target to be paralyzed or restrained. The target can also spend 5 feet of movement to automatically escape from nonmagical restraints, such as manacles or a creature that has it grappled.",
+    "damageType": null
+  },
+  {
+    "id": "blight",
+    "name": "Blight",
+    "level": 4,
+    "school": "necromancy",
+    "castingTime": "1 action",
+    "range": 30,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 0,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "description": "Necromantic energy washes over a creature of your choice that you can see within range, draining moisture and vitality from it. The target must make a Constitution saving throw. The target takes 8d8 necrotic damage on a failed save, or half as much damage on a successful one. This spell has no effect on undead or constructs.",
+    "damage": {
+      "dice": "8d8",
+      "type": "necrotic",
+      "scalingDice": {
+        "5": "9d8",
+        "6": "10d8",
+        "7": "11d8",
+        "8": "12d8",
+        "9": "13d8"
+      }
+    },
+    "damageType": "necrotic",
+    "savingThrow": {
+      "ability": "constitution",
+      "effect": "Takes half damage on success"
+    }
+  },
+  {
+    "id": "animate_objects",
+    "name": "Animate Objects",
+    "level": 5,
+    "school": "transmutation",
+    "castingTime": "1 action",
+    "range": 120,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 60,
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "wizard"
+    ],
+    "description": "Objects come to life at your command. Choose up to ten nonmagical objects within range that are not being worn or carried. Medium targets count as two objects, Large targets count as four objects, Huge targets count as eight objects. You can't animate any object larger than Huge. Each target animates and becomes a creature under your control until the spell ends or until reduced to 0 hit points.",
+    "damageType": null
+  },
+  {
+    "id": "greater_restoration",
+    "name": "Greater Restoration",
+    "level": 5,
+    "school": "abjuration",
+    "castingTime": "1 action",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 0,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid"
+    ],
+    "description": "You imbue a creature you touch with positive energy to undo a debilitating effect. You can reduce the target's exhaustion level by one, or end one of the following effects on the target: one effect that charmed or petrified the target, one curse, including the target's attunement to a cursed magic item, any reduction to one of the target's ability scores, or one effect reducing the target's hit point maximum.",
+    "damageType": null
+  },
+  {
+    "id": "flame_strike",
+    "name": "Flame Strike",
+    "level": 5,
+    "school": "evocation",
+    "castingTime": "1 action",
+    "range": 60,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 0,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "description": "A vertical column of divine fire roars down from the heavens in a location you specify. Each creature in a 10-foot-radius, 40-foot-high cylinder centered on a point within range must make a Dexterity saving throw. A creature takes 4d6 fire damage and 4d6 radiant damage on a failed save, or half as much damage on a successful one.",
+    "damage": {
+      "dice": "4d6",
+      "type": "fire",
+      "scalingDice": {
+        "6": "5d6",
+        "7": "6d6",
+        "8": "7d6",
+        "9": "8d6"
+      }
+    },
+    "additionalDamage": {
+      "dice": "4d6",
+      "type": "radiant"
+    },
+    "damageType": "fire",
+    "savingThrow": {
+      "ability": "dexterity",
+      "effect": "Takes half damage on success"
+    },
+    "areaOfEffect": {
+      "type": "cylinder",
+      "size": 10
+    }
+  },
+  {
+    "id": "awaken",
+    "name": "Awaken",
+    "level": 5,
+    "school": "transmutation",
+    "castingTime": "8 hours",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 0,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "druid"
+    ],
+    "description": "After spending the casting time tracing magical pathways within a precious gemstone, you touch a Huge or smaller beast or plant. The target must have either no Intelligence score or an Intelligence of 3 or less. The target gains an Intelligence of 10. The target also gains the ability to speak one language you know. If the target is a plant, it gains the ability to move its limbs, roots, vines, creepers, and so forth, and it gains senses similar to a human's. Your DM chooses statistics appropriate for the awakened plant, such as the statistics for the awakened shrub or the awakened tree.",
+    "damageType": null
+  },
+  {
+    "id": "true_seeing",
+    "name": "True Seeing",
+    "level": 6,
+    "school": "divination",
+    "castingTime": "1 action",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 3600,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "description": "This spell gives the willing creature you touch the ability to see things as they actually are. For the duration, the creature has truesight, notices secret doors hidden by magic, and can see into the Ethereal Plane, all out to a range of 120 feet.",
+    "damageType": null
+  },
+  {
+    "id": "harm",
+    "name": "Harm",
+    "level": 6,
+    "school": "necromancy",
+    "castingTime": "1 action",
+    "range": 60,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 0,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "description": "You unleash a virulent disease on a creature that you can see within range. The target must make a Constitution saving throw. On a failed save, it takes 14d6 necrotic damage, or half as much damage on a successful save. The damage can't reduce the target's hit points below 1. If the target fails the saving throw, its hit point maximum is reduced for 1 hour by an amount equal to the necrotic damage it took.",
+    "damage": {
+      "dice": "14d6",
+      "type": "necrotic"
+    },
+    "damageType": "necrotic",
+    "savingThrow": {
+      "ability": "constitution",
+      "effect": "Takes half damage on success"
+    }
+  },
+  {
+    "id": "word_of_recall",
+    "name": "Word of Recall",
+    "level": 6,
+    "school": "conjuration",
+    "castingTime": "1 action",
+    "range": 5,
+    "components": {
+      "verbal": true,
+      "somatic": false,
+      "material": false
+    },
+    "duration": 0,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "description": "You and up to five willing creatures within 5 feet of you instantly teleport to a previously designated sanctuary. You and any creatures that teleport with you appear in the nearest unoccupied space to the spot you designated when you prepared your sanctuary.",
+    "damageType": null
+  },
+  {
+    "id": "etherealness",
+    "name": "Etherealness",
+    "level": 7,
+    "school": "transmutation",
+    "castingTime": "1 action",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 28800,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "description": "You step into the border regions of the Ethereal Plane, in the area where it overlaps with your current plane. You remain in the Border Ethereal for the duration or until you use your action to dismiss the spell. During this time, you can move in any direction. If you move up or down, every foot of movement costs an extra foot. You can see and hear the plane you originated from, but everything there looks gray, and you can't see anything more than 60 feet away.",
+    "damageType": null
+  },
+  {
+    "id": "fire_storm",
+    "name": "Fire Storm",
+    "level": 7,
+    "school": "evocation",
+    "castingTime": "1 action",
+    "range": 150,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 0,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "druid",
+      "sorcerer"
+    ],
+    "description": "A storm made up of sheets of roaring flame appears in a location you choose within range. The area of the storm consists of up to ten 10-foot cubes, which you can arrange as you wish. Each cube must have at least one face adjacent to the face of another cube. Each creature in the area must make a Dexterity saving throw. It takes 7d10 fire damage on a failed save, or half as much damage on a successful one.",
+    "damage": {
+      "dice": "7d10",
+      "type": "fire",
+      "scalingDice": {
+        "8": "8d10",
+        "9": "9d10"
+      }
+    },
+    "damageType": "fire",
+    "savingThrow": {
+      "ability": "dexterity",
+      "effect": "Takes half damage on success"
+    }
+  },
+  {
+    "id": "regenerate",
+    "name": "Regenerate",
+    "level": 7,
+    "school": "transmutation",
+    "castingTime": "1 minute",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 3600,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid"
+    ],
+    "description": "You touch a creature and stimulate its natural healing ability. The target regains 4d8 + 15 hit points. For the duration of the spell, the target regains 1 hit point at the start of each of its turns (10 hit points each minute). The target's severed body members (fingers, legs, tails, and so on), if any, are restored after 2 minutes. If you have the severed part and hold it to the stump, the spell instantaneously causes the limb to knit to the stump.",
+    "healing": {
+      "dice": "4d8",
+      "modifier": 15
+    },
+    "damageType": null
+  },
+  {
+    "id": "antimagic_field",
+    "name": "Antimagic Field",
+    "level": 8,
+    "school": "abjuration",
+    "castingTime": "1 action",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 3600,
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "wizard"
+    ],
+    "description": "A 10-foot-radius invisible sphere of antimagic surrounds you. This area is divorced from the magical energy that suffuses the multiverse. Within the sphere, spells can't be cast, summoned creatures disappear, and even magic items become mundane. Until the spell ends, the sphere moves with you, centered on you.",
+    "damageType": null,
+    "areaOfEffect": {
+      "type": "sphere",
+      "size": 10
+    }
+  },
+  {
+    "id": "holy_aura",
+    "name": "Holy Aura",
+    "level": 8,
+    "school": "abjuration",
+    "castingTime": "1 action",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 60,
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "description": "Divine light washes out from you and coalesces in a soft radiance in a 30-foot radius around you. Creatures of your choice in that radius when you cast this spell shed dim light in a 5-foot radius and have advantage on all saving throws, and other creatures have disadvantage on attack rolls against them until the spell ends. In addition, when a fiend or an undead hits an affected creature with a melee attack, the aura flashes with brilliant light. The attacker must succeed on a Constitution saving throw or be blinded until the spell ends.",
+    "damageType": null,
+    "areaOfEffect": {
+      "type": "sphere",
+      "size": 30
+    }
+  },
+  {
+    "id": "incendiary_cloud",
+    "name": "Incendiary Cloud",
+    "level": 8,
+    "school": "conjuration",
+    "castingTime": "1 action",
+    "range": 150,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 60,
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "description": "A swirling cloud of smoke shot through with white-hot embers appears in a 20-foot-radius sphere centered on a point within range. The cloud spreads around corners and is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it. When the cloud appears, each creature in it must make a Dexterity saving throw. A creature takes 10d8 fire damage on a failed save, or half as much damage on a successful one.",
+    "damage": {
+      "dice": "10d8",
+      "type": "fire",
+      "scalingDice": {
+        "9": "11d8"
+      }
+    },
+    "damageType": "fire",
+    "savingThrow": {
+      "ability": "dexterity",
+      "effect": "Takes half damage on success"
+    },
+    "areaOfEffect": {
+      "type": "sphere",
+      "size": 20
+    }
+  },
+  {
+    "id": "gate",
+    "name": "Gate",
+    "level": 9,
+    "school": "conjuration",
+    "castingTime": "1 action",
+    "range": 60,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true
+    },
+    "duration": 60,
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "sorcerer",
+      "wizard"
+    ],
+    "description": "You conjure a portal linking an unoccupied space you can see within range to a precise location on a different plane of existence. The portal is a circular opening, which you can make 5 to 20 feet in diameter. You can orient the portal in any direction you choose. The portal lasts for the duration. The portal has a front and a back on each plane where it appears. Travel through the portal is possible only by moving through its front. Anything that does so is instantly transported to the other plane, appearing in the unoccupied space nearest to the portal.",
+    "damageType": null
+  },
+  {
+    "id": "prismatic_wall",
+    "name": "Prismatic Wall",
+    "level": 9,
+    "school": "abjuration",
+    "castingTime": "1 action",
+    "range": 60,
+    "components": {
+      "verbal": true,
+      "somatic": false,
+      "material": false
+    },
+    "duration": 600,
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "description": "A shimmering, multicolored plane of light forms a vertical opaque wall\u2014up to 90 feet long, 30 feet high, and 1 inch thick\u2014centered on a point you can see within range. Alternatively, you can shape the wall into a sphere up to 30 feet in diameter centered on a point you choose within range. The wall remains in place for the duration. If you position the wall so that it passes through a space occupied by a creature, the spell fails, and your action and the spell slot are wasted. The wall sheds bright light out to a range of 100 feet and dim light for an additional 100 feet. You and creatures you designate at the time you cast the spell can pass through and remain near the wall without harm. If another creature that can see the wall moves to within 20 feet of it or starts its turn there, the creature must succeed on a Constitution saving throw or become blinded for 1 minute.",
+    "damageType": null
+  },
+  {
+    "id": "storm_of_vengeance",
+    "name": "Storm of Vengeance",
+    "level": 9,
+    "school": "conjuration",
+    "castingTime": "1 action",
+    "range": 0,
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false
+    },
+    "duration": 60,
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid"
+    ],
+    "description": "A churning storm cloud forms, centered on a point you can see and spreading to a radius of 360 feet. Lightning flashes in the area, thunder booms, and strong winds roar. Each creature under the cloud (no more than 5,000 feet beneath the cloud) when it appears must make a Constitution saving throw. On a failed save, a creature takes 2d6 thunder damage and becomes deafened for 5 minutes.",
+    "damage": {
+      "dice": "2d6",
+      "type": "thunder"
+    },
+    "damageType": "thunder",
+    "savingThrow": {
+      "ability": "constitution",
+      "effect": "Takes no damage and not deafened on success"
+    },
+    "areaOfEffect": {
+      "type": "circle",
+      "size": 360
+    }
   }
 ]
