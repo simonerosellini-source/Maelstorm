@@ -11,8 +11,15 @@
       "type": "simple_melee",
       "damage": "1d4",
       "damageType": "piercing",
-      "properties": ["finesse", "light", "thrown"],
-      "range": {"normal": 20, "long": 60}
+      "properties": [
+        "finesse",
+        "light",
+        "thrown"
+      ],
+      "range": {
+        "normal": 20,
+        "long": 60
+      }
     },
     "equipSlot": "mainHand",
     "requiresAttunement": false
@@ -29,7 +36,10 @@
       "type": "martial_melee",
       "damage": "1d6",
       "damageType": "piercing",
-      "properties": ["finesse", "light"]
+      "properties": [
+        "finesse",
+        "light"
+      ]
     },
     "equipSlot": "mainHand",
     "requiresAttunement": false
@@ -46,7 +56,9 @@
       "type": "martial_melee",
       "damage": "1d8",
       "damageType": "slashing",
-      "properties": ["versatile"],
+      "properties": [
+        "versatile"
+      ],
       "versatileDamage": "1d10"
     },
     "equipSlot": "mainHand",
@@ -64,7 +76,10 @@
       "type": "martial_melee",
       "damage": "2d6",
       "damageType": "slashing",
-      "properties": ["heavy", "two_handed"]
+      "properties": [
+        "heavy",
+        "two_handed"
+      ]
     },
     "equipSlot": "mainHand",
     "requiresAttunement": false
@@ -81,7 +96,10 @@
       "type": "martial_melee",
       "damage": "1d12",
       "damageType": "slashing",
-      "properties": ["heavy", "two_handed"]
+      "properties": [
+        "heavy",
+        "two_handed"
+      ]
     },
     "equipSlot": "mainHand",
     "requiresAttunement": false
@@ -98,8 +116,14 @@
       "type": "simple_ranged",
       "damage": "1d6",
       "damageType": "piercing",
-      "properties": ["ammunition", "two_handed"],
-      "range": {"normal": 80, "long": 320}
+      "properties": [
+        "ammunition",
+        "two_handed"
+      ],
+      "range": {
+        "normal": 80,
+        "long": 320
+      }
     },
     "equipSlot": "mainHand",
     "requiresAttunement": false
@@ -116,8 +140,15 @@
       "type": "martial_ranged",
       "damage": "1d8",
       "damageType": "piercing",
-      "properties": ["ammunition", "heavy", "two_handed"],
-      "range": {"normal": 150, "long": 600}
+      "properties": [
+        "ammunition",
+        "heavy",
+        "two_handed"
+      ],
+      "range": {
+        "normal": 150,
+        "long": 600
+      }
     },
     "equipSlot": "mainHand",
     "requiresAttunement": false
@@ -198,7 +229,9 @@
       "type": "martial_melee",
       "damage": "1d8",
       "damageType": "slashing",
-      "properties": ["versatile"],
+      "properties": [
+        "versatile"
+      ],
       "versatileDamage": "1d10"
     },
     "magicBonus": 1,
@@ -217,7 +250,9 @@
       "type": "martial_melee",
       "damage": "1d8",
       "damageType": "slashing",
-      "properties": ["versatile"],
+      "properties": [
+        "versatile"
+      ],
       "versatileDamage": "1d10"
     },
     "effects": [
@@ -242,7 +277,9 @@
       "type": "martial_melee",
       "damage": "1d8",
       "damageType": "slashing",
-      "properties": ["versatile"],
+      "properties": [
+        "versatile"
+      ],
       "versatileDamage": "1d10"
     },
     "magicBonus": 3,
@@ -412,7 +449,9 @@
       "type": "martial_melee",
       "damage": "1d8",
       "damageType": "slashing",
-      "properties": ["versatile"],
+      "properties": [
+        "versatile"
+      ],
       "versatileDamage": "1d10"
     },
     "magicBonus": 1,
@@ -477,5 +516,1005 @@
       }
     ],
     "requiresAttunement": false
+  },
+  {
+    "id": "club",
+    "name": "Club",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A simple bludgeoning weapon.",
+    "value": 0.1,
+    "weight": 2,
+    "weapon": {
+      "type": "simple_melee",
+      "damage": "1d4",
+      "damageType": "bludgeoning",
+      "properties": [
+        "light"
+      ]
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "mace",
+    "name": "Mace",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A simple metal-headed weapon.",
+    "value": 5,
+    "weight": 4,
+    "weapon": {
+      "type": "simple_melee",
+      "damage": "1d6",
+      "damageType": "bludgeoning",
+      "properties": []
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "quarterstaff",
+    "name": "Quarterstaff",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A simple wooden staff.",
+    "value": 0.2,
+    "weight": 4,
+    "weapon": {
+      "type": "simple_melee",
+      "damage": "1d6",
+      "damageType": "bludgeoning",
+      "properties": [
+        "versatile"
+      ],
+      "versatileDamage": "1d8"
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "spear",
+    "name": "Spear",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A simple piercing weapon with range.",
+    "value": 1,
+    "weight": 3,
+    "weapon": {
+      "type": "simple_melee",
+      "damage": "1d6",
+      "damageType": "piercing",
+      "properties": [
+        "thrown",
+        "versatile"
+      ],
+      "versatileDamage": "1d8",
+      "range": {
+        "normal": 20,
+        "long": 60
+      }
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "javelin",
+    "name": "Javelin",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A simple thrown spear.",
+    "value": 0.5,
+    "weight": 2,
+    "weapon": {
+      "type": "simple_melee",
+      "damage": "1d6",
+      "damageType": "piercing",
+      "properties": [
+        "thrown"
+      ],
+      "range": {
+        "normal": 30,
+        "long": 120
+      }
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "rapier",
+    "name": "Rapier",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A finesse martial weapon favored by duelists.",
+    "value": 25,
+    "weight": 2,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d8",
+      "damageType": "piercing",
+      "properties": [
+        "finesse"
+      ]
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "scimitar",
+    "name": "Scimitar",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A curved martial blade.",
+    "value": 25,
+    "weight": 3,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d6",
+      "damageType": "slashing",
+      "properties": [
+        "finesse",
+        "light"
+      ]
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "warhammer",
+    "name": "Warhammer",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A one-handed martial bludgeoning weapon.",
+    "value": 15,
+    "weight": 2,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d8",
+      "damageType": "bludgeoning",
+      "properties": [
+        "versatile"
+      ],
+      "versatileDamage": "1d10"
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "battleaxe",
+    "name": "Battleaxe",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A one-handed martial axe.",
+    "value": 10,
+    "weight": 4,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d8",
+      "damageType": "slashing",
+      "properties": [
+        "versatile"
+      ],
+      "versatileDamage": "1d10"
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "flail",
+    "name": "Flail",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A spiked ball and chain weapon.",
+    "value": 10,
+    "weight": 2,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d8",
+      "damageType": "bludgeoning",
+      "properties": []
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "glaive",
+    "name": "Glaive",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A polearm with extended reach.",
+    "value": 20,
+    "weight": 6,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d10",
+      "damageType": "slashing",
+      "properties": [
+        "heavy",
+        "reach",
+        "two_handed"
+      ]
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "halberd",
+    "name": "Halberd",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A versatile polearm with axe and spike.",
+    "value": 20,
+    "weight": 6,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d10",
+      "damageType": "slashing",
+      "properties": [
+        "heavy",
+        "reach",
+        "two_handed"
+      ]
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "pike",
+    "name": "Pike",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A long spear with exceptional reach.",
+    "value": 5,
+    "weight": 18,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d10",
+      "damageType": "piercing",
+      "properties": [
+        "heavy",
+        "reach",
+        "two_handed"
+      ]
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "lance",
+    "name": "Lance",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A mounted combat weapon with reach.",
+    "value": 10,
+    "weight": 6,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d12",
+      "damageType": "piercing",
+      "properties": [
+        "reach",
+        "special"
+      ]
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "maul",
+    "name": "Maul",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A massive two-handed hammer.",
+    "value": 10,
+    "weight": 10,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "2d6",
+      "damageType": "bludgeoning",
+      "properties": [
+        "heavy",
+        "two_handed"
+      ]
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "morningstar",
+    "name": "Morningstar",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A spiked mace.",
+    "value": 15,
+    "weight": 4,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d8",
+      "damageType": "piercing",
+      "properties": []
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "light_crossbow",
+    "name": "Light Crossbow",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A simple mechanical ranged weapon.",
+    "value": 25,
+    "weight": 5,
+    "weapon": {
+      "type": "simple_ranged",
+      "damage": "1d8",
+      "damageType": "piercing",
+      "properties": [
+        "ammunition",
+        "loading",
+        "two_handed"
+      ],
+      "range": {
+        "normal": 80,
+        "long": 320
+      }
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "sling",
+    "name": "Sling",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A simple ranged weapon using stones or bullets.",
+    "value": 0.1,
+    "weight": 0,
+    "weapon": {
+      "type": "simple_ranged",
+      "damage": "1d4",
+      "damageType": "bludgeoning",
+      "properties": [
+        "ammunition"
+      ],
+      "range": {
+        "normal": 30,
+        "long": 120
+      }
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "heavy_crossbow",
+    "name": "Heavy Crossbow",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A powerful martial crossbow.",
+    "value": 50,
+    "weight": 18,
+    "weapon": {
+      "type": "martial_ranged",
+      "damage": "1d10",
+      "damageType": "piercing",
+      "properties": [
+        "ammunition",
+        "heavy",
+        "loading",
+        "two_handed"
+      ],
+      "range": {
+        "normal": 100,
+        "long": 400
+      }
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "hand_crossbow",
+    "name": "Hand Crossbow",
+    "type": "weapon",
+    "rarity": "common",
+    "description": "A small one-handed crossbow.",
+    "value": 75,
+    "weight": 3,
+    "weapon": {
+      "type": "martial_ranged",
+      "damage": "1d6",
+      "damageType": "piercing",
+      "properties": [
+        "ammunition",
+        "light",
+        "loading"
+      ],
+      "range": {
+        "normal": 30,
+        "long": 120
+      }
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "padded_armor",
+    "name": "Padded Armor",
+    "type": "armor",
+    "rarity": "common",
+    "description": "Quilted layers of cloth and batting.",
+    "value": 5,
+    "weight": 8,
+    "armor": {
+      "type": "light",
+      "baseAC": 11,
+      "maxDexBonus": null,
+      "stealthDisadvantage": true
+    },
+    "equipSlot": "armor",
+    "requiresAttunement": false
+  },
+  {
+    "id": "studded_leather_armor",
+    "name": "Studded Leather Armor",
+    "type": "armor",
+    "rarity": "common",
+    "description": "Leather armor reinforced with metal studs.",
+    "value": 45,
+    "weight": 13,
+    "armor": {
+      "type": "light",
+      "baseAC": 12,
+      "maxDexBonus": null,
+      "stealthDisadvantage": false
+    },
+    "equipSlot": "armor",
+    "requiresAttunement": false
+  },
+  {
+    "id": "hide_armor",
+    "name": "Hide Armor",
+    "type": "armor",
+    "rarity": "common",
+    "description": "Crude armor made from thick furs and pelts.",
+    "value": 10,
+    "weight": 12,
+    "armor": {
+      "type": "medium",
+      "baseAC": 12,
+      "maxDexBonus": 2,
+      "stealthDisadvantage": false
+    },
+    "equipSlot": "armor",
+    "requiresAttunement": false
+  },
+  {
+    "id": "scale_mail",
+    "name": "Scale Mail",
+    "type": "armor",
+    "rarity": "common",
+    "description": "Armor consisting of a coat of leather covered with overlapping pieces of metal.",
+    "value": 50,
+    "weight": 45,
+    "armor": {
+      "type": "medium",
+      "baseAC": 14,
+      "maxDexBonus": 2,
+      "stealthDisadvantage": true
+    },
+    "equipSlot": "armor",
+    "requiresAttunement": false
+  },
+  {
+    "id": "breastplate",
+    "name": "Breastplate",
+    "type": "armor",
+    "rarity": "common",
+    "description": "A fitted metal chest piece worn with supple leather.",
+    "value": 400,
+    "weight": 20,
+    "armor": {
+      "type": "medium",
+      "baseAC": 14,
+      "maxDexBonus": 2,
+      "stealthDisadvantage": false
+    },
+    "equipSlot": "armor",
+    "requiresAttunement": false
+  },
+  {
+    "id": "half_plate",
+    "name": "Half Plate",
+    "type": "armor",
+    "rarity": "common",
+    "description": "Partial plate armor with leather for joints.",
+    "value": 750,
+    "weight": 40,
+    "armor": {
+      "type": "medium",
+      "baseAC": 15,
+      "maxDexBonus": 2,
+      "stealthDisadvantage": true
+    },
+    "equipSlot": "armor",
+    "requiresAttunement": false
+  },
+  {
+    "id": "ring_mail",
+    "name": "Ring Mail",
+    "type": "armor",
+    "rarity": "common",
+    "description": "Leather armor with heavy rings sewn into it.",
+    "value": 30,
+    "weight": 40,
+    "armor": {
+      "type": "heavy",
+      "baseAC": 14,
+      "maxDexBonus": 0,
+      "stealthDisadvantage": true,
+      "strengthRequirement": 0
+    },
+    "equipSlot": "armor",
+    "requiresAttunement": false
+  },
+  {
+    "id": "splint_armor",
+    "name": "Splint Armor",
+    "type": "armor",
+    "rarity": "common",
+    "description": "Armor made of narrow vertical metal strips riveted to a backing.",
+    "value": 200,
+    "weight": 60,
+    "armor": {
+      "type": "heavy",
+      "baseAC": 17,
+      "maxDexBonus": 0,
+      "stealthDisadvantage": true,
+      "strengthRequirement": 15
+    },
+    "equipSlot": "armor",
+    "requiresAttunement": false
+  },
+  {
+    "id": "tower_shield",
+    "name": "Tower Shield",
+    "type": "shield",
+    "rarity": "uncommon",
+    "description": "A massive shield providing superior protection.",
+    "value": 50,
+    "weight": 20,
+    "armor": {
+      "acBonus": 3
+    },
+    "equipSlot": "offHand",
+    "requiresAttunement": false
+  },
+  {
+    "id": "frost_brand",
+    "name": "Frost Brand",
+    "type": "weapon",
+    "rarity": "very_rare",
+    "description": "When you draw this weapon, you can extinguish all nonmagical flames within 30 feet of you. While you wield it, you have resistance to fire damage. In freezing temperatures, the blade sheds bright light in a 10-foot radius and dim light for an additional 10 feet. When you hit with an attack using this magic sword, the target takes an extra 1d6 cold damage.",
+    "value": 20000,
+    "weight": 3,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d8",
+      "damageType": "slashing",
+      "properties": [
+        "versatile"
+      ],
+      "versatileDamage": "1d10",
+      "magicBonus": 0,
+      "additionalDamage": {
+        "dice": "1d6",
+        "type": "cold"
+      }
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": true,
+    "effects": [
+      {
+        "type": "resistance",
+        "damageType": "fire"
+      }
+    ]
+  },
+  {
+    "id": "sword_of_sharpness",
+    "name": "Sword of Sharpness",
+    "type": "weapon",
+    "rarity": "very_rare",
+    "description": "When you attack an object with this magic sword and hit, maximize your weapon damage dice. When you attack a creature with this weapon and roll a 20, that target takes an extra 14 slashing damage. Then roll another d20. If you roll a 20, you lop off one of the target's limbs.",
+    "value": 15000,
+    "weight": 3,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d8",
+      "damageType": "slashing",
+      "properties": [
+        "versatile"
+      ],
+      "versatileDamage": "1d10",
+      "magicBonus": 0
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": true
+  },
+  {
+    "id": "holy_avenger",
+    "name": "Holy Avenger",
+    "type": "weapon",
+    "rarity": "legendary",
+    "description": "You gain a +3 bonus to attack and damage rolls made with this magic weapon. When you hit a fiend or an undead with it, that creature takes an extra 2d10 radiant damage. While you hold the drawn sword, it creates an aura in a 10-foot radius around you. You and all creatures friendly to you in the aura have advantage on saving throws against spells and other magical effects.",
+    "value": 100000,
+    "weight": 3,
+    "weapon": {
+      "type": "martial_melee",
+      "damage": "1d8",
+      "damageType": "slashing",
+      "properties": [
+        "versatile"
+      ],
+      "versatileDamage": "1d10",
+      "magicBonus": 3,
+      "additionalDamage": {
+        "dice": "2d10",
+        "type": "radiant",
+        "againstTypes": [
+          "fiend",
+          "undead"
+        ]
+      }
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": true
+  },
+  {
+    "id": "oathbow",
+    "name": "Oathbow",
+    "type": "weapon",
+    "rarity": "very_rare",
+    "description": "When you nock an arrow on this bow, it whispers in Elvish, 'Swift defeat to my enemies.' When you use this weapon to make a ranged attack, you can speak its command word to make the target your sworn enemy. When you hit your sworn enemy, it takes an extra 3d6 piercing damage. You have advantage on attack rolls against your sworn enemy. Your sworn enemy remains so until it dies or until dawn seven days later.",
+    "value": 15000,
+    "weight": 2,
+    "weapon": {
+      "type": "martial_ranged",
+      "damage": "1d8",
+      "damageType": "piercing",
+      "properties": [
+        "ammunition",
+        "heavy",
+        "two_handed"
+      ],
+      "range": {
+        "normal": 150,
+        "long": 600
+      },
+      "magicBonus": 0
+    },
+    "equipSlot": "mainHand",
+    "requiresAttunement": true
+  },
+  {
+    "id": "armor_of_invulnerability",
+    "name": "Armor of Invulnerability",
+    "type": "armor",
+    "rarity": "legendary",
+    "description": "You have resistance to nonmagical damage while you wear this armor. Additionally, you can use an action to make yourself immune to nonmagical damage for 10 minutes or until you are no longer wearing the armor. Once this special action is used, it can't be used again until the next dawn.",
+    "value": 75000,
+    "weight": 65,
+    "armor": {
+      "type": "heavy",
+      "baseAC": 18,
+      "maxDexBonus": 0,
+      "stealthDisadvantage": true,
+      "strengthRequirement": 15
+    },
+    "equipSlot": "armor",
+    "requiresAttunement": true,
+    "effects": [
+      {
+        "type": "resistance",
+        "damageType": "nonmagical"
+      }
+    ]
+  },
+  {
+    "id": "elven_chain",
+    "name": "Elven Chain",
+    "type": "armor",
+    "rarity": "rare",
+    "description": "You gain a +1 bonus to AC while you wear this armor. You are considered proficient with this armor even if you lack proficiency with medium armor.",
+    "value": 5000,
+    "weight": 20,
+    "armor": {
+      "type": "medium",
+      "baseAC": 14,
+      "maxDexBonus": 2,
+      "stealthDisadvantage": false,
+      "acBonus": 1
+    },
+    "equipSlot": "armor",
+    "requiresAttunement": false
+  },
+  {
+    "id": "adamantine_armor",
+    "name": "Adamantine Armor",
+    "type": "armor",
+    "rarity": "uncommon",
+    "description": "This armor is reinforced with adamantine, one of the hardest substances in existence. While you're wearing it, any critical hit against you becomes a normal hit.",
+    "value": 1500,
+    "weight": 65,
+    "armor": {
+      "type": "heavy",
+      "baseAC": 18,
+      "maxDexBonus": 0,
+      "stealthDisadvantage": true,
+      "strengthRequirement": 15
+    },
+    "equipSlot": "armor",
+    "requiresAttunement": false
+  },
+  {
+    "id": "mithral_armor",
+    "name": "Mithral Armor",
+    "type": "armor",
+    "rarity": "uncommon",
+    "description": "Mithral is a light, flexible metal. If the armor normally imposes disadvantage on Dexterity (Stealth) checks or has a Strength requirement, the mithral version of the armor doesn't.",
+    "value": 1000,
+    "weight": 40,
+    "armor": {
+      "type": "medium",
+      "baseAC": 15,
+      "maxDexBonus": 2,
+      "stealthDisadvantage": false,
+      "strengthRequirement": 0
+    },
+    "equipSlot": "armor",
+    "requiresAttunement": false
+  },
+  {
+    "id": "ring_of_spell_storing",
+    "name": "Ring of Spell Storing",
+    "type": "ring",
+    "rarity": "rare",
+    "description": "This ring stores spells cast into it, holding them until the attuned wearer uses them. The ring can store up to 5 levels worth of spells at a time. Any creature can cast a spell of 1st through 5th level into the ring by touching the ring as the spell is cast. The spell has no effect, other than to be stored in the ring.",
+    "value": 10000,
+    "weight": 0,
+    "equipSlot": "ring",
+    "requiresAttunement": true
+  },
+  {
+    "id": "ring_of_regeneration",
+    "name": "Ring of Regeneration",
+    "type": "ring",
+    "rarity": "very_rare",
+    "description": "While wearing this ring, you regain 1d6 hit points every 10 minutes, provided that you have at least 1 hit point. If you lose a body part, the ring causes the missing part to regrow and return to full functionality after 1d6 + 1 days if you have at least 1 hit point the whole time.",
+    "value": 20000,
+    "weight": 0,
+    "equipSlot": "ring",
+    "requiresAttunement": true,
+    "effects": [
+      {
+        "type": "healing",
+        "amount": "1d6",
+        "interval": 600
+      }
+    ]
+  },
+  {
+    "id": "ring_of_three_wishes",
+    "name": "Ring of Three Wishes",
+    "type": "ring",
+    "rarity": "legendary",
+    "description": "While wearing this ring, you can use an action to expend 1 of its 3 charges to cast the wish spell from it. The ring becomes nonmagical when you use the last charge.",
+    "value": 100000,
+    "weight": 0,
+    "equipSlot": "ring",
+    "requiresAttunement": false,
+    "charges": 3
+  },
+  {
+    "id": "ring_of_fire_resistance",
+    "name": "Ring of Fire Resistance",
+    "type": "ring",
+    "rarity": "rare",
+    "description": "You have resistance to fire damage while wearing this ring.",
+    "value": 6000,
+    "weight": 0,
+    "equipSlot": "ring",
+    "requiresAttunement": true,
+    "effects": [
+      {
+        "type": "resistance",
+        "damageType": "fire"
+      }
+    ]
+  },
+  {
+    "id": "cloak_of_displacement",
+    "name": "Cloak of Displacement",
+    "type": "wondrous",
+    "rarity": "rare",
+    "description": "While you wear this cloak, it projects an illusion that makes you appear to be standing in a place near your actual location, causing any creature to have disadvantage on attack rolls against you. If you take damage, the property ceases to function until the start of your next turn. This property is suppressed while you are incapacitated, restrained, or otherwise unable to move.",
+    "value": 10000,
+    "weight": 1,
+    "equipSlot": "back",
+    "requiresAttunement": true
+  },
+  {
+    "id": "cloak_of_invisibility",
+    "name": "Cloak of Invisibility",
+    "type": "wondrous",
+    "rarity": "legendary",
+    "description": "While wearing this cloak, you can pull its hood over your head to cause yourself to become invisible. While you are invisible, anything you are carrying or wearing is invisible with you. You become visible when you cease wearing the hood. Pulling the hood up or down requires an action.",
+    "value": 80000,
+    "weight": 1,
+    "equipSlot": "back",
+    "requiresAttunement": true
+  },
+  {
+    "id": "boots_of_speed",
+    "name": "Boots of Speed",
+    "type": "wondrous",
+    "rarity": "rare",
+    "description": "While you wear these boots, you can use a bonus action and click the boots' heels together. If you do, the boots double your walking speed, and any creature that makes an opportunity attack against you has disadvantage on the attack roll. If you click your heels together again, you end the effect. When the boots' property has been used for a total of 10 minutes, the magic ceases to function until you finish a long rest.",
+    "value": 4000,
+    "weight": 1,
+    "equipSlot": "feet",
+    "requiresAttunement": true
+  },
+  {
+    "id": "boots_of_levitation",
+    "name": "Boots of Levitation",
+    "type": "wondrous",
+    "rarity": "rare",
+    "description": "While you wear these boots, you can use an action to cast the levitate spell on yourself at will.",
+    "value": 4000,
+    "weight": 1,
+    "equipSlot": "feet",
+    "requiresAttunement": true
+  },
+  {
+    "id": "gauntlets_of_ogre_power",
+    "name": "Gauntlets of Ogre Power",
+    "type": "wondrous",
+    "rarity": "uncommon",
+    "description": "Your Strength score is 19 while you wear these gauntlets. They have no effect on you if your Strength is already 19 or higher.",
+    "value": 8000,
+    "weight": 2,
+    "equipSlot": "hands",
+    "requiresAttunement": true,
+    "effects": [
+      {
+        "type": "ability",
+        "ability": "strength",
+        "value": 19
+      }
+    ]
+  },
+  {
+    "id": "amulet_of_health",
+    "name": "Amulet of Health",
+    "type": "wondrous",
+    "rarity": "rare",
+    "description": "Your Constitution score is 19 while you wear this amulet. It has no effect on you if your Constitution is already 19 or higher.",
+    "value": 8000,
+    "weight": 0,
+    "equipSlot": "neck",
+    "requiresAttunement": true,
+    "effects": [
+      {
+        "type": "ability",
+        "ability": "constitution",
+        "value": 19
+      }
+    ]
+  },
+  {
+    "id": "headband_of_intellect",
+    "name": "Headband of Intellect",
+    "type": "wondrous",
+    "rarity": "uncommon",
+    "description": "Your Intelligence score is 19 while you wear this headband. It has no effect on you if your Intelligence is already 19 or higher.",
+    "value": 6000,
+    "weight": 0,
+    "equipSlot": "head",
+    "requiresAttunement": true,
+    "effects": [
+      {
+        "type": "ability",
+        "ability": "intelligence",
+        "value": 19
+      }
+    ]
+  },
+  {
+    "id": "periapt_of_health",
+    "name": "Periapt of Health",
+    "type": "wondrous",
+    "rarity": "uncommon",
+    "description": "You are immune to contracting any disease while you wear this pendant. If you are already infected with a disease, the effects of the disease are suppressed you while you wear the pendant.",
+    "value": 5000,
+    "weight": 0,
+    "equipSlot": "neck",
+    "requiresAttunement": false
+  },
+  {
+    "id": "periapt_of_wound_closure",
+    "name": "Periapt of Wound Closure",
+    "type": "wondrous",
+    "rarity": "uncommon",
+    "description": "While you wear this pendant, you stabilize whenever you are dying at the start of your turn. In addition, whenever you roll a Hit Die to regain hit points, double the number of hit points it restores.",
+    "value": 5000,
+    "weight": 0,
+    "equipSlot": "neck",
+    "requiresAttunement": true
+  },
+  {
+    "id": "portable_hole",
+    "name": "Portable Hole",
+    "type": "wondrous",
+    "rarity": "rare",
+    "description": "This fine black cloth, soft as silk, is folded up to the dimensions of a handkerchief. It unfolds into a circular sheet 6 feet in diameter. You can use an action to unfold a portable hole and place it on or against a solid surface, whereupon the portable hole creates an extradimensional hole 10 feet deep.",
+    "value": 8000,
+    "weight": 0,
+    "equipSlot": null,
+    "requiresAttunement": false
+  },
+  {
+    "id": "deck_of_many_things",
+    "name": "Deck of Many Things",
+    "type": "wondrous",
+    "rarity": "legendary",
+    "description": "Usually found in a box or pouch, this deck contains a number of cards made of ivory or vellum. Most (75 percent) of these decks have only thirteen cards, but the rest have twenty-two. Before you draw a card, you must declare how many cards you intend to draw and then draw them randomly.",
+    "value": 100000,
+    "weight": 0,
+    "equipSlot": null,
+    "requiresAttunement": false
+  },
+  {
+    "id": "staff_of_power",
+    "name": "Staff of Power",
+    "type": "wondrous",
+    "rarity": "very_rare",
+    "description": "This staff can be wielded as a magic quarterstaff that grants a +2 bonus to attack and damage rolls made with it. While holding it, you gain a +2 bonus to Armor Class, saving throws, and spell attack rolls. The staff has 20 charges for various properties.",
+    "value": 40000,
+    "weight": 4,
+    "equipSlot": "mainHand",
+    "requiresAttunement": true,
+    "charges": 20,
+    "weapon": {
+      "type": "simple_melee",
+      "damage": "1d6",
+      "damageType": "bludgeoning",
+      "properties": [
+        "versatile"
+      ],
+      "versatileDamage": "1d8",
+      "magicBonus": 2
+    },
+    "effects": [
+      {
+        "type": "ac",
+        "bonus": 2
+      },
+      {
+        "type": "save",
+        "bonus": 2
+      }
+    ]
+  },
+  {
+    "id": "wand_of_fireballs",
+    "name": "Wand of Fireballs",
+    "type": "wondrous",
+    "rarity": "rare",
+    "description": "This wand has 7 charges. While holding it, you can use an action to expend 1 or more of its charges to cast the fireball spell (save DC 15) from it. For 1 charge, you cast the 3rd-level version of the spell. You can increase the spell slot level by one for each additional charge you expend. The wand regains 1d6 + 1 expended charges daily at dawn.",
+    "value": 12000,
+    "weight": 1,
+    "equipSlot": null,
+    "requiresAttunement": true,
+    "charges": 7
   }
 ]
