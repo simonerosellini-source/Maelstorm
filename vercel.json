@@ -1,15 +1,7 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "packages/api/package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "packages/api/$1"
-    }
-  ]
+  "buildCommand": "cd packages/shared && npm run build && cd ../api && npm run build",
+  "devCommand": "cd packages/api && npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "outputDirectory": "packages/api/.next"
 }
