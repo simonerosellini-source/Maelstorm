@@ -3,5 +3,5 @@
   "devCommand": "npm run --workspace=@maelstorm/api dev",
   "installCommand": "npm install --workspaces",
   "framework": "nextjs",
-  "outputDirectory": "packages/api/.next"
+  "outputDirectory": ".next"
 }
