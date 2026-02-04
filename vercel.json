@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run --workspace=@maelstorm/shared build && npm run --workspace=@maelstorm/app build:web",
-  "installCommand": "npm install && cd packages/app && npm install",
+  "installCommand": "npm install --workspaces --include-workspace-root",
   "framework": null,
   "outputDirectory": "packages/app/dist"
 }
