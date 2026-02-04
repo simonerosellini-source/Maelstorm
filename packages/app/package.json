@@ -1,7 +1,7 @@
 {
   "name": "@maelstorm/app",
   "version": "1.0.0",
-  "main": "expo/index.js",
+  "main": "./index.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
