@@ -5,7 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   ScrollView,
-  Alert,
+  Platform,
 } from 'react-native';
 import { useAuthStore } from '../../store/authStore';
 import { useCharacterStore } from '../../store/characterStore';
@@ -13,27 +13,31 @@ import { useCharacterStore } from '../../store/characterStore';
 export default function HomeScreen({ navigation }: any) {
   const user = useAuthStore((state) => state.user);
   const signOut = useAuthStore((state) => state.signOut);
-  const { characters, currentCharacter, fetchCharacters } = useCharacterStore();
+  const { characters, currentCharacter, fetchCharacters, selectCharacter } = useCharacterStore();
 
   useEffect(() => {
     fetchCharacters();
   }, []);
 
   const handleCreateCharacter = () => {
-    navigation.navigate('CreateCharacter');
+    navigation.navigate('Character');
   };
 
   const handleLogout = () => {
-    Alert.alert('Logout', 'Are you sure you want to logout?', [
-      { text: 'Cancel', style: 'cancel' },
-      { text: 'Logout', onPress: signOut },
-    ]);
+    if (Platform.OS === 'web') {
+      if (window.confirm('Are you sure you want to logout?')) {
+        signOut();
+      }
+    } else {
+      // For native, we'd use Alert, but for now just logout
+      signOut();
+    }
   };
 
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>Welcome, {user?.nickname}!</Text>
+        <Text style={styles.title}>Welcome, {user?.nickname || 'Adventurer'}!</Text>
         <TouchableOpacity onPress={handleLogout}>
           <Text style={styles.logoutText}>Logout</Text>
         </TouchableOpacity>
@@ -48,7 +52,9 @@ export default function HomeScreen({ navigation }: any) {
           </Text>
           <View style={styles.statsRow}>
             <View style={styles.stat}>
-              <Text style={styles.statValue}>{currentCharacter.currentHitPoints}/{currentCharacter.maxHitPoints}</Text>
+              <Text style={styles.statValue}>
+                {currentCharacter.current_hit_points}/{currentCharacter.max_hit_points}
+              </Text>
               <Text style={styles.statLabel}>HP</Text>
             </View>
             <View style={styles.stat}>
@@ -56,7 +62,7 @@ export default function HomeScreen({ navigation }: any) {
               <Text style={styles.statLabel}>XP</Text>
             </View>
             <View style={styles.stat}>
-              <Text style={styles.statValue}>{currentCharacter.armorClass}</Text>
+              <Text style={styles.statValue}>{currentCharacter.armor_class}</Text>
               <Text style={styles.statLabel}>AC</Text>
             </View>
           </View>
@@ -78,8 +84,11 @@ export default function HomeScreen({ navigation }: any) {
           characters.map((char) => (
             <TouchableOpacity
               key={char.id}
-              style={styles.characterItem}
-              onPress={() => useCharacterStore.getState().selectCharacter(char)}
+              style={[
+                styles.characterItem,
+                currentCharacter?.id === char.id && styles.characterItemSelected
+              ]}
+              onPress={() => selectCharacter(char)}
             >
               <Text style={styles.characterItemName}>{char.name}</Text>
               <Text style={styles.characterItemInfo}>
@@ -95,13 +104,22 @@ export default function HomeScreen({ navigation }: any) {
 
       <View style={styles.card}>
         <Text style={styles.cardTitle}>Quick Actions</Text>
-        <TouchableOpacity style={styles.actionButton}>
+        <TouchableOpacity
+          style={styles.actionButton}
+          onPress={() => navigation.navigate('Dungeon')}
+        >
           <Text style={styles.actionText}>🏰 Enter Dungeon</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.actionButton}>
+        <TouchableOpacity
+          style={styles.actionButton}
+          onPress={() => navigation.navigate('Party')}
+        >
           <Text style={styles.actionText}>👥 Join Party</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.actionButton}>
+        <TouchableOpacity
+          style={styles.actionButton}
+          onPress={() => navigation.navigate('Shop')}
+        >
           <Text style={styles.actionText}>🛍️ Visit Shop</Text>
         </TouchableOpacity>
       </View>
@@ -183,6 +201,10 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 8,
     marginBottom: 8,
+  },
+  characterItemSelected: {
+    borderColor: '#9d4edd',
+    borderWidth: 2,
   },
   characterItemName: {
     color: '#fff',
