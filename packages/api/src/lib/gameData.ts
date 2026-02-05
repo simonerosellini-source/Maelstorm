@@ -1,9 +1,9 @@
 // Game data loaders
-import racesData from '../../../../data/races.json';
-import classesData from '../../../../data/classes.json';
-import spellsData from '../../../../data/spells.json';
-import monstersData from '../../../../data/monsters.json';
-import itemsData from '../../../../data/items.json';
+import racesData from '../../../data/races.json';
+import classesData from '../../../data/classes.json';
+import spellsData from '../../../data/spells.json';
+import monstersData from '../../../data/monsters.json';
+import itemsData from '../../../data/items.json';
 
 import type { RaceData, ClassData, Spell, Monster, Item } from '@maelstorm/shared';
 

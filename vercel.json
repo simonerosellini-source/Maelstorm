@@ -1,7 +1,6 @@
 {
-  "buildCommand": "cd packages/shared && npm run build && cd ../api && npm run build",
-  "devCommand": "cd packages/api && npm run dev",
-  "installCommand": "npm install",
-  "framework": "nextjs",
-  "outputDirectory": "packages/api/.next"
+  "buildCommand": "cd ../.. && npm run --workspace=@maelstorm/shared build && npm run --workspace=@maelstorm/app build:web",
+  "installCommand": "cd ../.. && npm install && npm install --prefix packages/app",
+  "framework": null,
+  "outputDirectory": "../../packages/app/dist"
 }

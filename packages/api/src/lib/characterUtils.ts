@@ -101,10 +101,7 @@ export function createCharacterFromData(
 
     gold: 50, // Starting gold
 
-    partyId: undefined,
-
-    createdAt: new Date(),
-    updatedAt: new Date()
+    partyId: undefined
   };
 }
 

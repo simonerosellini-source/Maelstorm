@@ -5,7 +5,6 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
-  Alert,
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
@@ -15,11 +14,14 @@ export default function LoginScreen({ navigation }: any) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const signIn = useAuthStore((state) => state.signIn);
 
   const handleLogin = async () => {
+    setErrorMessage('');
+
     if (!email || !password) {
-      Alert.alert('Error', 'Please fill in all fields');
+      setErrorMessage('Please fill in all fields');
       return;
     }
 
@@ -27,7 +29,7 @@ export default function LoginScreen({ navigation }: any) {
     try {
       await signIn(email, password);
     } catch (error: any) {
-      Alert.alert('Login Failed', error.message);
+      setErrorMessage(error.message || 'Login failed. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -41,6 +43,12 @@ export default function LoginScreen({ navigation }: any) {
       <View style={styles.content}>
         <Text style={styles.title}>Maelstorm RPG</Text>
         <Text style={styles.subtitle}>Competitive D&D Adventure</Text>
+
+        {errorMessage ? (
+          <View style={styles.errorContainer}>
+            <Text style={styles.errorText}>{errorMessage}</Text>
+          </View>
+        ) : null}
 
         <TextInput
           style={styles.input}
@@ -130,5 +138,16 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 24,
     fontSize: 16,
+  },
+  errorContainer: {
+    backgroundColor: '#ff4757',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+  errorText: {
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 14,
   },
 });

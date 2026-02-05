@@ -5,12 +5,21 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
-  Alert,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
 } from 'react-native';
 import { useAuthStore } from '../../store/authStore';
+
+// Cross-platform alert that works on web
+const showAlert = (title: string, message: string) => {
+  if (Platform.OS === 'web') {
+    window.alert(`${title}\n\n${message}`);
+  } else {
+    const { Alert } = require('react-native');
+    Alert.alert(title, message);
+  }
+};
 
 export default function RegisterScreen({ navigation }: any) {
   const [email, setEmail] = useState('');
@@ -18,21 +27,24 @@ export default function RegisterScreen({ navigation }: any) {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [nickname, setNickname] = useState('');
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const signUp = useAuthStore((state) => state.signUp);
 
   const handleRegister = async () => {
+    setErrorMessage('');
+
     if (!email || !password || !nickname) {
-      Alert.alert('Error', 'Please fill in all fields');
+      setErrorMessage('Please fill in all fields');
       return;
     }
 
     if (password !== confirmPassword) {
-      Alert.alert('Error', 'Passwords do not match');
+      setErrorMessage('Passwords do not match');
       return;
     }
 
     if (password.length < 6) {
-      Alert.alert('Error', 'Password must be at least 6 characters');
+      setErrorMessage('Password must be at least 6 characters');
       return;
     }
 
@@ -40,7 +52,7 @@ export default function RegisterScreen({ navigation }: any) {
     try {
       await signUp(email, password, nickname);
     } catch (error: any) {
-      Alert.alert('Registration Failed', error.message);
+      setErrorMessage(error.message || 'Registration failed. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -54,6 +66,12 @@ export default function RegisterScreen({ navigation }: any) {
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <Text style={styles.title}>Create Account</Text>
         <Text style={styles.subtitle}>Join the adventure!</Text>
+
+        {errorMessage ? (
+          <View style={styles.errorContainer}>
+            <Text style={styles.errorText}>{errorMessage}</Text>
+          </View>
+        ) : null}
 
         <TextInput
           style={styles.input}
@@ -161,5 +179,16 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 24,
     fontSize: 16,
+  },
+  errorContainer: {
+    backgroundColor: '#ff4757',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+  errorText: {
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 14,
   },
 });
