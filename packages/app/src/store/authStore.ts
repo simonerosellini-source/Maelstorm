@@ -1,6 +1,5 @@
 import { create } from 'zustand';
-import { supabase, isSupabaseConfigured } from '../services/supabase';
-import apiService from '../services/api';
+import { supabase } from '../services/supabase';
 
 interface User {
   id: string;
@@ -27,73 +26,111 @@ export const useAuthStore = create<AuthState>((set) => ({
 
   initialize: async () => {
     try {
-      if (!isSupabaseConfigured) {
-        console.warn('Supabase not configured - running in demo mode');
-        set({ loading: false, error: null });
-        return;
-      }
-
       const { data: { session } } = await supabase.auth.getSession();
 
       if (session) {
-        apiService.setToken(session.access_token);
-
+        // Get user data from users table
         const { data: userData } = await supabase
           .from('users')
           .select('*')
           .eq('id', session.user.id)
           .single();
 
-        set({ user: userData, session, loading: false, error: null });
+        set({
+          user: userData || {
+            id: session.user.id,
+            email: session.user.email || '',
+            nickname: session.user.user_metadata?.nickname || 'Player'
+          },
+          session,
+          loading: false,
+          error: null
+        });
       } else {
         set({ loading: false, error: null });
       }
     } catch (error) {
       console.error('Auth initialization error:', error);
-      set({ loading: false, error: 'Failed to initialize auth' });
+      set({ loading: false, error: null });
     }
   },
 
   signUp: async (email: string, password: string, nickname: string) => {
     try {
-      if (!isSupabaseConfigured) {
-        throw new Error('Backend not configured');
-      }
-      const response: any = await apiService.register(email, password, nickname);
+      // 1. Create auth user with Supabase Auth
+      const { data: authData, error: authError } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: { nickname }
+        }
+      });
 
-      if (response.session) {
-        apiService.setToken(response.session.access_token);
-        set({ user: response.user, session: response.session, error: null });
+      if (authError) throw authError;
+      if (!authData.user) throw new Error('Failed to create account');
+
+      // 2. Create user record in users table
+      const { error: userError } = await supabase
+        .from('users')
+        .insert({
+          id: authData.user.id,
+          email: email,
+          nickname: nickname
+        });
+
+      if (userError) {
+        console.error('Error creating user record:', userError);
+        // Continue anyway - user is authenticated
       }
+
+      const user = {
+        id: authData.user.id,
+        email: email,
+        nickname: nickname
+      };
+
+      set({ user, session: authData.session, error: null });
     } catch (error: any) {
-      set({ error: error.message || 'Sign up failed' });
-      throw error;
+      const message = error.message || 'Sign up failed';
+      set({ error: message });
+      throw new Error(message);
     }
   },
 
   signIn: async (email: string, password: string) => {
     try {
-      if (!isSupabaseConfigured) {
-        throw new Error('Backend not configured');
-      }
-      const response: any = await apiService.login(email, password);
+      const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
+        email,
+        password
+      });
 
-      if (response.session) {
-        apiService.setToken(response.session.access_token);
-        set({ user: response.user, session: response.session, error: null });
-      }
+      if (authError) throw authError;
+      if (!authData.user) throw new Error('Login failed');
+
+      // Get user data from users table
+      const { data: userData } = await supabase
+        .from('users')
+        .select('*')
+        .eq('id', authData.user.id)
+        .single();
+
+      const user = userData || {
+        id: authData.user.id,
+        email: authData.user.email || email,
+        nickname: authData.user.user_metadata?.nickname || 'Player'
+      };
+
+      set({ user, session: authData.session, error: null });
     } catch (error: any) {
-      set({ error: error.message || 'Sign in failed' });
-      throw error;
+      const message = error.message || 'Sign in failed';
+      set({ error: message });
+      throw new Error(message);
     }
   },
 
   signOut: async () => {
     try {
-      if (isSupabaseConfigured) {
-        await supabase.auth.signOut();
-      }
-      apiService.setToken(null);
+      await supabase.auth.signOut();
       set({ user: null, session: null, error: null });
     } catch (error) {
       console.error('Sign out error:', error);
