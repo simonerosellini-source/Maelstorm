@@ -9,9 +9,20 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import { useCharacterStore } from '../../store/characterStore';
+import { useAuthStore } from '../../store/authStore';
+import { supabase } from '../../services/supabase';
 
 const RACES = ['Human', 'Elf', 'Dwarf', 'Halfling', 'Dragonborn', 'Gnome', 'Half-Elf', 'Half-Orc', 'Tiefling'];
 const CLASSES = ['Fighter', 'Wizard', 'Rogue', 'Cleric', 'Ranger', 'Paladin', 'Barbarian', 'Bard', 'Druid', 'Monk', 'Sorcerer', 'Warlock'];
+const ABILITIES = ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'] as const;
+const ABILITY_LABELS: Record<string, string> = {
+  strength: 'STR',
+  dexterity: 'DEX',
+  constitution: 'CON',
+  intelligence: 'INT',
+  wisdom: 'WIS',
+  charisma: 'CHA',
+};
 
 // Roll 4d6, drop lowest
 const rollStat = () => {
@@ -24,29 +35,111 @@ const calculateModifier = (score: number) => Math.floor((score - 10) / 2);
 
 export default function CharacterScreen() {
   const { currentCharacter, createCharacter, loading } = useCharacterStore();
+  const { user } = useAuthStore();
   const [showCreate, setShowCreate] = useState(false);
   const [name, setName] = useState('');
   const [selectedRace, setSelectedRace] = useState('Human');
   const [selectedClass, setSelectedClass] = useState('Fighter');
-  const [stats, setStats] = useState({
-    strength: 10,
-    dexterity: 10,
-    constitution: 10,
-    intelligence: 10,
-    wisdom: 10,
-    charisma: 10,
+
+  // New stat allocation system
+  const [rolledValues, setRolledValues] = useState<number[]>([]);
+  const [assignments, setAssignments] = useState<Record<string, number | null>>({
+    strength: null,
+    dexterity: null,
+    constitution: null,
+    intelligence: null,
+    wisdom: null,
+    charisma: null,
   });
+  const [selectedValue, setSelectedValue] = useState<number | null>(null);
+  const [rerollsLeft, setRerollsLeft] = useState(3);
   const [error, setError] = useState('');
 
-  const handleRollStats = () => {
-    setStats({
-      strength: rollStat(),
-      dexterity: rollStat(),
-      constitution: rollStat(),
-      intelligence: rollStat(),
-      wisdom: rollStat(),
-      charisma: rollStat(),
+  const handleRollAllStats = () => {
+    if (rerollsLeft <= 0) {
+      setError('No rerolls left!');
+      return;
+    }
+
+    // Roll 6 values
+    const newValues = Array(6).fill(0).map(() => rollStat());
+    newValues.sort((a, b) => b - a); // Sort descending for convenience
+    setRolledValues(newValues);
+
+    // Reset assignments
+    setAssignments({
+      strength: null,
+      dexterity: null,
+      constitution: null,
+      intelligence: null,
+      wisdom: null,
+      charisma: null,
     });
+    setSelectedValue(null);
+    setRerollsLeft(prev => prev - 1);
+    setError('');
+  };
+
+  const handleSelectValue = (value: number, index: number) => {
+    // Check if this value is already assigned
+    const isAssigned = Object.values(assignments).includes(value);
+    if (isAssigned) return;
+
+    setSelectedValue(value);
+  };
+
+  const handleAssignToAbility = (ability: string) => {
+    if (selectedValue === null) return;
+
+    // If this ability already has a value, unassign it first
+    const currentValue = assignments[ability];
+
+    setAssignments(prev => ({
+      ...prev,
+      [ability]: selectedValue,
+    }));
+    setSelectedValue(null);
+  };
+
+  const handleUnassign = (ability: string) => {
+    setAssignments(prev => ({
+      ...prev,
+      [ability]: null,
+    }));
+  };
+
+  const isValueAssigned = (value: number) => {
+    return Object.values(assignments).includes(value);
+  };
+
+  const allStatsAssigned = () => {
+    return ABILITIES.every(ability => assignments[ability] !== null);
+  };
+
+  const ensureUserExists = async () => {
+    if (!user) throw new Error('Not authenticated');
+
+    // Check if user exists in users table
+    const { data: existingUser, error: checkError } = await supabase
+      .from('users')
+      .select('id')
+      .eq('id', user.id)
+      .single();
+
+    if (!existingUser) {
+      // Create user record
+      const { error: createError } = await supabase
+        .from('users')
+        .insert({
+          id: user.id,
+          email: user.email || '',
+          nickname: user.email?.split('@')[0] || 'Player',
+        });
+
+      if (createError && !createError.message.includes('duplicate')) {
+        throw new Error('Failed to create user profile: ' + createError.message);
+      }
+    }
   };
 
   const handleCreate = async () => {
@@ -55,8 +148,25 @@ export default function CharacterScreen() {
       return;
     }
 
+    if (!allStatsAssigned()) {
+      setError('Please assign all ability scores');
+      return;
+    }
+
     setError('');
     try {
+      // Ensure user exists in users table first
+      await ensureUserExists();
+
+      const stats = {
+        strength: assignments.strength!,
+        dexterity: assignments.dexterity!,
+        constitution: assignments.constitution!,
+        intelligence: assignments.intelligence!,
+        wisdom: assignments.wisdom!,
+        charisma: assignments.charisma!,
+      };
+
       const conMod = calculateModifier(stats.constitution);
       const hitDice: Record<string, number> = {
         'Barbarian': 12, 'Fighter': 10, 'Paladin': 10, 'Ranger': 10,
@@ -75,8 +185,11 @@ export default function CharacterScreen() {
         initiative: calculateModifier(stats.dexterity),
         speed: selectedRace === 'Dwarf' ? 25 : 30,
       });
+
       setShowCreate(false);
       setName('');
+      setRolledValues([]);
+      setRerollsLeft(3);
     } catch (err: any) {
       setError(err.message || 'Failed to create character');
     }
@@ -144,27 +257,108 @@ export default function CharacterScreen() {
         <View style={styles.card}>
           <View style={styles.cardHeader}>
             <Text style={styles.label}>Ability Scores</Text>
-            <TouchableOpacity style={styles.rollButton} onPress={handleRollStats}>
-              <Text style={styles.rollButtonText}>🎲 Roll Stats</Text>
+            <TouchableOpacity
+              style={[styles.rollButton, rerollsLeft <= 0 && styles.rollButtonDisabled]}
+              onPress={handleRollAllStats}
+              disabled={rerollsLeft <= 0}
+            >
+              <Text style={styles.rollButtonText}>
+                🎲 Roll ({rerollsLeft} left)
+              </Text>
             </TouchableOpacity>
           </View>
-          <View style={styles.statsGrid}>
-            {Object.entries(stats).map(([stat, value]) => (
-              <View key={stat} style={styles.statBox}>
-                <Text style={styles.statName}>{stat.substring(0, 3).toUpperCase()}</Text>
-                <Text style={styles.statValue}>{value}</Text>
-                <Text style={styles.statMod}>
-                  {calculateModifier(value) >= 0 ? '+' : ''}{calculateModifier(value)}
-                </Text>
+
+          {rolledValues.length === 0 ? (
+            <View style={styles.instructionBox}>
+              <Text style={styles.instructionText}>
+                Press "Roll" to generate 6 ability scores (4d6 drop lowest).
+              </Text>
+              <Text style={styles.instructionText}>
+                You have 3 rerolls total per character.
+              </Text>
+            </View>
+          ) : (
+            <>
+              {/* Rolled Values Pool */}
+              <Text style={styles.subLabel}>Available Values (tap to select)</Text>
+              <View style={styles.rolledValuesContainer}>
+                {rolledValues.map((value, index) => {
+                  const assigned = isValueAssigned(value);
+                  const isSelected = selectedValue === value && !assigned;
+                  return (
+                    <TouchableOpacity
+                      key={`${value}-${index}`}
+                      style={[
+                        styles.rolledValue,
+                        assigned && styles.rolledValueAssigned,
+                        isSelected && styles.rolledValueSelected,
+                      ]}
+                      onPress={() => !assigned && handleSelectValue(value, index)}
+                      disabled={assigned}
+                    >
+                      <Text style={[
+                        styles.rolledValueText,
+                        assigned && styles.rolledValueTextAssigned,
+                        isSelected && styles.rolledValueTextSelected,
+                      ]}>
+                        {value}
+                      </Text>
+                    </TouchableOpacity>
+                  );
+                })}
               </View>
-            ))}
-          </View>
+
+              {selectedValue !== null && (
+                <View style={styles.selectedIndicator}>
+                  <Text style={styles.selectedText}>
+                    Selected: {selectedValue} - Tap an ability to assign
+                  </Text>
+                </View>
+              )}
+
+              {/* Ability Assignment */}
+              <Text style={[styles.subLabel, { marginTop: 16 }]}>Assign to Abilities (tap to assign/remove)</Text>
+              <View style={styles.statsGrid}>
+                {ABILITIES.map((ability) => {
+                  const value = assignments[ability];
+                  const hasValue = value !== null;
+                  return (
+                    <TouchableOpacity
+                      key={ability}
+                      style={[
+                        styles.statBox,
+                        hasValue && styles.statBoxFilled,
+                        selectedValue !== null && !hasValue && styles.statBoxHighlight,
+                      ]}
+                      onPress={() => {
+                        if (hasValue) {
+                          handleUnassign(ability);
+                        } else if (selectedValue !== null) {
+                          handleAssignToAbility(ability);
+                        }
+                      }}
+                    >
+                      <Text style={styles.statName}>{ABILITY_LABELS[ability]}</Text>
+                      <Text style={[styles.statValue, !hasValue && styles.statValueEmpty]}>
+                        {hasValue ? value : '—'}
+                      </Text>
+                      {hasValue && (
+                        <Text style={styles.statMod}>
+                          {calculateModifier(value!) >= 0 ? '+' : ''}{calculateModifier(value!)}
+                        </Text>
+                      )}
+                    </TouchableOpacity>
+                  );
+                })}
+              </View>
+            </>
+          )}
         </View>
 
         <TouchableOpacity
-          style={[styles.createButton, loading && styles.buttonDisabled]}
+          style={[styles.createButton, (loading || !allStatsAssigned()) && styles.buttonDisabled]}
           onPress={handleCreate}
-          disabled={loading}
+          disabled={loading || !allStatsAssigned()}
         >
           {loading ? (
             <ActivityIndicator color="#fff" />
@@ -195,9 +389,9 @@ export default function CharacterScreen() {
       <View style={styles.card}>
         <Text style={styles.cardTitle}>Ability Scores</Text>
         <View style={styles.statsGrid}>
-          {['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'].map((stat) => (
+          {ABILITIES.map((stat) => (
             <View key={stat} style={styles.statBox}>
-              <Text style={styles.statName}>{stat.substring(0, 3).toUpperCase()}</Text>
+              <Text style={styles.statName}>{ABILITY_LABELS[stat]}</Text>
               <Text style={styles.statValue}>{(currentCharacter as any)[stat]}</Text>
               <Text style={styles.statMod}>
                 {calculateModifier((currentCharacter as any)[stat]) >= 0 ? '+' : ''}
@@ -232,9 +426,25 @@ export default function CharacterScreen() {
           <Text style={styles.statLabel}>Gold:</Text>
           <Text style={styles.statValueText}>{currentCharacter.gold} gp</Text>
         </View>
+        <View style={styles.statRow}>
+          <Text style={styles.statLabel}>Experience:</Text>
+          <Text style={styles.statValueText}>{currentCharacter.experience_points} XP</Text>
+        </View>
       </View>
 
-      <TouchableOpacity style={styles.newCharButton} onPress={() => setShowCreate(true)}>
+      <TouchableOpacity style={styles.newCharButton} onPress={() => {
+        setShowCreate(true);
+        setRolledValues([]);
+        setRerollsLeft(3);
+        setAssignments({
+          strength: null,
+          dexterity: null,
+          constitution: null,
+          intelligence: null,
+          wisdom: null,
+          charisma: null,
+        });
+      }}>
         <Text style={styles.newCharButtonText}>+ Create New Character</Text>
       </TouchableOpacity>
     </ScrollView>
@@ -289,6 +499,11 @@ const styles = StyleSheet.create({
     color: '#9d4edd',
     marginBottom: 12,
   },
+  subLabel: {
+    fontSize: 14,
+    color: '#94a1b2',
+    marginBottom: 8,
+  },
   input: {
     backgroundColor: '#0f3460',
     padding: 16,
@@ -327,8 +542,70 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     borderRadius: 8,
   },
+  rollButtonDisabled: {
+    backgroundColor: '#4a4a6a',
+    opacity: 0.6,
+  },
   rollButtonText: {
     color: '#fff',
+    fontWeight: 'bold',
+  },
+  instructionBox: {
+    backgroundColor: '#0f3460',
+    padding: 16,
+    borderRadius: 8,
+    alignItems: 'center',
+  },
+  instructionText: {
+    color: '#94a1b2',
+    fontSize: 14,
+    textAlign: 'center',
+    marginBottom: 4,
+  },
+  rolledValuesContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    justifyContent: 'center',
+  },
+  rolledValue: {
+    width: 50,
+    height: 50,
+    backgroundColor: '#0f3460',
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: 'transparent',
+  },
+  rolledValueAssigned: {
+    backgroundColor: '#1a1a2e',
+    opacity: 0.4,
+  },
+  rolledValueSelected: {
+    borderColor: '#fbbf24',
+    backgroundColor: '#3d2e00',
+  },
+  rolledValueText: {
+    color: '#fff',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  rolledValueTextAssigned: {
+    color: '#666',
+  },
+  rolledValueTextSelected: {
+    color: '#fbbf24',
+  },
+  selectedIndicator: {
+    backgroundColor: '#3d2e00',
+    padding: 10,
+    borderRadius: 8,
+    marginTop: 12,
+    alignItems: 'center',
+  },
+  selectedText: {
+    color: '#fbbf24',
     fontWeight: 'bold',
   },
   statsGrid: {
@@ -343,6 +620,15 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 8,
     alignItems: 'center',
+    borderWidth: 2,
+    borderColor: 'transparent',
+  },
+  statBoxFilled: {
+    borderColor: '#10b981',
+  },
+  statBoxHighlight: {
+    borderColor: '#fbbf24',
+    borderStyle: 'dashed',
   },
   statName: {
     color: '#94a1b2',
@@ -354,6 +640,9 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginVertical: 4,
+  },
+  statValueEmpty: {
+    color: '#4a4a6a',
   },
   statMod: {
     color: '#9d4edd',
