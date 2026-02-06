@@ -336,6 +336,15 @@ CREATE POLICY "Users can view own notifications"
   ON notifications FOR SELECT
   USING (auth.uid()::text = user_id::text);
 
+CREATE POLICY "Users can insert notifications"
+  ON notifications FOR INSERT
+  TO authenticated
+  WITH CHECK (true);
+
+CREATE POLICY "Users can update own notifications"
+  ON notifications FOR UPDATE
+  USING (auth.uid()::text = user_id::text);
+
 -- Player Interactions: Can view interactions involving them
 CREATE POLICY "Users can view interactions involving them"
   ON player_interactions FOR SELECT
