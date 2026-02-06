@@ -9,7 +9,7 @@ interface Character {
   race: string;
   class: string;
   level: number;
-  experience: number;
+  experience_points: number; // maps to 'experience' in DB
   strength: number;
   dexterity: number;
   constitution: number;
@@ -37,7 +37,7 @@ const mapDbToApp = (dbChar: any): Character => ({
   race: dbChar.race,
   class: dbChar.class,
   level: dbChar.level,
-  experience: dbChar.experience,
+  experience_points: dbChar.experience_points || dbChar.experience || 0,
   strength: dbChar.strength,
   dexterity: dbChar.dexterity,
   constitution: dbChar.constitution,

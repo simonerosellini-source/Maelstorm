@@ -98,6 +98,22 @@ CREATE INDEX idx_parties_code ON parties(code);
 CREATE INDEX idx_parties_leader_id ON parties(leader_id);
 
 -- ============================================
+-- PARTY MEMBERS TABLE
+-- ============================================
+CREATE TABLE IF NOT EXISTS party_members (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  party_id UUID NOT NULL REFERENCES parties(id) ON DELETE CASCADE,
+  user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  character_id UUID NOT NULL REFERENCES characters(id) ON DELETE CASCADE,
+  role TEXT DEFAULT 'member',
+  joined_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  UNIQUE(party_id, user_id)
+);
+
+CREATE INDEX idx_party_members_party_id ON party_members(party_id);
+CREATE INDEX idx_party_members_user_id ON party_members(user_id);
+
+-- ============================================
 -- COMBATS TABLE
 -- ============================================
 CREATE TABLE IF NOT EXISTS combats (
@@ -277,6 +293,7 @@ ALTER TABLE notifications ENABLE ROW LEVEL SECURITY;
 ALTER TABLE player_interactions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE trade_offers ENABLE ROW LEVEL SECURITY;
 ALTER TABLE player_achievements ENABLE ROW LEVEL SECURITY;
+ALTER TABLE party_members ENABLE ROW LEVEL SECURITY;
 
 -- Users: Can read their own data
 CREATE POLICY "Users can view own data"
@@ -320,6 +337,38 @@ CREATE POLICY "Users can view interactions involving them"
 CREATE POLICY "Users can view trade offers involving them"
   ON trade_offers FOR SELECT
   USING (auth.uid()::text = from_user_id::text OR auth.uid()::text = to_user_id::text);
+
+-- Party Members: Full access for authenticated users
+CREATE POLICY "Users can view party members"
+  ON party_members FOR SELECT
+  TO authenticated
+  USING (true);
+
+CREATE POLICY "Users can insert party members"
+  ON party_members FOR INSERT
+  TO authenticated
+  WITH CHECK (auth.uid()::text = user_id::text);
+
+CREATE POLICY "Users can delete own party membership"
+  ON party_members FOR DELETE
+  TO authenticated
+  USING (auth.uid()::text = user_id::text);
+
+-- Parties: Insert and Update
+CREATE POLICY "Users can create parties"
+  ON parties FOR INSERT
+  TO authenticated
+  WITH CHECK (auth.uid()::text = leader_id::text);
+
+CREATE POLICY "Leaders can update parties"
+  ON parties FOR UPDATE
+  TO authenticated
+  USING (auth.uid()::text = leader_id::text);
+
+CREATE POLICY "Leaders can delete parties"
+  ON parties FOR DELETE
+  TO authenticated
+  USING (auth.uid()::text = leader_id::text);
 
 -- ============================================
 -- SAMPLE ACHIEVEMENTS
